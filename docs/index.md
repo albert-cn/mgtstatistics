@@ -1,7 +1,7 @@
 ---
 title: "管理学统计分析快速上手指南"
 author: "曹伟"
-date: "2020年6月30日"
+date: "2020-07-01"
 description: "这是用R的bookdown功能制作中文图书，输出格式为bookdown::gitbook和bookdown::pdf_book."
 documentclass: book
 biblio-style: apa
