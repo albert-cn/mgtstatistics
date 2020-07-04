@@ -1,5 +1,0 @@
-bookdown::gitbook:
-  includes:
-    in_header: _header.html
-  config:
-    download: ["pdf"]
