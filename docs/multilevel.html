@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 多层次线性回归模型 | 管理学统计分析快速上手指南</title>
+  <meta name="description" content="这是用R的bookdown功能制作中文图书，输出格式为bookdown::gitbook和bookdown::pdf_book." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 多层次线性回归模型 | 管理学统计分析快速上手指南" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="这是用R的bookdown功能制作中文图书，输出格式为bookdown::gitbook和bookdown::pdf_book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 多层次线性回归模型 | 管理学统计分析快速上手指南" />
+  
+  <meta name="twitter:description" content="这是用R的bookdown功能制作中文图书，输出格式为bookdown::gitbook和bookdown::pdf_book." />
+  
+
+<meta name="author" content="Albert Cao" />
+
+
+<meta name="date" content="2021-02-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="mome.html"/>
+<link rel="next" href="meta.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>简介与前言</a></li>
+<li class="chapter" data-level="1" data-path="mome.html"><a href="mome.html"><i class="fa fa-check"></i><b>1</b> 调节与中介分析</a><ul>
+<li class="chapter" data-level="1.1" data-path="mome.html"><a href="mome.html#linear"><i class="fa fa-check"></i><b>1.1</b> 线性关系</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="mome.html"><a href="mome.html#momesteps"><i class="fa fa-check"></i><b>1.1.1</b> 调节与中介效果的检验步骤</a></li>
+<li class="chapter" data-level="1.1.2" data-path="mome.html"><a href="mome.html#mocode"><i class="fa fa-check"></i><b>1.1.2</b> 管理学研究常用调节效应检验Mplus Code</a></li>
+<li class="chapter" data-level="1.1.3" data-path="mome.html"><a href="mome.html#normme"><i class="fa fa-check"></i><b>1.1.3</b> 常见中介效应</a></li>
+<li class="chapter" data-level="1.1.4" data-path="mome.html"><a href="mome.html#firstmome"><i class="fa fa-check"></i><b>1.1.4</b> 第一阶段有调节的中介、第二阶段有调节的中介、两阶段有调节的中介</a></li>
+<li class="chapter" data-level="1.1.5" data-path="mome.html"><a href="mome.html#memo"><i class="fa fa-check"></i><b>1.1.5</b> 单层次有中介的调节效应</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="mome.html"><a href="mome.html#nonlinear"><i class="fa fa-check"></i><b>1.2</b> 非线性关系</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="mome.html"><a href="mome.html#有调节的倒u型效应"><i class="fa fa-check"></i><b>1.2.1</b> 有调节的倒U型效应</a></li>
+<li class="chapter" data-level="1.2.2" data-path="mome.html"><a href="mome.html#有调节的倒u型中介效应"><i class="fa fa-check"></i><b>1.2.2</b> 有调节的倒U型中介效应</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="mome.html"><a href="mome.html#modplot"><i class="fa fa-check"></i><b>1.3</b> 绘制调节效应图</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="mome.html"><a href="mome.html#spssmplusexcel计算简单斜率并绘制调节效应图"><i class="fa fa-check"></i><b>1.3.1</b> SPSS+Mplus+Excel计算简单斜率并绘制调节效应图</a></li>
+<li class="chapter" data-level="1.3.2" data-path="mome.html"><a href="mome.html#利用r作调节效应图"><i class="fa fa-check"></i><b>1.3.2</b> 利用R作调节效应图</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="multilevel.html"><a href="multilevel.html"><i class="fa fa-check"></i><b>2</b> 多层次线性回归模型</a><ul>
+<li class="chapter" data-level="2.1" data-path="multilevel.html"><a href="multilevel.html#multiconcept"><i class="fa fa-check"></i><b>2.1</b> 相关概念介绍</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="meta.html"><a href="meta.html"><i class="fa fa-check"></i><b>3</b> 元分析</a><ul>
+<li class="chapter" data-level="3.1" data-path="meta.html"><a href="meta.html#meta-concept"><i class="fa fa-check"></i><b>3.1</b> 元分析中的常见概念及原理</a></li>
+<li class="chapter" data-level="3.2" data-path="meta.html"><a href="meta.html#meta-practice"><i class="fa fa-check"></i><b>3.2</b> 手把手的元分析实战</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="meta.html"><a href="meta.html#mian-effect-test"><i class="fa fa-check"></i><b>3.2.1</b> 主效应检验</a></li>
+<li class="chapter" data-level="3.2.2" data-path="meta.html"><a href="meta.html#B-F"><i class="fa fa-check"></i><b>3.2.2</b> Bajaut plot和forest plot</a></li>
+<li class="chapter" data-level="3.2.3" data-path="meta.html"><a href="meta.html#bias"><i class="fa fa-check"></i><b>3.2.3</b> 出版偏倚的检验</a></li>
+<li class="chapter" data-level="3.2.4" data-path="meta.html"><a href="meta.html#调节效应分析-meta-moderator"><i class="fa fa-check"></i><b>3.2.4</b> 调节效应分析 {meta-moderator}</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="参考文献.html"><a href="参考文献.html"><i class="fa fa-check"></i><b>4</b> 参考文献</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">管理学统计分析快速上手指南</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="multilevel" class="section level1">
+<h1><span class="header-section-number">2</span> 多层次线性回归模型</h1>
+<div id="multiconcept" class="section level2">
+<h2><span class="header-section-number">2.1</span> 相关概念介绍</h2>
+<p>当研究涉及到不同的层面时，我们可能就需要构建跨层模型来验证研究假设。比如当我们想要讨论员工个性(personality)和员工创造力(creativity)之间的关系时，个体层面的personality→creativity之间的关系可能会受到团队层面的团队氛围(team climate)的影响。</p>
+<p>较为常见的是两层线性模型。即使是三层线性模型，都不是很常见。以下以常见的两层线性模型为例。</p>
+<ol style="list-style-type: decimal">
+<li>基本的两层线性模型阐述</li>
+</ol>
+<p>第一层的方程：</p>
+<p><span class="math display">\[
+Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij} + r_{ij}
+\]</span></p>
+<p>第二层的方程：</p>
+<p><span class="math display">\[
+\beta_{0j} = \gamma_{00} + \gamma_{01}W_j + u_{0j}
+\]</span></p>
+<p><span class="math display">\[
+\beta_{1j} = \gamma_{10} + \gamma_{11}W_j + u_{1j}
+\]</span></p>
+<p>模型中的参数含义如下:</p>
+<p><span class="math inline">\(\beta_{0j}\)</span>: 在第<span class="math inline">\(j\)</span>组中，<span class="math inline">\(X\)</span>对<span class="math inline">\(Y\)</span>平均的影响(即截距)</p>
+<p><span class="math inline">\(\beta_{1j}\)</span>: 在第<span class="math inline">\(j\)</span>组中，当<span class="math inline">\(X\)</span>改变一个单位时，<span class="math inline">\(Y\)</span>的改变量</p>
+<p><span class="math inline">\(r_{ij}\)</span>: 每一组中，<span class="math inline">\(X\)</span>估计<span class="math inline">\(Y\)</span>的误差(残差)</p>
+<p>在第二层模型中，<span class="math inline">\(\beta_{0j}\)</span>和<span class="math inline">\(\beta_{1j}\)</span>是随着<span class="math inline">\(j\)</span>的不同(组与组之间)而发生改变。<span class="math inline">\(\beta_{0j}\)</span>和<span class="math inline">\(\beta_{1j}\)</span>是随机的，而不是固定不变的(即第二层模型是<code>随机效应模型</code>)，改变的程度可用<span class="math inline">\(W\)</span>来估计。而第一层的<span class="math inline">\(\beta_{0j}\)</span>和<span class="math inline">\(\beta_{1j}\)</span>是固定不变的，所以第一层模型被成为<code>固定效应模型</code>。</p>
+<p><span class="math inline">\(\gamma_{00}\)</span>: <span class="math inline">\(W_j\)</span>对<span class="math inline">\(\beta_{0j}\)</span>(组内<span class="math inline">\(X\)</span>对<span class="math inline">\(Y\)</span>平均的影响)的平均影响</p>
+<p><span class="math inline">\(\gamma_{01}\)</span>: 当<span class="math inline">\(W_j\)</span>改变一个单位时，<span class="math inline">\(\beta_{0j}\)</span>的改变量</p>
+<p><span class="math inline">\(u_{0j}\)</span>: <span class="math inline">\(W_j\)</span>估计<span class="math inline">\(\beta_{0j}\)</span>的误差</p>
+<p><span class="math inline">\(\gamma_{10}\)</span>: <span class="math inline">\(W_j\)</span>对<span class="math inline">\(\beta_{1j}\)</span>(组内<span class="math inline">\(X\)</span>对<span class="math inline">\(Y\)</span>的影响)的平均影响</p>
+<p><span class="math inline">\(\gamma_{11}\)</span>: 当<span class="math inline">\(W_j\)</span>改变一个单位时，<span class="math inline">\(\beta_{1j}\)</span>的改变量</p>
+<p><span class="math inline">\(u_{1j}\)</span>: <span class="math inline">\(W_j\)</span>估计<span class="math inline">\(\beta_{1j}\)</span>的误差</p>
+<p>一般的线性回归方程(<span class="math inline">\(Y=\beta_0+\beta_1X\)</span>)中，我们一般只关注一次项系数(<span class="math inline">\(\beta_1\)</span>)的显著性，因为截距项(<span class="math inline">\(\beta_0\)</span>)一般来说没有意义。但当<span class="math inline">\(X\)</span>中心化(例如均值中心化：<span class="math inline">\(X-\bar{X}\)</span>)后，<span class="math inline">\(\beta_0\)</span>意味着<span class="math inline">\(X\)</span>对<span class="math inline">\(Y\)</span>的平均影响。这也就解释了为什么<span class="math inline">\(\beta_{0j}\)</span>是在第<span class="math inline">\(j\)</span>组中，<span class="math inline">\(X\)</span>对<span class="math inline">\(Y\)</span>平均的影响，实际上我们是默认为方程进行了中心化。</p>
+<p>随之而来的一个问题是：跨层回归方程中如何进行中心化(centering)？中心化主要有两个目的：一是避免产生不合理的解释；二是避免共线性问题。在多层回归分析中，主要有总平均值中心化(Grand Mean Centering,<span class="math inline">\(x-\bar{x}_{ij}\)</span>,<span class="math inline">\(\bar{x}_{ij}\)</span>是所有数据的平均数 )和分组平均值中心化(Group Mean Centering,<span class="math inline">\(\bar{x}_{.j}\)</span>是第<span class="math inline">\(j\)</span>组的<span class="math inline">\(x_{ij}\)</span>值的平均数)。</p>
+<p>简言之，在第一层的方程中，我们希望进行组内中心化，主要有以下几个好处：一是小组之间截距(<span class="math inline">\(\beta_{0j}\)</span>)的方差=小组平均数(<span class="math inline">\(\bar{y}_{.j}\)</span>)的方差，这就方便了第二层中<span class="math inline">\(\gamma_{00}\)</span>的理解(<span class="math inline">\(\gamma_{00}\)</span>就是第二层变量<span class="math inline">\(W_j\)</span>对每一组的<span class="math inline">\(\bar{y}_{.j}\)</span>的影响)；二是区别开了组内效应和组间效应，组内效应是在第一层估计，组间效应就留给第二层估计。第一层采用分组平均值中心化后，第二组其实也就不太需要进行中心化了。所以，我们一般会把基本的<span class="math inline">\(HLM\)</span>表述为：</p>
+<p><span class="math display">\[
+\left\{ \begin{aligned} 
+        Y_{ij} = \beta_{0j} + \beta_{1j}(X_{ij} - \bar{X}_{.j}) + r_{ij} \\
+        \beta_{0j} = \gamma_{00} + \gamma_{01}W_j + u_{0j} \\
+         \beta_{ij} = \gamma_{10} + \gamma_{11}W_j + u_{1j}   
+\end{aligned} \right.
+\]</span></p>
+<p>论文中也有采用第一层和第二层都是总平均值中心化的，第一层分组平均值中心化第二层总平均值中心化的。其实从统计上来说，都没有太大问题。实际上我们一般只关注回归系数的显著性。</p>
+<ol start="2" style="list-style-type: decimal">
+<li>统计检验</li>
+</ol>
+<ul>
+<li><p>验证<span class="math inline">\(u_{0j}\)</span>=0.讨论<span class="math inline">\(W_j\)</span>是否有足够能力去解释<span class="math inline">\(\beta_{0j}\)</span>(组间的截距)的差异。当<span class="math inline">\(u_{0j}\)</span>=0时，表示<span class="math inline">\(W_j\)</span>可以解释组间的截距的所有差异。<span class="math inline">\(u_{0j}\)</span>服从<span class="math inline">\(\chi\)</span>分布。</p></li>
+<li><p><span class="math inline">\(W_j\)</span>与<span class="math inline">\(\beta_{0j}\)</span>的关系。通过验证回归系数的<span class="math inline">\(t\)</span>检验来验证系数<span class="math inline">\(\gamma_{00}\)</span>和<span class="math inline">\(\gamma_{01}\)</span>是否显著。</p></li>
+<li><p>类似地，可以通过验证<span class="math inline">\(u_{1j}\)</span>=0.讨论<span class="math inline">\(W_j\)</span>是否有足够能力去解释<span class="math inline">\(\beta_{1j}\)</span>(组间的斜率)的差异，<span class="math inline">\(u_{1j}\)</span>也服从<span class="math inline">\(\chi\)</span>分布。同样也可以通过<span class="math inline">\(t\)</span>检验来验证系数<span class="math inline">\(\gamma_{10}\)</span>和<span class="math inline">\(\gamma_{11}\)</span>的显著性(<span class="math inline">\(W_j\)</span>与<span class="math inline">\(\beta_{1j}\)</span>的关系)。</p></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>四种变化模型</li>
+</ol>
+<p>完整的两层线性模型：</p>
+<p><span class="math display">\[
+\left\{ \begin{aligned} 
+        Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij} + r_{ij} \\
+        \beta_{0j} = \gamma_{00} + \gamma_{01}W_j + u_{0j} \\
+         \beta_{ij} = \gamma_{10} + \gamma_{11}W_j + u_{1j}   
+\end{aligned} \right.
+\]</span></p>
+<p>3.1 变化之一：Model 1</p>
+<p><span class="math display">\[
+\left\{ \begin{aligned} 
+        Y_{ij} = \beta_{0j} + r_{ij} \\
+        \beta_{0j} = \gamma_{00} + u_{0j}       
+\end{aligned} \right.
+\]</span></p>
+<p><span class="math inline">\(Y_{ij}\)</span>受三个因素影响：</p>
+<p>一个总平均(<span class="math inline">\(\gamma_{00}\)</span>);</p>
+<p>一个随机的第二层效应(<span class="math inline">\(u_{0j}\)</span>);</p>
+<p>一个随机的第一层效应(<span class="math inline">\(r_{ij}\)</span>)。</p>
+<p>这实质上是方差分析(<span class="math inline">\(ANOVA\)</span>)。</p>
+<p>3.2 变化之二：Model 2</p>
+<p><span class="math display">\[
+\left\{ \begin{aligned} 
+        Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij}+ r_{ij} \\
+        \beta_{0j} = \gamma_{00} + u_{0j} \\
+        \beta_{1j} = \gamma_{10}       
+\end{aligned} \right.
+\]</span></p>
+<p><span class="math inline">\(Y_{ij}\)</span>受四个因素影响：</p>
+<p>一个总平均(<span class="math inline">\(\gamma_{00}\)</span>);</p>
+<p>一个随机的第二层效应(<span class="math inline">\(u_{0j}\)</span>);</p>
+<p>一个变量(<span class="math inline">\(X_{ij}\)</span>)的影响效应(<span class="math inline">\(\gamma_{10}\)</span>);</p>
+<p>一个随机的第一层效应(<span class="math inline">\(r_{ij}\)</span>)。</p>
+<p>这实质上是协方差分析(<span class="math inline">\(ANCOVA\)</span>)。</p>
+<p>3.3 变化之三： Model 3</p>
+<p><span class="math display">\[
+\left\{ \begin{aligned} 
+        Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij}+ r_{ij} \\
+        \beta_{0j} = \gamma_{00} \\
+        \beta_{1j} = \gamma_{10}       
+\end{aligned} \right.
+\]</span></p>
+<p><span class="math inline">\(Y_{ij}\)</span>受三个因素影响：</p>
+<p>一个总平均(<span class="math inline">\(\gamma_{00}\)</span>);</p>
+<p>一个变量(<span class="math inline">\(X_{ij}\)</span>的影响效应(<span class="math inline">\(\gamma_{10}\)</span>);</p>
+<p>一个随机的第一层效应(<span class="math inline">\(r_{ij}\)</span>)。</p>
+<p>Model 3中，第二层都是参数，所以其实就等同于一个单层的线性回归模型。</p>
+<p>3.4 变化之四：Model 4</p>
+<p><span class="math display">\[
+\left\{ \begin{aligned} 
+        Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij}+ r_{ij} \\
+        \beta_{0j} = \gamma_{00} + u_{0j} \\
+        \beta_{1j} = \gamma_{10} + u_{1j}       
+\end{aligned} \right.
+\]</span></p>
+<p><span class="math inline">\(Y_{ij}\)</span>受五个因素影响：</p>
+<p>一个总平均(<span class="math inline">\(\gamma_{00}\)</span>);</p>
+<p>一个随机的第一层效应(<span class="math inline">\(r_{ij}\)</span>)；</p>
+<p>一个随机的第二层效应(<span class="math inline">\(u_{0j}\)</span>);</p>
+<p>一个变量(<span class="math inline">\(X_{ij}\)</span>)的影响效应(<span class="math inline">\(\gamma_{10}\)</span>);</p>
+<p>一个随机的第二层效应(<span class="math inline">\(u_{1j}\)</span>)。</p>
+<p>虽然Model 4看似是一个简单的线性回归方程，但因为分为两层，截距和回归系数可以在不同层面上发生改变。</p>
+<ol start="4" style="list-style-type: decimal">
+<li><span class="math inline">\(R_{wg}\)</span>和<span class="math inline">\(ICC\)</span>的建议</li>
+</ol>
+<p><span class="math inline">\(R_{wg}\)</span>和<span class="math inline">\(ICC\)</span>都是判断能否进行分层线性回归模型分析的指标。</p>
+<p><span class="math inline">\(R_{wg}\)</span>是组内评分者信度指标(within-group interrater reliability)，<span class="math inline">\(j\)</span>一般是指构念量表的题目数量。它是判断低层面的变量是否有足够的信度上升(聚合)到高层面中去的依据。理论上来说，<span class="math inline">\(R_{wg}\)</span>介于0和1之间，大于0.7较为理想。但实际操作中，也有可能出现小于0或大于1的现象。这种情况下，一般可将小于0的值视为0，大于1的值视为1<span class="citation">(罗胜强 and 姜嬿 <a href="#ref-law2014:StochProc" role="doc-biblioref">2014</a>)</span>。</p>
+<p><span class="math inline">\(ICC\)</span>是组内相关系数(intra-class correlation)，分为<span class="math inline">\(ICC(1)\)</span>和<span class="math inline">\(ICC(1)\)</span>。二者的区别简单来说是：<span class="math inline">\(ICC(1)\)</span>是小组内不同成员的评分的信度；<span class="math inline">\(ICC(2)\)</span>是小组的平均评分的信度。对于<span class="math inline">\(ICC(2)\)</span>的理解，我们可以这样来看：当我们从<span class="math inline">\(n\)</span>个组内随机从每个组内抽取<span class="math inline">\(k\)</span>个成员，计算每一组的平均。理论上我们可以重复上述步骤再做一次。这样我们就会有两个样本，每个样本都有<span class="math inline">\(n\)</span>个组，每个组有<span class="math inline">\(k\)</span>个成员的平均分。<span class="math inline">\(ICC(2)\)</span>就可以看成是这两个样本的<span class="math inline">\(n\)</span>个平均的相关系数。通常来说，<span class="math inline">\(ICC(1)\)</span>大于0.12、<span class="math inline">\(ICC(2)\)</span>大于0.7较为合适。关于聚合建议值标准的阐述，希望可以引用相关的参考文献，这样比较有理有据。跨层分析的文献有很多，可以从中去引用。不一一赘述。</p>
+
+</div>
+</div>
+<h3> 参考文献</h3>
+<div id="refs" class="references">
+<div id="ref-law2014:StochProc">
+<p>罗胜强, and 姜嬿. 2014. <em>管理学问卷调查研究方法</em>. 重庆大学出版社.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="mome.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="meta.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["mybook1.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
