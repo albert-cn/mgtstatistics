@@ -1,28 +1,28 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.6.20)  4 JUL 2020 09:47
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.2.10)  10 FEB 2021 21:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **mybook1.tex
 (./mybook1.tex
-LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-06-18> (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-06> (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-
 dist/tex/latex/base/book.cls
-Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
+Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/bk10.clo
-File: bk10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+File: bk10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
-\c@part=\count163
-\c@chapter=\count164
-\c@section=\count165
-\c@subsection=\count166
-\c@subsubsection=\count167
-\c@paragraph=\count168
-\c@subparagraph=\count169
-\c@figure=\count170
-\c@table=\count171
+\c@part=\count173
+\c@chapter=\count174
+\c@section=\count175
+\c@subsection=\count176
+\c@subsubsection=\count177
+\c@paragraph=\count178
+\c@subparagraph=\count179
+\c@figure=\count180
+\c@table=\count181
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen134
+\bibindent=\dimen138
 ) (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -73,7 +73,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2020/01/20 v2.17e AMS math features
+Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip49
 For additional information on amsmath, use the `?' option.
 
@@ -82,52 +82,52 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
-\ex@=\dimen135
+\ex@=\dimen139
 )) (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.s
 ty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen136
+\pmbraise@=\dimen140
 ) (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.st
 y
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count172
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count173
-\leftroot@=\count174
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count175
-\DOTSCASE@=\count176
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box45
-\strutbox@=\box46
-\big@size=\dimen137
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count177
-\c@MaxMatrixCols=\count178
+\inf@bad=\count182
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count183
+\leftroot@=\count184
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count185
+\DOTSCASE@=\count186
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen141
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count187
+\c@MaxMatrixCols=\count188
 \dotsspace@=\muskip16
-\c@parentequation=\count179
-\dspbrk@lvl=\count180
+\c@parentequation=\count189
+\dspbrk@lvl=\count190
 \tag@help=\toks17
-\row@=\count181
-\column@=\count182
-\maxfields@=\count183
+\row@=\count191
+\column@=\count192
+\maxfields@=\count193
 \andhelp@=\toks18
-\eqnshift@=\dimen138
-\alignsep@=\dimen139
-\tagshift@=\dimen140
-\tagwidth@=\dimen141
-\totwidth@=\dimen142
-\lineht@=\dimen143
+\eqnshift@=\dimen142
+\alignsep@=\dimen143
+\tagshift@=\dimen144
+\tagwidth@=\dimen145
+\totwidth@=\dimen146
+\lineht@=\dimen147
 \@envbody=\toks19
 \multlinegap=\skip50
 \multlinetaggap=\skip51
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2859.
-LaTeX Info: Redefining \] on input line 2860.
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
@@ -141,15 +141,20 @@ Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/unicode-math/unicod
 e-math.sty (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel
 /expl3.sty
-Package: expl3 2020-06-18 L3 programming layer (loader) 
+Package: expl3 2021-02-06 L3 programming layer (loader) 
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend
--xdvipdfmx.def
-File: l3backend-xdvipdfmx.def 2020-06-29 L3 backend support: xdvipdfmx
-\g__graphics_track_int=\count184
-\l__pdf_internal_box=\box47
-\g__pdf_backend_object_int=\count185
-\g__pdf_backend_annotation_int=\count186
+-xetex.def
+File: l3backend-xetex.def 2021-02-06 L3 backend support: XeTeX
+(|extractbb --version)
+\c__kernel_sys_dvipdfmx_version_int=\count194
+\l__color_backend_stack_int=\count195
+\g__color_backend_stack_int=\count196
+\g__graphics_track_int=\count197
+\l__pdf_internal_box=\box49
+\g__pdf_backend_object_int=\count198
+\g__pdf_backend_annotation_int=\count199
+\g__pdf_backend_link_int=\count266
 ))
 Package: unicode-math 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
 
@@ -160,18 +165,13 @@ TeX
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/x
 parse.sty
-Package: xparse 2020-05-15 L3 Experimental document command parser
-
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/x
-parse-generic.tex
-\l__xparse_current_arg_int=\count187
-\g__xparse_grabber_int=\count188
-\l__xparse_m_args_int=\count189
-\l__xparse_v_nesting_int=\count190
-))
+parse-2020-10-01.sty
+(c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/x
+parse-generic.tex)))
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e
 /l3keys2e.sty
-Package: l3keys2e 2020-05-15 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2021-02-02 LaTeX2e option processing using LaTeX3 keys
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.s
 ty
@@ -181,22 +181,22 @@ Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 etex.sty
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count191
-\l__fontspec_language_int=\count192
-\l__fontspec_strnum_int=\count193
-\l__fontspec_tmp_int=\count194
-\l__fontspec_tmpa_int=\count195
-\l__fontspec_tmpb_int=\count196
-\l__fontspec_tmpc_int=\count197
-\l__fontspec_em_int=\count198
-\l__fontspec_emdef_int=\count199
-\l__fontspec_strong_int=\count266
-\l__fontspec_strongdef_int=\count267
-\l__fontspec_tmpa_dim=\dimen144
-\l__fontspec_tmpb_dim=\dimen145
-\l__fontspec_tmpc_dim=\dimen146
+\l__fontspec_script_int=\count267
+\l__fontspec_language_int=\count268
+\l__fontspec_strnum_int=\count269
+\l__fontspec_tmp_int=\count270
+\l__fontspec_tmpa_int=\count271
+\l__fontspec_tmpb_int=\count272
+\l__fontspec_tmpc_int=\count273
+\l__fontspec_em_int=\count274
+\l__fontspec_emdef_int=\count275
+\l__fontspec_strong_int=\count276
+\l__fontspec_strongdef_int=\count277
+\l__fontspec_tmpa_dim=\dimen148
+\l__fontspec_tmpb_dim=\dimen149
+\l__fontspec_tmpc_dim=\dimen150
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.c
 fg))) (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fix-cm.s
@@ -206,9 +206,9 @@ Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 ))
-\g__um_fam_int=\count268
-\g__um_fonts_used_int=\count269
-\l__um_primecount_int=\count270
+\g__um_fam_int=\count278
+\g__um_fonts_used_int=\count279
+\l__um_primecount_int=\count280
 \g__um_primekern_muskip=\muskip17
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/unicode-math/unicod
@@ -224,7 +224,7 @@ Package xcolor Info: Driver file: xetex.def on input line 225.
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/xetex.
 def
-File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+File: xetex.def 2020/08/26 v5.0i Graphics/color driver for xetex
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -237,11 +237,11 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.s
 ty
-Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
+Package: hyperref 2021-02-08 v7.00i Hypertext links for LaTeX
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.s
 ty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftex
 cmds.sty
@@ -284,14 +284,19 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions
 .sty
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
-\@linkdim=\dimen147
-\Hy@linkcounter=\count271
-\Hy@pagecounter=\count272
+\@linkdim=\dimen151
+\Hy@linkcounter=\count281
+\Hy@pagecounter=\count282
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2021-02-08 v7.00i Hyperref: PDFDocEncoding definition (HO)
+)
+(c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref-l
+angpatches.def
+File: hyperref-langpatches.def 2021-02-08 v7.00i Hyperref: patches for babel la
+nguages
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.s
 ty
@@ -301,25 +306,25 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 .sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count273
-Package hyperref Info: Option `unicode' set `true' on input line 4338.
+\Hy@SavedSpaceFactor=\count283
+Package hyperref Info: Option `unicode' set `true' on input line 4058.
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2021-02-08 v7.00i Hyperref: PDF Unicode definition (HO)
 )
-Package hyperref Info: Hyper figures OFF on input line 4464.
-Package hyperref Info: Link nesting OFF on input line 4469.
-Package hyperref Info: Hyper index ON on input line 4472.
-Package hyperref Info: Plain pages OFF on input line 4479.
-Package hyperref Info: Backreferencing OFF on input line 4484.
+Package hyperref Info: Hyper figures OFF on input line 4180.
+Package hyperref Info: Link nesting OFF on input line 4185.
+Package hyperref Info: Hyper index ON on input line 4188.
+Package hyperref Info: Plain pages OFF on input line 4195.
+Package hyperref Info: Backreferencing OFF on input line 4200.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4717.
-\c@Hy@tempcnt=\count274
+Package hyperref Info: Bookmarks ON on input line 4433.
+\c@Hy@tempcnt=\count284
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5076.
-\XeTeXLinkMargin=\dimen148
+LaTeX Info: Redefining \url on input line 4792.
+\XeTeXLinkMargin=\dimen152
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -329,51 +334,54 @@ calc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count275
-\Field@Width=\dimen149
-\Fld@charsize=\dimen150
-Package hyperref Info: Hyper figures OFF on input line 6347.
-Package hyperref Info: Link nesting OFF on input line 6352.
-Package hyperref Info: Hyper index ON on input line 6355.
-Package hyperref Info: backreferencing OFF on input line 6362.
-Package hyperref Info: Link coloring OFF on input line 6367.
-Package hyperref Info: Link coloring with OCG OFF on input line 6372.
-Package hyperref Info: PDF/A mode OFF on input line 6377.
-LaTeX Info: Redefining \ref on input line 6417.
-LaTeX Info: Redefining \pageref on input line 6421.
+\Fld@menulength=\count285
+\Field@Width=\dimen153
+\Fld@charsize=\dimen154
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring OFF on input line 6083.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+LaTeX Info: Redefining \ref on input line 6133.
+LaTeX Info: Redefining \pageref on input line 6137.
 
-(c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/atbegshi/atbegshi
-.sty
-Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+(c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.s
+ty
+Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
+ge
+with kernel methods
 )
-\Hy@abspage=\count276
-\c@Item=\count277
-\c@Hfootnote=\count278
+\Hy@abspage=\count286
+\c@Item=\count287
+\c@Hfootnote=\count288
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
-File: hxetex.def 2020-05-15 v7.00e Hyperref driver for XeTeX
+File: hxetex.def 2021-02-08 v7.00i Hyperref driver for XeTeX
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringenc/stringe
 nc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\pdfm@box=\box48
-\c@Hy@AnnotLevel=\count279
-\HyField@AnnotCount=\count280
-\Fld@listcount=\count281
-\c@bookmark@seq@number=\count282
+\pdfm@box=\box50
+\c@Hy@AnnotLevel=\count289
+\HyField@AnnotCount=\count290
+\Fld@listcount=\count291
+\c@bookmark@seq@number=\count292
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/reru
 nfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/atveryend/atveryend
-.sty
-Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
+(c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.
+sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
+e
+with kernel methods
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/uni
 quecounter.sty
@@ -390,57 +398,57 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTright=\skip54
 \LTpre=\skip55
 \LTpost=\skip56
-\LTchunksize=\count283
-\LTcapwidth=\dimen151
-\LT@head=\box49
-\LT@firsthead=\box50
-\LT@foot=\box51
-\LT@lastfoot=\box52
-\LT@cols=\count284
-\LT@rows=\count285
-\c@LT@tables=\count286
-\c@LT@chunks=\count287
+\LTchunksize=\count293
+\LTcapwidth=\dimen155
+\LT@head=\box51
+\LT@firsthead=\box52
+\LT@foot=\box53
+\LT@lastfoot=\box54
+\LT@cols=\count294
+\LT@rows=\count295
+\c@LT@tables=\count296
+\c@LT@chunks=\count297
 \LT@p@ftn=\toks22
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.s
 ty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen152
-\lightrulewidth=\dimen153
-\cmidrulewidth=\dimen154
-\belowrulesep=\dimen155
-\belowbottomsep=\dimen156
-\aboverulesep=\dimen157
-\abovetopsep=\dimen158
-\cmidrulesep=\dimen159
-\cmidrulekern=\dimen160
-\defaultaddspace=\dimen161
-\@cmidla=\count288
-\@cmidlb=\count289
-\@aboverulesep=\dimen162
-\@belowrulesep=\dimen163
-\@thisruleclass=\count290
-\@lastruleclass=\count291
-\@thisrulewidth=\dimen164
+\heavyrulewidth=\dimen156
+\lightrulewidth=\dimen157
+\cmidrulewidth=\dimen158
+\belowrulesep=\dimen159
+\belowbottomsep=\dimen160
+\aboverulesep=\dimen161
+\abovetopsep=\dimen162
+\cmidrulesep=\dimen163
+\cmidrulekern=\dimen164
+\defaultaddspace=\dimen165
+\@cmidla=\count298
+\@cmidlb=\count299
+\@aboverulesep=\dimen166
+\@belowrulesep=\dimen167
+\@thisruleclass=\count300
+\@lastruleclass=\count301
+\@thisrulewidth=\dimen168
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.s
 ty
-Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count292
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count302
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.s
 ty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box53
-\fn@width=\dimen165
+\fn@notes=\box55
+\fn@width=\dimen169
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.s
 ty
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.s
 ty
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
@@ -450,8 +458,8 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 105.
 )
-\Gin@req@height=\dimen166
-\Gin@req@width=\dimen167
+\Gin@req@height=\dimen170
+\Gin@req@width=\dimen171
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/grffile/grffile.sty
 Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
@@ -459,57 +467,61 @@ y)
 Package grffile Info: This package is an empty stub for compatibility on input 
 line 40.
 ) (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box54
-\UL@hyphenbox=\box55
+\UL@box=\box56
+\UL@hyphenbox=\box57
 \UL@skip=\skip57
 \UL@hook=\toks23
-\UL@height=\dimen168
-\UL@pe=\count293
-\UL@pixel=\dimen169
-\ULC@box=\box56
+\UL@height=\dimen172
+\UL@pe=\count303
+\UL@pixel=\dimen173
+\ULC@box=\box58
 Package: ulem 2019/11/18
-\ULdepth=\dimen170
+\ULdepth=\dimen174
 ) (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ctex/ctex.sty
-Package: ctex 2020/06/06 v2.5.3 Chinese adapter in LaTeX (CTEX)
+Package: ctex 2020/10/19 v2.5.5 Chinese adapter in LaTeX (CTEX)
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ctex/ctexhook.sty
-Package: ctexhook 2020/06/06 v2.5.3 Document and package hooks (CTEX)
+Package: ctexhook 2020/10/19 v2.5.5 Document and package hooks (CTEX)
 ) (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ctex/ctexpatch.st
 y
-Package: ctexpatch 2020/06/06 v2.5.3 Patching commands (CTEX)
-) (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ms/everysel.sty
-Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+Package: ctexpatch 2020/10/19 v2.5.5 Patching commands (CTEX)
 )
-\l__ctex_tmp_int=\count294
-\l__ctex_tmp_box=\box57
-\l__ctex_tmp_dim=\dimen171
-\g__ctex_section_depth_int=\count295
-\g__ctex_font_size_int=\count296
+(c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/everysel/everysel.s
+ty
+Package: everysel 2021/01/20 v2.1 EverySelectfont Package (MS)
+
+(c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/everysel/everysel-2
+011-10-28.sty))
+\l__ctex_tmp_int=\count304
+\l__ctex_tmp_box=\box59
+\l__ctex_tmp_dim=\dimen175
+\g__ctex_section_depth_int=\count305
+\g__ctex_font_size_int=\count306
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ctex/config/ctexopt
 s.cfg
-File: ctexopts.cfg 2020/06/06 v2.5.3 Option configuration file (CTEX)
+File: ctexopts.cfg 2020/10/19 v2.5.5 Option configuration file (CTEX)
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ctex/engine/ctex-en
 gine-xetex.def
-File: ctex-engine-xetex.def 2020/06/06 v2.5.3 XeLaTeX adapter (CTEX)
+File: ctex-engine-xetex.def 2020/10/19 v2.5.5 XeLaTeX adapter (CTEX)
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
-Package: xeCJK 2020/06/06 v3.8.4 Typesetting CJK scripts with XeLaTeX
+Package: xeCJK 2020/10/19 v3.8.6 Typesetting CJK scripts with XeLaTeX
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xtemplat
 e/xtemplate.sty
-Package: xtemplate 2020-05-15 L3 Experimental prototype document functions
-\l__xtemplate_tmp_dim=\dimen172
-\l__xtemplate_tmp_int=\count297
+Package: xtemplate 2021-02-02 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen176
+\l__xtemplate_tmp_int=\count307
 \l__xtemplate_tmp_muskip=\muskip19
 \l__xtemplate_tmp_skip=\skip58
 )
-\l__xeCJK_tmp_int=\count298
-\l__xeCJK_tmp_box=\box58
-\l__xeCJK_tmp_dim=\dimen173
+\l__xeCJK_tmp_int=\count308
+\l__xeCJK_tmp_box=\box60
+\l__xeCJK_tmp_dim=\dimen177
 \l__xeCJK_tmp_skip=\skip59
-\g__xeCJK_space_factor_int=\count299
-\l__xeCJK_begin_int=\count300
-\l__xeCJK_end_int=\count301
+\g__xeCJK_space_factor_int=\count309
+\l__xeCJK_begin_int=\count310
+\l__xeCJK_end_int=\count311
 \c__xeCJK_CJK_class_int=\XeTeXcharclass1
 \c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
 \c__xeCJK_FullRight_class_int=\XeTeXcharclass3
@@ -519,60 +531,60 @@ Package: xtemplate 2020-05-15 L3 Experimental prototype document functions
 \c__xeCJK_CM_class_int=\XeTeXcharclass7
 \c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
 \l__xeCJK_last_skip=\skip60
-\g__xeCJK_node_int=\count302
-\c__xeCJK_CJK_node_dim=\dimen174
-\c__xeCJK_CJK-space_node_dim=\dimen175
-\c__xeCJK_default_node_dim=\dimen176
-\c__xeCJK_default-space_node_dim=\dimen177
-\c__xeCJK_CJK-widow_node_dim=\dimen178
-\c__xeCJK_normalspace_node_dim=\dimen179
+\g__xeCJK_node_int=\count312
+\c__xeCJK_CJK_node_dim=\dimen178
+\c__xeCJK_CJK-space_node_dim=\dimen179
+\c__xeCJK_default_node_dim=\dimen180
+\c__xeCJK_default-space_node_dim=\dimen181
+\c__xeCJK_CJK-widow_node_dim=\dimen182
+\c__xeCJK_normalspace_node_dim=\dimen183
 \l__xeCJK_ccglue_skip=\skip61
 \l__xeCJK_ecglue_skip=\skip62
 \l__xeCJK_punct_kern_skip=\skip63
-\l__xeCJK_last_penalty_int=\count303
-\l__xeCJK_last_bound_dim=\dimen180
-\l__xeCJK_last_kern_dim=\dimen181
-\l__xeCJK_widow_penalty_int=\count304
+\l__xeCJK_last_penalty_int=\count313
+\l__xeCJK_last_bound_dim=\dimen184
+\l__xeCJK_last_kern_dim=\dimen185
+\l__xeCJK_widow_penalty_int=\count314
 
 Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
-(xtemplate)             argument(s) on line 2329.
+(xtemplate)             argument(s) on line 2341.
 
-\l__xeCJK_fixed_punct_width_dim=\dimen182
-\l__xeCJK_mixed_punct_width_dim=\dimen183
-\l__xeCJK_middle_punct_width_dim=\dimen184
-\l__xeCJK_fixed_margin_width_dim=\dimen185
-\l__xeCJK_mixed_margin_width_dim=\dimen186
-\l__xeCJK_middle_margin_width_dim=\dimen187
-\l__xeCJK_bound_punct_width_dim=\dimen188
-\l__xeCJK_bound_margin_width_dim=\dimen189
-\l__xeCJK_margin_minimum_dim=\dimen190
-\l__xeCJK_kerning_total_width_dim=\dimen191
-\l__xeCJK_same_align_margin_dim=\dimen192
-\l__xeCJK_different_align_margin_dim=\dimen193
-\l__xeCJK_kerning_margin_width_dim=\dimen194
-\l__xeCJK_kerning_margin_minimum_dim=\dimen195
-\l__xeCJK_bound_dim=\dimen196
-\l__xeCJK_reverse_bound_dim=\dimen197
-\l__xeCJK_margin_dim=\dimen198
-\l__xeCJK_minimum_bound_dim=\dimen199
-\l__xeCJK_kerning_margin_dim=\dimen256
-\g__xeCJK_family_int=\count305
-\l__xeCJK_fam_int=\count306
-\g__xeCJK_fam_allocation_int=\count307
-\l__xeCJK_verb_case_int=\count308
+\l__xeCJK_fixed_punct_width_dim=\dimen186
+\l__xeCJK_mixed_punct_width_dim=\dimen187
+\l__xeCJK_middle_punct_width_dim=\dimen188
+\l__xeCJK_fixed_margin_width_dim=\dimen189
+\l__xeCJK_mixed_margin_width_dim=\dimen190
+\l__xeCJK_middle_margin_width_dim=\dimen191
+\l__xeCJK_bound_punct_width_dim=\dimen192
+\l__xeCJK_bound_margin_width_dim=\dimen193
+\l__xeCJK_margin_minimum_dim=\dimen194
+\l__xeCJK_kerning_total_width_dim=\dimen195
+\l__xeCJK_same_align_margin_dim=\dimen196
+\l__xeCJK_different_align_margin_dim=\dimen197
+\l__xeCJK_kerning_margin_width_dim=\dimen198
+\l__xeCJK_kerning_margin_minimum_dim=\dimen199
+\l__xeCJK_bound_dim=\dimen256
+\l__xeCJK_reverse_bound_dim=\dimen257
+\l__xeCJK_margin_dim=\dimen258
+\l__xeCJK_minimum_bound_dim=\dimen259
+\l__xeCJK_kerning_margin_dim=\dimen260
+\g__xeCJK_family_int=\count315
+\l__xeCJK_fam_int=\count316
+\g__xeCJK_fam_allocation_int=\count317
+\l__xeCJK_verb_case_int=\count318
 \l__xeCJK_verb_exspace_skip=\skip64
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg
-File: xeCJK.cfg 2020/06/06 v3.8.4 Configuration file for xeCJK package
+File: xeCJK.cfg 2020/10/19 v3.8.6 Configuration file for xeCJK package
 ))
-\ccwd=\dimen257
+\ccwd=\dimen261
 \l__ctex_ccglue_skip=\skip65
 )
-\l__ctex_ziju_dim=\dimen258
+\l__ctex_ziju_dim=\dimen262
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/zhnumber/zhnumber.s
 ty
 Package: zhnumber 2020/05/01 v2.8 Typesetting numbers with Chinese glyphs
-\l__zhnum_scale_int=\count309
+\l__zhnum_scale_int=\count319
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/zhnumber/zhnumber-u
 tf8.cfg
@@ -580,12 +592,12 @@ File: zhnumber-utf8.cfg 2020/05/01 v2.8 Chinese numerals with UTF8 encoding
 ))
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ctex/scheme/ctex-sc
 heme-chinese.def
-File: ctex-scheme-chinese.def 2020/06/06 v2.5.3 Chinese scheme for generic (CTE
+File: ctex-scheme-chinese.def 2020/10/19 v2.5.5 Chinese scheme for generic (CTE
 X)
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ctex/config/ctex-na
 me-utf8.cfg
-File: ctex-name-utf8.cfg 2020/06/06 v2.5.3 Caption with encoding UTF-8 (CTEX)
+File: ctex-name-utf8.cfg 2020/10/19 v2.5.5 Caption with encoding UTF-8 (CTEX)
 ))
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/indentfirst.s
 ty
@@ -593,11 +605,11 @@ Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ctex/ctex-c5size.cl
 o
-File: ctex-c5size.clo 2020/06/06 v2.5.3 c5size option (CTEX)
+File: ctex-c5size.clo 2020/10/19 v2.5.5 c5size option (CTEX)
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ctex/fontset/ctex-f
 ontset-windows.def
-File: ctex-fontset-windows.def 2020/06/06 v2.5.3 Windows fonts definition (CTEX
+File: ctex-fontset-windows.def 2020/10/19 v2.5.5 Windows fonts definition (CTEX
 )
 
 Package fontspec Info: SimSun scale = 0.9511690917572482.
@@ -648,7 +660,7 @@ dflt;"
 ))
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ctex/config/ctex.cf
 g
-File: ctex.cfg 2020/06/06 v2.5.3 Configuration file (CTEX)
+File: ctex.cfg 2020/10/19 v2.5.5 Configuration file (CTEX)
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/geometry/geometry.s
 ty
@@ -656,17 +668,17 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count310
-\Gm@cntv=\count311
-\c@Gm@tempcnt=\count312
-\Gm@bindingoffset=\dimen259
-\Gm@wd@mp=\dimen260
-\Gm@odd@mp=\dimen261
-\Gm@even@mp=\dimen262
-\Gm@layoutwidth=\dimen263
-\Gm@layoutheight=\dimen264
-\Gm@layouthoffset=\dimen265
-\Gm@layoutvoffset=\dimen266
+\Gm@cnth=\count320
+\Gm@cntv=\count321
+\c@Gm@tempcnt=\count322
+\Gm@bindingoffset=\dimen263
+\Gm@wd@mp=\dimen264
+\Gm@odd@mp=\dimen265
+\Gm@even@mp=\dimen266
+\Gm@layoutwidth=\dimen267
+\Gm@layoutheight=\dimen268
+\Gm@layouthoffset=\dimen269
+\Gm@layoutvoffset=\dimen270
 \Gm@dimlist=\toks24
 ) (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
@@ -687,56 +699,57 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 )
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.s
 ty
-Package: biblatex 2019/12/01 v3.14 programmable bibliographies (PK/MW)
+Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count313
+\lrq@indent=\count323
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@tabx@nest=\count314
-\c@listtotal=\count315
-\c@listcount=\count316
-\c@liststart=\count317
-\c@liststop=\count318
-\c@citecount=\count319
-\c@citetotal=\count320
-\c@multicitecount=\count321
-\c@multicitetotal=\count322
-\c@instcount=\count323
-\c@maxnames=\count324
-\c@minnames=\count325
-\c@maxitems=\count326
-\c@minitems=\count327
-\c@citecounter=\count328
-\c@maxcitecounter=\count329
-\c@savedcitecounter=\count330
-\c@uniquelist=\count331
-\c@uniquename=\count332
-\c@refsection=\count333
-\c@refsegment=\count334
-\c@maxextratitle=\count335
-\c@maxextratitleyear=\count336
-\c@maxextraname=\count337
-\c@maxextradate=\count338
-\c@maxextraalpha=\count339
-\c@abbrvpenalty=\count340
-\c@highnamepenalty=\count341
-\c@lownamepenalty=\count342
-\c@maxparens=\count343
-\c@parenlevel=\count344
-\blx@tempcnta=\count345
-\blx@tempcntb=\count346
-\blx@tempcntc=\count347
-\blx@maxsection=\count348
-\blx@maxsegment@0=\count349
-\blx@notetype=\count350
-\blx@parenlevel@text=\count351
-\blx@parenlevel@foot=\count352
-\blx@sectionciteorder@0=\count353
-\blx@entrysetcounter=\count354
+\c@tabx@nest=\count324
+\c@listtotal=\count325
+\c@listcount=\count326
+\c@liststart=\count327
+\c@liststop=\count328
+\c@citecount=\count329
+\c@citetotal=\count330
+\c@multicitecount=\count331
+\c@multicitetotal=\count332
+\c@instcount=\count333
+\c@maxnames=\count334
+\c@minnames=\count335
+\c@maxitems=\count336
+\c@minitems=\count337
+\c@citecounter=\count338
+\c@maxcitecounter=\count339
+\c@savedcitecounter=\count340
+\c@uniquelist=\count341
+\c@uniquename=\count342
+\c@refsection=\count343
+\c@refsegment=\count344
+\c@maxextratitle=\count345
+\c@maxextratitleyear=\count346
+\c@maxextraname=\count347
+\c@maxextradate=\count348
+\c@maxextraalpha=\count349
+\c@abbrvpenalty=\count350
+\c@highnamepenalty=\count351
+\c@lownamepenalty=\count352
+\c@maxparens=\count353
+\c@parenlevel=\count354
+\blx@tempcnta=\count355
+\blx@tempcntb=\count356
+\blx@tempcntc=\count357
+\blx@maxsection=\count358
+\blx@maxsegment@0=\count359
+\blx@notetype=\count360
+\blx@parenlevel@text=\count361
+\blx@parenlevel@foot=\count362
+\blx@sectionciteorder@0=\count363
+\blx@entrysetcounter=\count364
+\blx@biblioinstance=\count365
 \labelnumberwidth=\skip69
 \labelalphawidth=\skip70
 \biblabelsep=\skip71
@@ -748,104 +761,104 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \blx@bcfin=\read2
 \blx@bcfout=\write3
 \blx@langwohyphens=\language3
-\c@mincomprange=\count355
-\c@maxcomprange=\count356
-\c@mincompwidth=\count357
+\c@mincomprange=\count366
+\c@maxcomprange=\count367
+\c@mincompwidth=\count368
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/blx-dm.def
-File: blx-dm.def 2019/12/01 v3.14 biblatex localization (PK/MW)
+File: blx-dm.def 2020/12/31 v3.16 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'apa.dbx' found.
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.db
 x
-File: apa.dbx 2020/05/30 v9.13 APA biblatex style data model
+File: apa.dbx 2020/08/28 v9.14 APA biblatex style data model
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count358
-\c@savedafterword=\count359
-\c@annotator=\count360
-\c@savedannotator=\count361
-\c@author=\count362
-\c@savedauthor=\count363
-\c@bookauthor=\count364
-\c@savedbookauthor=\count365
-\c@commentator=\count366
-\c@savedcommentator=\count367
-\c@editor=\count368
-\c@savededitor=\count369
-\c@editora=\count370
-\c@savededitora=\count371
-\c@editorb=\count372
-\c@savededitorb=\count373
-\c@editorc=\count374
-\c@savededitorc=\count375
-\c@foreword=\count376
-\c@savedforeword=\count377
-\c@holder=\count378
-\c@savedholder=\count379
-\c@introduction=\count380
-\c@savedintroduction=\count381
-\c@namea=\count382
-\c@savednamea=\count383
-\c@nameb=\count384
-\c@savednameb=\count385
-\c@namec=\count386
-\c@savednamec=\count387
-\c@translator=\count388
-\c@savedtranslator=\count389
-\c@shortauthor=\count390
-\c@savedshortauthor=\count391
-\c@shorteditor=\count392
-\c@savedshorteditor=\count393
-\c@groupauthor=\count394
-\c@savedgroupauthor=\count395
-\c@narrator=\count396
-\c@savednarrator=\count397
-\c@execproducer=\count398
-\c@savedexecproducer=\count399
-\c@execdirector=\count400
-\c@savedexecdirector=\count401
-\c@with=\count402
-\c@savedwith=\count403
-\c@labelname=\count404
-\c@savedlabelname=\count405
-\c@institution=\count406
-\c@savedinstitution=\count407
-\c@lista=\count408
-\c@savedlista=\count409
-\c@listb=\count410
-\c@savedlistb=\count411
-\c@listc=\count412
-\c@savedlistc=\count413
-\c@listd=\count414
-\c@savedlistd=\count415
-\c@liste=\count416
-\c@savedliste=\count417
-\c@listf=\count418
-\c@savedlistf=\count419
-\c@location=\count420
-\c@savedlocation=\count421
-\c@organization=\count422
-\c@savedorganization=\count423
-\c@origlocation=\count424
-\c@savedoriglocation=\count425
-\c@origpublisher=\count426
-\c@savedorigpublisher=\count427
-\c@publisher=\count428
-\c@savedpublisher=\count429
-\c@language=\count430
-\c@savedlanguage=\count431
-\c@origlanguage=\count432
-\c@savedoriglanguage=\count433
-\c@citation=\count434
-\c@savedcitation=\count435
-\c@pageref=\count436
-\c@savedpageref=\count437
+\c@afterword=\count369
+\c@savedafterword=\count370
+\c@annotator=\count371
+\c@savedannotator=\count372
+\c@author=\count373
+\c@savedauthor=\count374
+\c@bookauthor=\count375
+\c@savedbookauthor=\count376
+\c@commentator=\count377
+\c@savedcommentator=\count378
+\c@editor=\count379
+\c@savededitor=\count380
+\c@editora=\count381
+\c@savededitora=\count382
+\c@editorb=\count383
+\c@savededitorb=\count384
+\c@editorc=\count385
+\c@savededitorc=\count386
+\c@foreword=\count387
+\c@savedforeword=\count388
+\c@holder=\count389
+\c@savedholder=\count390
+\c@introduction=\count391
+\c@savedintroduction=\count392
+\c@namea=\count393
+\c@savednamea=\count394
+\c@nameb=\count395
+\c@savednameb=\count396
+\c@namec=\count397
+\c@savednamec=\count398
+\c@translator=\count399
+\c@savedtranslator=\count400
+\c@shortauthor=\count401
+\c@savedshortauthor=\count402
+\c@shorteditor=\count403
+\c@savedshorteditor=\count404
+\c@groupauthor=\count405
+\c@savedgroupauthor=\count406
+\c@narrator=\count407
+\c@savednarrator=\count408
+\c@execproducer=\count409
+\c@savedexecproducer=\count410
+\c@execdirector=\count411
+\c@savedexecdirector=\count412
+\c@with=\count413
+\c@savedwith=\count414
+\c@labelname=\count415
+\c@savedlabelname=\count416
+\c@institution=\count417
+\c@savedinstitution=\count418
+\c@lista=\count419
+\c@savedlista=\count420
+\c@listb=\count421
+\c@savedlistb=\count422
+\c@listc=\count423
+\c@savedlistc=\count424
+\c@listd=\count425
+\c@savedlistd=\count426
+\c@liste=\count427
+\c@savedliste=\count428
+\c@listf=\count429
+\c@savedlistf=\count430
+\c@location=\count431
+\c@savedlocation=\count432
+\c@organization=\count433
+\c@savedorganization=\count434
+\c@origlocation=\count435
+\c@savedoriglocation=\count436
+\c@origpublisher=\count437
+\c@savedorigpublisher=\count438
+\c@publisher=\count439
+\c@savedpublisher=\count440
+\c@language=\count441
+\c@savedlanguage=\count442
+\c@origlanguage=\count443
+\c@savedoriglanguage=\count444
+\c@citation=\count445
+\c@savedcitation=\count446
+\c@pageref=\count447
+\c@savedpageref=\count448
 \shorthandwidth=\skip77
 \shortjournalwidth=\skip78
 \shortserieswidth=\skip79
@@ -870,49 +883,49 @@ Package biblatex Info: ... file 'blx-compat.def' found.
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/blx-compat
 .def
-File: blx-compat.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
+File: blx-compat.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/biblatex.d
 ef
-File: biblatex.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
-\c@textcitecount=\count438
-\c@textcitetotal=\count439
-\c@textcitemaxnames=\count440
-\c@biburlbigbreakpenalty=\count441
-\c@biburlbreakpenalty=\count442
-\c@biburlnumpenalty=\count443
-\c@biburlucpenalty=\count444
-\c@biburllcpenalty=\count445
+File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+\c@textcitecount=\count449
+\c@textcitetotal=\count450
+\c@textcitemaxnames=\count451
+\c@biburlbigbreakpenalty=\count452
+\c@biburlbreakpenalty=\count453
+\c@biburlnumpenalty=\count454
+\c@biburlucpenalty=\count455
+\c@biburllcpenalty=\count456
 \biburlbigskip=\muskip20
 \biburlnumskip=\muskip21
 \biburlucskip=\muskip22
 \biburllcskip=\muskip23
-\c@smartand=\count446
+\c@smartand=\count457
 )
 Package biblatex Info: Trying to load bibliography style 'apa'...
 Package biblatex Info: ... file 'apa.bbx' found.
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.bb
 x
-File: apa.bbx 2020/05/30 v9.13 APA biblatex references style
+File: apa.bbx 2020/08/28 v9.14 APA biblatex references style
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/bbx/standa
 rd.bbx
-File: standard.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count447
-\c@bbx:relatedtotal=\count448
+File: standard.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count458
+\c@bbx:relatedtotal=\count459
 ))
 Package biblatex Info: Trying to load citation style 'apa'...
 Package biblatex Info: ... file 'apa.cbx' found.
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex-apa/apa.cb
 x
-File: apa.cbx 2020/05/30 v9.13 APA biblatex citation style
+File: apa.cbx 2020/08/28 v9.14 APA biblatex citation style
 Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined,
  overwriting.
 Package biblatex Info: Delimiter 'nameyeardelim' in context 'textcite' already 
@@ -942,8 +955,8 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 fg
 File: biblatex.cfg 
 ))
-\@quotelevel=\count449
-\@quotereset=\count450
+\@quotelevel=\count460
+\@quotereset=\count461
 No file mybook1.aux.
 \openout1 = `mybook1.aux'.
 
@@ -1234,12 +1247,11 @@ LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
 t line 100.
-\AtBeginShipoutBox=\box59
 Package hyperref Info: Link coloring OFF on input line 100.
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.st
 y
-Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.s
 ty
@@ -1249,7 +1261,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ttitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count451
+\c@section@level=\count462
 )
 LaTeX Info: Redefining \ref on input line 100.
 LaTeX Info: Redefining \pageref on input line 100.
@@ -1301,37 +1313,47 @@ Package biblatex Info: ... file 'english-apa.lbx' found.
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex-apa/englis
 h-apa.lbx
-File: english-apa.lbx 2020/05/30 v9.13 APA biblatex localisation
+File: english-apa.lbx 2020/08/28 v9.14 APA biblatex localisation
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/englis
 h.lbx
-File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+File: english.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load language 'american' -> 'american-apa'...
 Package biblatex Info: ... file 'american-apa.lbx' found.
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex-apa/americ
 an-apa.lbx
-File: american-apa.lbx 2020/05/30 v9.13 APA biblatex localisation
+File: american-apa.lbx 2020/08/28 v9.14 APA biblatex localisation
 Package biblatex Info: Trying to load language 'american'...
 Package biblatex Info: ... file 'american.lbx' found.
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/americ
 an.lbx
-File: american.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+File: american.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/lbx/englis
 h.lbx
-File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+File: english.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
 ))))
 Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2021-02-06 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/biblatex/blx-case-e
+xpl3.sty
+Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
+)
 \openout3 = `mybook1.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
@@ -1378,10 +1400,7 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10
 2.
 (c:/Users/ASUS/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Font shape `TU/SimSun(0)/m/n' will be
-(Font)              scaled to size 11.45686pt on input line 102.
-[1
+) [1
 
 
 ] [2
@@ -1541,12 +1560,12 @@ LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
 l.440 \includegraphics{figs/1141.png}
                                       
 Here is how much of TeX's memory you used:
- 27432 strings out of 481269
- 529626 string characters out of 5923327
- 1428155 words of memory out of 5000000
- 44558 multiletter control sequences out of 15000+600000
- 540076 words of font info for 108 fonts, out of 8000000 for 9000
+ 26872 strings out of 479248
+ 523053 string characters out of 5874872
+ 1481054 words of memory out of 5000000
+ 46004 multiletter control sequences out of 15000+600000
+ 411160 words of font info for 110 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 64i,6n,130p,901b,4731s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,6n,141p,740b,4823s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on mybook1.pdf (21 pages).

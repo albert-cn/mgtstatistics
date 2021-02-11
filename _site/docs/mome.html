@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 调节与中介分析 | 管理学统计分析快速上手指南</title>
+  <meta name="description" content="这是用R的bookdown功能制作中文图书，输出格式为bookdown::gitbook和bookdown::pdf_book." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 调节与中介分析 | 管理学统计分析快速上手指南" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="这是用R的bookdown功能制作中文图书，输出格式为bookdown::gitbook和bookdown::pdf_book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 调节与中介分析 | 管理学统计分析快速上手指南" />
+  
+  <meta name="twitter:description" content="这是用R的bookdown功能制作中文图书，输出格式为bookdown::gitbook和bookdown::pdf_book." />
+  
+
+<meta name="author" content="曹伟" />
+
+
+<meta name="date" content="2020-07-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="multilevel.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>简介</a></li>
+<li class="chapter" data-level="1" data-path="mome.html"><a href="mome.html"><i class="fa fa-check"></i><b>1</b> 调节与中介分析</a><ul>
+<li class="chapter" data-level="1.1" data-path="mome.html"><a href="mome.html#linear"><i class="fa fa-check"></i><b>1.1</b> 线性关系</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="mome.html"><a href="mome.html#momesteps"><i class="fa fa-check"></i><b>1.1.1</b> 调节与中介效果的检验步骤</a></li>
+<li class="chapter" data-level="1.1.2" data-path="mome.html"><a href="mome.html#mocode"><i class="fa fa-check"></i><b>1.1.2</b> 管理学研究常用调节效应检验Mplus Code</a></li>
+<li class="chapter" data-level="1.1.3" data-path="mome.html"><a href="mome.html#normme"><i class="fa fa-check"></i><b>1.1.3</b> 常见中介效应</a></li>
+<li class="chapter" data-level="1.1.4" data-path="mome.html"><a href="mome.html#firstmome"><i class="fa fa-check"></i><b>1.1.4</b> 第一阶段有调节的中介、第二阶段有调节的中介、两阶段有调节的中介</a></li>
+<li class="chapter" data-level="1.1.5" data-path="mome.html"><a href="mome.html#memo"><i class="fa fa-check"></i><b>1.1.5</b> 单层次有中介的调节效应</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="mome.html"><a href="mome.html#nonlinear"><i class="fa fa-check"></i><b>1.2</b> 非线性关系</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="mome.html"><a href="mome.html#有调节的倒u型效应"><i class="fa fa-check"></i><b>1.2.1</b> 有调节的倒U型效应</a></li>
+<li class="chapter" data-level="1.2.2" data-path="mome.html"><a href="mome.html#有调节的倒u型中介效应"><i class="fa fa-check"></i><b>1.2.2</b> 有调节的倒U型中介效应</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="mome.html"><a href="mome.html#modplot"><i class="fa fa-check"></i><b>1.3</b> 绘制调节效应图</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="mome.html"><a href="mome.html#spssmplusexcel计算简单斜率并绘制调节效应图"><i class="fa fa-check"></i><b>1.3.1</b> SPSS+Mplus+Excel计算简单斜率并绘制调节效应图</a></li>
+<li class="chapter" data-level="1.3.2" data-path="mome.html"><a href="mome.html#利用r作调节效应图"><i class="fa fa-check"></i><b>1.3.2</b> 利用R作调节效应图</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="multilevel.html"><a href="multilevel.html"><i class="fa fa-check"></i><b>2</b> 多层次线性回归模型</a><ul>
+<li class="chapter" data-level="2.1" data-path="multilevel.html"><a href="multilevel.html#multiconcept"><i class="fa fa-check"></i><b>2.1</b> 相关概念介绍</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="meta.html"><a href="meta.html"><i class="fa fa-check"></i><b>3</b> 元分析</a><ul>
+<li class="chapter" data-level="3.1" data-path="meta.html"><a href="meta.html#meta-concept"><i class="fa fa-check"></i><b>3.1</b> 元分析中的常见概念及原理</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="参考文献.html"><a href="参考文献.html"><i class="fa fa-check"></i><b>4</b> 参考文献</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">管理学统计分析快速上手指南</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="mome" class="section level1">
+<h1><span class="header-section-number">1</span> 调节与中介分析</h1>
+<div id="linear" class="section level2">
+<h2><span class="header-section-number">1.1</span> 线性关系</h2>
+<div id="momesteps" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> 调节与中介效果的检验步骤</h3>
+<p>自<span class="citation">(Baron and Kenny <a href="#ref-Baron1986:RNG" role="doc-biblioref">1986</a>)</span>关于调节与中介效果的检验经典文章以来，调节与中介效果的检验已经非常成熟，甚至现在有所谓的调节的中介与中介的调节。</p>
+<p>社会科学尤其是管理学，未来以后肯定会有大的方法上的突破，现有的管理学研究范式已经进入了相对瓶颈期。鉴于目前国内期刊上很多关于中介与调节的检验不是很正确，下文给出相对正确的检验步骤。</p>
+<p><strong>调节效果的检验步骤</strong>：</p>
+<ul>
+<li>第一步，如果有控制变量，先放入控制变量与结果变量进行回归；</li>
+<li>第二步，将自变量与控制变量一起与结果变量进行回归；</li>
+<li>第三步，将控制变量、自变量、调节变量一起与结果变量进行回归；</li>
+<li>第四步，将控制变量、自变量、调节变量、自变量与调节变量的乘积项一起与结果变量进行回归，自变量与调节变量的乘积项显著，则调节作用存在。</li>
+</ul>
+<p>需要注意的是：在验证调节作用时，通常需要将自变量与调节变量中心化以降低共线性的可能性。</p>
+<p><strong>中介效果的检验步骤</strong>：</p>
+<p>最有效最直接也最简单的方法是使用Bootstrapping，诸如SPSS、Mplus等软件都可以轻易实现，便捷高效。</p>
+<p><strong>以下列出我所认为相对不错的中文论文供大家参考</strong>：</p>
+<p>[1] 方杰, 张敏强, 李晓鹏. 中介效应的三类区间估计方法[J]. 心理科学进展, 2011, 19(5):765-774.</p>
+<p>[2] 刘冰, 齐蕾, 徐璐. 棍棒之下出“孝子”吗——员工职场偏差行为研究[J]. 南开管理评论, 2017, 20(3):182-192.</p>
+<p>[3] 芦谢峰, 韩立敏. 中介变量、调节变量与协变量——概念、统计检验及其比较[J]. 心理科学, 2007, 30(4):934-936.</p>
+<p>[4] 温忠麟, 张雷, 侯杰泰. 有中介的调节变量和有调节的中介变量[J]. 心理学报, 2006, 38(3):448-452.</p>
+<p>其中，刘冰等(2017)这篇文章关于调节与中介的检验较为标准，所以我列出供大家参照借鉴。</p>
+</div>
+<div id="mocode" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> 管理学研究常用调节效应检验Mplus Code</h3>
+<ol style="list-style-type: decimal">
+<li>只有一个调节变量</li>
+</ol>
+<p><img src="figs/1111.png" /></p>
+<p><img src="figs/1112.png" /></p>
+<pre><code>USEVARIABLE = X W Y XW;
+DEFINE:
+  XW = X*W;
+ANALYSIS:
+  TYPE = GENERAL;
+  ESTIMATOR =  ML;
+  BOOTSTRAP = 5000;
+MODEL:
+  [Y](b0);
+  Y ON X(b1);
+  Y ON W(b2);
+  Y ON XW(b3);
+MODEL CONSTRAINT:
+  NEW(LOW_W HIGH_W SIMP_LO SIMIP_HI DIFF);
+  LOW_W = #LOWW; ! replace #LOWW in the code with your chosen low value of W
+  HIGH_W = #HIGHW; ! replace #HIGHW in the code with your chosen high value of W
+! Now calculate simple slopes for each value of W
+  SIMP_LO = b1 + b3*LOW_W;
+  SIMP_HI = b1 + b3*HIGH_W;
+  DIFF = SIMP_HI - SIMP_LO;
+OUTPUTE:
+  STAND CINT(bcbootstrap);</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>存在两个并列的调节变量</li>
+</ol>
+<p><img src="figs/1113.png" /></p>
+<p><img src="figs/1114.png" /></p>
+<pre><code>USEVARIABLES = X W Y XW XZ;
+DEFINE: 
+  XW = X*W; 
+  XZ = X*Z;
+ANALYSIS: 
+  TYPE = GENERAL; 
+  ESTIMATOR = ML; 
+  BOOTSTRAP = 5000;
+MODEL:
+  [Y](b0); 
+  Y ON X(b1); 
+  Y ON W(b2); 
+  Y ON Z(b3); 
+  Y ON XW(b4); 
+  Y ON XZ(b5);
+ MODEL CONSTRAINT: 
+   NEW(LOW_W HIGH_W LOW_Z HIGH_Z LOW_LOZ HIW_LOZ LOW_HIZ HIW_HIZ DIFF1 DIFF2 DIFF3 DIFF4 DIFF5 DIFF6);
+   LOW_W = #LOWW; ! replace #LOWW in the code with your chosen low value of W 
+   HIGH_W = #HIGHW; ! replace #HIGHW in the code with your chosen high value of W
+   LOW_Z = #LOWZ; ! replace #LOWZ in the code with your chosen low value of Z
+   HIGH_Z = #HIGHZ; ! replace #HIGHZ in the code with your chosen high value of Z
+ ! Now calc simple slopes for each value of W and Z
+   LOW_LOZ = b1 + b4*LOW_W + b5*LOW_Z;
+   HIW_LOZ = b1 + b4*HIGH_W + b5*LOW_Z;
+   LOW_HIZ = b1 + b4*LOW_W + b5*HIGH_Z;
+   HIW_HIZ = b1 + b4*HIGH_W + b5*HIGH_Z;
+   DIFF1 = LOW_LOZ - HIW_LOZ;
+   DIFF2 = LOW_LOZ - LOW_HIZ;
+   DIFF3 = LOW_LOZ - HIW_HIZ;
+   DIFF4 = HIW_LOZ - LOW_HIZ;
+   DIFF5 = HIW_LOZ - HIW_HIZ;
+   DIFF6 = LOW_HIZ - HIW_HIZ;
+OUTPUT: 
+  STAND CINT(bcbootstrap);</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>调节的调节效应</li>
+</ol>
+<p><img src="figs/1115.png" /></p>
+<p><img src="figs/1116.png" /></p>
+<pre><code>USEVARIABLES = X W Y XW XZ WZ XWZ;
+DEFINE: 
+  XW = X*W; 
+  XZ = X*Z; 
+  WZ = W*Z; 
+  XWZ = X*W*Z;
+ANALYSIS: 
+  TYPE = GENERAL; 
+  ESTIMATOR = ML; 
+  BOOTSTRAP = 5000;
+MODEL: 
+  [Y] (b0); 
+  Y ON X(b1); 
+  Y ON W(b2); 
+  Y ON Z(b3); 
+  Y ON XW(b4); 
+  Y ON XZ(b5); 
+  Y ON WZ(b6); 
+  Y ON XWZ(b7);
+  MODEL CONSTRAINT: 
+  NEW(LOW_W HIGH_W LOW_Z HIGH_Z LOW_LOZ HIW_LOZ LOW_HIZ HIW_HIZ DIFF1 DIFF2 DIFF3 DIFF4 DIFF5 DIFF6);
+  LOW_W = #LOWW; ! replace #LOWW in the code with your chosen low value of W
+  HIGH_W = #HIGHW; ! replace #HIGHW in the code with your chosen high value of W
+  LOW_Z = #LOWZ; ! replace #LOWZ in the code with your chosen low value of Z
+  HIGH_Z = #HIGHZ; ! replace #HIGHZ in the code with your chosen high value of Z
+! Now calc simple slopes for each value of W and Z
+  LOW_LOZ = b1 + b4*LOW_W + b5*LOW_Z + b7*LOW_W*LOW_Z;
+  HIW_LOZ = b1 + b4*HIGH_W + b5*LOW_Z + b7*HIGH_W*LOW_Z;
+  LOW_HIZ = b1 + b4*LOW_W + b5*HIGH_Z + b7*LOW_W*HIGH_Z;
+  HIW_HIZ = b1 + b4*HIGH_W + b5*HIGH_Z + b7*HIGH_W*HIGH_Z;
+   DIFF1 = LOW_LOZ - HIW_LOZ;
+   DIFF2 = LOW_LOZ - LOW_HIZ;
+   DIFF3 = LOW_LOZ - HIW_HIZ;
+   DIFF4 = HIW_LOZ - LOW_HIZ;
+   DIFF5 = HIW_LOZ - HIW_HIZ;
+   DIFF6 = LOW_HIZ - HIW_HIZ;
+OUTPUTE:
+  STAND CINT(bcbootstrap);</code></pre>
+</div>
+<div id="normme" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> 常见中介效应</h3>
+<p><strong>重点</strong>：</p>
+<p>首先介绍只有一个中介变量的单中介模型；然后介绍具有多个中介变量的并列中介模型；最后介绍具有多个中介变量的中介链模型。</p>
+<p>需要说明的是，以上中介效应模型的分类名称是我结合自身的理解命名，大家可能不太熟悉，明白就好。比如<code>链式中介</code>、<code>连续中介</code>等，其实就是我所阐述的<code>中介链</code>。</p>
+<p>开始之前，还想结合阅读的文献以及自己的理解，想跟大家阐述一下间接效应与中介效应的区别。</p>
+<p>简言之，间接效应(Indirect Effect)实质上等同于中介效应(Mediation Effect)。只不过提及间接效应的假设时，通常不会提主效应(X→Y)，只会提X→M→Y的关系假设。此外，心理统计类论文通常只会出现indirect effect，而不会出现mediation effect。<del>我的推测是，当有direct effect的说法后，说indirect effect可能更直觉。</del></p>
+<ol style="list-style-type: decimal">
+<li>单中介模型的Mplus code</li>
+</ol>
+<p><img src="figs/1131.png" /></p>
+<p><img src="figs/1132.png" /></p>
+<pre><code>USEVARIABLES = X M Y;
+
+ANALYSIS:
+  TYPE = GENERAL;
+  ESTIMATOR = ML;
+  BOOTSTRAP = 10000;
+
+! In model statement name each path using parentheses
+MODEL:
+  Y ON M (b1);
+  Y ON X (cdash); ! direct effect of X on Y
+  M ON X (a1);
+! Use model constraint to calculate indirect and total effect
+  MODEL CONSTRAINT:
+  NEW(a1b1 TOTAL);
+    a1b1 = a1*b1; ! Indirect effect of X on Y via M
+    TOTAL = a1*b1 + cdash; ! Total effect of X on Y
+
+OUTPUT:
+  STAND CINT(bcbootstrap);</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>并列中介模型的Mplus code</li>
+</ol>
+<p>以常见的双重并列中介为例：</p>
+<p><img src="figs/1133.png" /></p>
+<p><img src="figs/1134.png" /></p>
+<pre><code>USEVARIABLES = X M1 M2 Y;
+
+ANALYSIS:
+  TYPE = GENERAL;
+  ESTIMATOR = ML;
+  BOOTSTRAP = 10000;
+
+! In model statement name each path using parentheses
+MODEL:
+  Y ON M1 (b1);
+  Y ON M2 (b2);
+  Y ON X (cdash); ! direct effect of X on Y
+  M1 ON X (a1);
+  M2 ON X (a2);
+! Use model constraint to calculate indirect and total effect
+  MODEL CONSTRAINT:
+  NEW(a1b1 a2b2 TOTAL);
+    a1b1 = a1*b1; ! Indirect effect of X on Y via M1
+    a2b2 = a2*b2; ! Indirect effect of X on Y via M2
+    TOTAL = a1*b1 + a2*b2 + cdash; ! Total effect of X on Y
+
+OUTPUT:
+  STAND CINT(bcbootstrap);</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>中介链模型的Mplus code</li>
+</ol>
+<p><img src="figs/1135.png" /></p>
+<p><img src="figs/1136.png" /></p>
+<pre><code>USEVARIABLES = X M1 M2 Y;
+
+ANALYSIS:
+  TYPE = GENERAL;
+  ESTIMATOR = ML;
+  BOOTSTRAP = 10000;
+
+! In model statement name each path usingparentheses
+MODEL:
+  Y ON X (cdash); ! direct effect of X on Y
+  Y ON M1 (b1);
+  Y ON M2 (b2);
+  M1 ON X (a1);
+  M2 ON X (a2);
+  M2 ON M1 (d1);
+! Use model constraint to calculate specific indirectpaths and total indirect effect
+  MODEL CONSTRAINT:
+  NEW(a1b1 a2b2 a1d1b2 TOTALIND TOTAL);
+    a1b1 = a1*b1; ! Specific indirect effect of X on Y via M1
+    a2b2 = a2*b2; ! Specific indirect effect of X on Y via M2
+    a1d1b2 = a1*d1*b2; ! Specific indirect effect of X on Y via M1 andM2
+    TOTALIND = a1*b1 + a2*b2 + a1*d1*b2; ! Total indirect effect of X onY via M1, M2
+    TOTAL = a1*b1 + a2*b2 + a1*d1*b2 + cdash; ! Total effect of X on Y
+
+OUTPUT:
+  STAND CINT(bcbootstrap);</code></pre>
+</div>
+<div id="firstmome" class="section level3">
+<h3><span class="header-section-number">1.1.4</span> 第一阶段有调节的中介、第二阶段有调节的中介、两阶段有调节的中介</h3>
+<p>本文主要介绍了第一阶段有调节的中介效应(first-stage moderated mediation)、第二阶段有调节的中介效应(second-stage moderated mediation)和两阶段有调节的中介效应(dual-stage moderated mediation)的统计学原理，并将统计学逻辑通过Mplus软件写出Code出来。</p>
+<p>通过一份原始数据，手把手带你写出上述的三类有调节的中介效应。原始数据和Mplus Code在文末的链接中。</p>
+<p>1 第一阶段有调节的中介效应</p>
+<p>1.1 原理</p>
+<p>第一阶段有调节的中介效应是指<span class="math inline">\(x\)</span>→<span class="math inline">\(m\)</span>→<span class="math inline">\(y\)</span>的中介效应被调节变量<span class="math inline">\(w\)</span>所调节了，且调节效应发生在<span class="math inline">\(x\)</span>→<span class="math inline">\(m\)</span>之间。概念模型如下图所示：</p>
+<p><img src="figs/1141.png" /></p>
+<p>首先构建方程(1)：</p>
+<p><span class="math display">\[
+m=a_{0}+a_{1}x+a_{2}w+a_{3}xw(1)
+\]</span></p>
+<p>其次构建方程(2)：</p>
+<p><span class="math display">\[
+y=b_{0}+b_{1}m+c^{&#39;}x(2)
+\]</span></p>
+<p>将方程(1)带入(2)：</p>
+<p><span class="math display">\[
+y=b_{0}+b_{1}(a_{0}+a_{1}x+a_{2}w+a_{3}xw)+c^{&#39;}x(3)
+\]</span></p>
+<p>整理得：</p>
+<p><span class="math display">\[
+y=(b_{0}+a_{0}b_{1}+a_{2}b_{1}w)+(a_{1}b_{1}+a_{3}b_{1}w+c^{&#39;})x
+\]</span></p>
+<p>我们只关心一次项系数<span class="math inline">\(a_{1}b_{1}+a_{3}b_{1}w+c^{&#39;}\)</span>，其中<span class="math inline">\(a_{1}b_{1}+a_{3}b_{1}w\)</span>就是第一阶段有调节的中介效应，系数<span class="math inline">\(c^{&#39;}\)</span>是<span class="math inline">\(x\)</span>→<span class="math inline">\(y\)</span>的直接效应。</p>
+<p>本质上，第一阶段有调节的中介效应可以通过偏导数求得：</p>
+<p>首先对方程(1)求偏导：</p>
+<p><span class="math display">\[
+\frac{\partial m}{\partial x}=a_{1}+a_{3}w
+\]</span></p>
+<p>对方程(2)求偏导:</p>
+<p><span class="math display">\[
+\frac{\partial y}{\partial x}=b_{1}
+\]</span></p>
+<p>所以第一阶段有调节的中介效应为：</p>
+<p><span class="math display">\[
+\frac{\partial m}{\partial x} {\times} \frac{\partial y}{\partial x}=(a_{1}+a_{3}w)b_{1}
+\]</span></p>
+<p>1.2 实例</p>
+<p>研究假设模型如下：</p>
+<p><img src="figs/1142.png" /></p>
+<p>Depressed Affect在Economic Stress和Withdrawal
+Intentions中起中介作用，Entrepreneurial self-efficacy扮演了第一阶段的有中介的调节作用。</p>
+<p><code>关于本文所用原始数据来源说明</code>：</p>
+<p>estress.sav和estress.csv，Mplus以estress.csv进行分析。原始数据来源于：</p>
+<p>Pollack, J. M., Vanepps, E. M., &amp; Hayes, A. F. The moderating role of social ties on entrepreneurs’ depressed affect and withdrawal intentions in response to economic stress[J]. Journal of Organziational Behavior, 2012, 33: 789-810.</p>
+<p>因为作者提供的原始数据与文章有出入，所以我根据本推文所要解决的问题分别构建了三个研究假设模型。可能结果不会显著，但我只是利用数据来练习本文所要阐述的研究方法。</p>
+<p>原始数据的变量如下：</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">变量类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">控制变量</td>
+<td align="left">tenure sex age</td>
+</tr>
+<tr class="even">
+<td align="left">自变量</td>
+<td align="left">estress(Economic Stress,其中心化变量为estress_mc)</td>
+</tr>
+<tr class="odd">
+<td align="left">调节变量</td>
+<td align="left">ese(Entrepreneurial self-efficacy,其中心化变量为ese_mc)</td>
+</tr>
+<tr class="even">
+<td align="left">中介变量</td>
+<td align="left">affect(Depressed Affect,其中心化变量为affect_mc)</td>
+</tr>
+<tr class="odd">
+<td align="left">因变量</td>
+<td align="left">withdraw(Withdrawal Intentions)</td>
+</tr>
+</tbody>
+</table>
+<p>其他两个所构建的假设模型使用的数据也是这一数据。</p>
+<p>关于原始数据中的<code>控制变量</code>：</p>
+<p>控制变量的作用在于控制一些潜在的因素对你所要探究的变量所造成的影响。其实，控制变量既可以对中介变量进行回归(即认为控制变量会对中介变量产生影响)，也可以对因变量进行回归(即认为控制变量会对因变量产生影响)。到底对中介变量还是因变量回归，是根据理论和你的argument所决定的。</p>
+<p>在接下来的分析中，我将原始数据中的控制变量认为会对中介变量造成影响。</p>
+<p>Mplus软件对应第一阶段有调节的中介效应语法如下：</p>
+<pre><code>TITLE: first-stage moderated mediation;
+
+DATA: FILE = estress.csv;
+
+VARIABLE:
+NAMES = tenure estress affect withdraw sex age ese estress_mc affect_mc ese_mc;
+
+USEVAR = tenure sex age estress_mc affect_mc withdraw ese_mc interaction; !放入新生成变量
+
+DEFINE:     !定义交互项
+interaction = estress_mc*ese_mc; 
+
+ANALYS:
+TYPE = GENERAL;
+ESTIMATOR = ML;
+BOOTSTRAP = 1000;
+
+MODEL:
+affect_mc ON tenure
+             sex
+             age
+             estress_mc(a1)
+             ese_mc(a2)
+             interaction(a3);
+
+withdraw ON affect_mc(b1);
+            estress_mc;
+
+withdraw ON affect_mc(b1);
+            estress_mc;
+
+MODEL CONSTRAINT:
+NEW(LOW HIGH DIFF);
+LOW = (a1 + a3*(-0.94464))*b1;     !调节变量为低时
+HIGH = (a1 + a3*0.94464)*b1;       !调节变量为高时
+DIFF = HIGH - LOW;
+
+OUTPUT:
+SAMPSTAT STDYX CINTERVAL(BCBOOTSTRAP);</code></pre>
+<p>输出结果如下：</p>
+<p><img src="figs/1143.png" /></p>
+<p>我们主要关心画红线处新生成的三个参数的显著性，可以看出在ese_mc为低时，estress_mc→affect_mc→withdraw的中介效应显著(Index=0.218, p&lt;0.001)；在ese_mc为高时，estress_mc→affect_mc→withdraw的中介效应不显著(Index=0.051, p&gt;0.1)；ese_mc为高和为低时，中介效应的差异显著(Index=-0.167, p&lt;0.1)。</p>
+<p>一般情况下，我们比较关心上述结果的95%置信区间，在下图中体现：</p>
+<p><img src="figs/1144.png" /></p>
+<p>然后，我们可以将需要的结果复制到EXCEL中进行整理，然后再粘贴到Word中，形成期刊所需要的格式。</p>
+<p>2 第一阶段有调节的中介效应</p>
+<p>2.1 原理</p>
+<p>第二阶段有调节的中介效应是指<span class="math inline">\(x\)</span>→<span class="math inline">\(m\)</span>→<span class="math inline">\(y\)</span>的中介效应被调节变量<span class="math inline">\(w\)</span>所调节了，且调节效应发生在<span class="math inline">\(m\)</span>→<span class="math inline">\(y\)</span>之间。概念模型如下图所示：</p>
+<p><img src="figs/1145.png" /></p>
+<p>首先构建方程(1)：</p>
+<p><span class="math display">\[
+m=a_{0}+a_{1}x(1)
+\]</span></p>
+<p>其次构建方程(2)：</p>
+<p><span class="math display">\[
+y=b_{0}+b_{1}m+b_{2}w+b_{3}mw+c^{&#39;}x(2)
+\]</span></p>
+<p>将方程(1)带入(2)：</p>
+<p><span class="math display">\[
+y=b_{0}+b_{1}(a_{0}+a_{1}x)+b_{2}w+b_{3}(a_{0}+a_{1}x)w+c^{&#39;}x(3)
+\]</span></p>
+<p>整理得：</p>
+<p><span class="math display">\[
+y=(b_{0}+a_{0}b_{1}+b_{2}w+a_{0}b_{3}w)+(a_{1}b_{1}+a_{1}b_{3}w+c^{&#39;})x
+\]</span></p>
+<p>我们只关心一次项系数<span class="math inline">\(a_{1}b_{1}+a_{1}b_{3}w+c^{&#39;}\)</span>，其中<span class="math inline">\(a_{1}b_{1}+a_{1}b_{3}w\)</span>=<span class="math inline">\(a_{1}(b_{1}+b_{3}w)\)</span>就是第二阶段有调节的中介效应，系数<span class="math inline">\(c^{&#39;}\)</span>是<span class="math inline">\(x\)</span>→<span class="math inline">\(y\)</span>的直接效应。</p>
+<p>本质上，第二阶段有调节的中介效应可以通过偏导数求得：</p>
+<p>首先对方程(1)求偏导：</p>
+<p><span class="math display">\[
+\frac{\partial m}{\partial x}=a_{1}
+\]</span></p>
+<p>对方程(2)求偏导:</p>
+<p><span class="math display">\[
+\frac{\partial y}{\partial x}=b_{1}+b_{3}w
+\]</span></p>
+<p>所以第二阶段有调节的中介效应为：</p>
+<p><span class="math display">\[
+\frac{\partial m}{\partial x} {\times} \frac{\partial y}{\partial x}=a_{1}(b_{1}+b_{3}w)
+\]</span></p>
+<p>2.2 实例</p>
+<p>研究假设模型如下：</p>
+<p><img src="figs/1146.png" /></p>
+<p>Depressed Affect在Economic Stress和Withdrawal Intentions中起中介作用，Entrepreneurial self-efficacy扮演了第二阶段的有中介的调节作用。</p>
+<p>Mplus软件对应第二阶段有调节的中介效应语法如下：</p>
+<pre><code>TITLE: second-stage moderated mediation;
+
+DATA: FILE = estress.csv;
+
+VARIABLE:
+NAMES = tenure estress affect withdraw sex age ese estress_mc affect_mc ese_mc;
+
+USEVAR = tenure sex age estress_mc affect_mc withdraw ese_mc interaction; !定义新生成变量
+
+DEFINE:      !定义交互项
+interaction = affect_mc*ese_mc;
+
+ANALYS:
+TYPE = GENERAL;
+ESTIMATOR = ML;
+BOOTSTRAP = 1000;
+
+MODEL:
+affect_mc ON tenure
+             sex
+             age
+             estress_mc(a1);
+
+withdraw ON affect_mc(b1)
+            ese_mc(b2)
+            interaction(b3)
+            estress_mc;
+
+MODEL CONSTRAINT:
+NEW(LOW HIGH DIFF);
+LOW = a1*(b1 + b3*(-0.94464));       !当调节变量为低时
+HIGH = a1*(b1 + b3*(0.94464));       !当调节变量为高时
+DIFF = HIGH - LOW;
+
+OUTPUT:
+SAMPSTAT STDYX CINTERVAL(BCBOOTSTRAP);</code></pre>
+<p>输出结果如下：</p>
+<p><img src="figs/1147.png" /></p>
+<p><img src="figs/1148.png" /></p>
+<p>由上面的两张图片的结果可以看出，在ese_mc为低时，estress_mc→affect_mc→withdraw的中介效应显著(Index=0.110, p&lt;0.01)，95%CI=[0.048, 0.183]；在ese_mc为高时，estress_mc→affect_mc→withdraw的中介效应显著(Index=0.152, p&lt;0.001), 95%CI=[0.089, 0.243]；ese_mc为高和为低时，中介效应的差异不显著(Index=0.042, p&gt;0.1), 95%CI=[-0.018, 0.116]。</p>
+<p>3 第一阶段有调节的中介效应</p>
+<p>3.1 原理</p>
+<p>第二阶段有调节的中介效应是指<span class="math inline">\(x\)</span>→<span class="math inline">\(m\)</span>→<span class="math inline">\(y\)</span>的中介效应被调节变量<span class="math inline">\(w\)</span>所调节了，且调节效应发生在<span class="math inline">\(x\)</span>→<span class="math inline">\(m\)</span>和<span class="math inline">\(m\)</span>→<span class="math inline">\(y\)</span>之间。概念模型如下图所示：</p>
+<p><img src="figs/1149.png" /></p>
+<p>首先构建方程(1)：</p>
+<p><span class="math display">\[
+m=a_{0}+a_{1}x+a_{2}w+a_{3}xw(1)
+\]</span></p>
+<p>其次构建方程(2)：</p>
+<p><span class="math display">\[
+y=b_{0}+b_{1}m+b_{2}w+b_{3}mw+c^{&#39;}x(2)
+\]</span></p>
+<p>将方程(1)带入(2)：</p>
+<p><span class="math display">\[
+y=b_{0}+b_{1}(a_{0}+a_{1}x+a_{2}w+a_{3}xw)+b_{2}w+b_{3}(a_{0}+a_{1}x+a_{2}w+a_{3}xw)w+c^{&#39;}x(3)
+\]</span></p>
+<p>整理得：</p>
+<p><span class="math display">\[
+y=(b_{0}+a_{0}b_{1}+a_{2}b_{1}w+b_{2}w+a_{0}b_{3}w+a_{2}b_{3}w^{2})+(a_{1}b_{1}+a_{3}b_{1}w+a_{1}b_{3}w+a_{3}b_{3}w^{2}+c^{&#39;})x
+\]</span></p>
+<p>我们只关心一次项系数<span class="math inline">\(a_{1}b_{1}+a_{3}b_{1}w+a_{1}b_{3}w+a_{3}b_{3}w^{2}+c^{&#39;}\)</span>，其中，<span class="math inline">\(a_{1}b_{1}+a_{3}b_{1}w+a_{1}b_{3}w+a_{3}b_{3}w^{2}\)</span>=<span class="math inline">\((a_{1}+a_{3}w)(b_{1}+b_{3}w)\)</span>是两阶段有调节的中介效应，系数<span class="math inline">\(c^{&#39;}\)</span>是<span class="math inline">\(x\)</span>→<span class="math inline">\(y\)</span>的直接效应。</p>
+<p>本质上，两阶段有调节的中介效应可以通过偏导数求得：</p>
+<p>首先对方程(1)求偏导：</p>
+<p><span class="math display">\[
+\frac{\partial m}{\partial x}=a_{1}+a_{3}w
+\]</span></p>
+<p>对方程(2)求偏导:</p>
+<p><span class="math display">\[
+\frac{\partial y}{\partial x}=b_{1}+b_{3}w
+\]</span></p>
+<p>所以两阶段有调节的中介效应为：</p>
+<p><span class="math display">\[
+\frac{\partial m}{\partial x} {\times} \frac{\partial y}{\partial x}=(a_{1}+a_{3}w)(b_{1}+b_{3}w)
+\]</span></p>
+<p>3.2 实例</p>
+<p>研究假设模型如下：</p>
+<p><img src="figs/11410.png" /></p>
+<p>Depressed Affect在Economic Stress和Withdrawal Intentions中起中介作用，Entrepreneurial self-efficacy扮演了两阶段的有中介的调节作用。</p>
+<p>Mplus软件对应两阶段有调节的中介效应语法如下：</p>
+<pre><code>TITLE: dual-stage moderated mediation;
+
+DATA: FILE = estress.csv;
+
+VARIABLE:
+NAMES = tenure estress affect withdraw sex age ese estress_mc affect_mc ese_mc;
+
+USEVAR = tenure sex age estress_mc affect_mc withdraw ese_mc int1 int2; !放入新生成变量
+
+DEFINE:       !定义交互项
+int1 = estress_mc*ese_mc;
+int2 = affect_mc*ese_mc;
+
+ANALYS:
+TYPE = GENERAL;
+ESTIMATOR = ML;
+BOOTSTRAP = 1000;
+
+MODEL:
+affect_mc ON tenure
+             sex
+             age
+             estress_mc(a1)
+             ese_mc(a2)
+             int1(a3);
+
+withdraw ON affect_mc(b1)
+            ese_mc(b2)
+            int2(b3)
+            estress_mc;
+
+MODEL CONSTRAINT:
+NEW(LOW HIGH DIFF);
+LOW = (a1+a3*(-0.94464))*(b1+b3*(-0.94464));     !调节变量为低时
+HIGH = (a1 + a3*0.94464) * (b1 + b3*0.94464);    !调节变量为高时
+DIFF = HIGH - LOW;
+
+OUTPUT:
+SAMPSTAT STDYX CINTERVAL(BCBOOTSTRAP);</code></pre>
+<p>结果输出如下：</p>
+<p><img src="figs/11411.png" /></p>
+<p><img src="figs/11412.png" /></p>
+<p>由上面的两张图片的结果可以看出，在ese_mc为低时，estress_mc→affect_mc→withdraw的中介效应显著(Index=0.189, p&lt;0.01)，95%CI=[0.084, 0.330]；在ese_mc为高时，estress_mc→affect_mc→withdraw的中介效应不显著(Index=0.061, p&gt;0.1), 95%CI=[-0.045, 0.163]；ese_mc为高和为低时，中介效应的差异不显著(Index=-0.128, p&gt;0.1), 95%CI=[-0.342, 0.020]。</p>
+<p>本小节涉及的数据和语法存放在<a href="https://pan.baidu.com/s/18CvdyI59eLxmkC-_8bDrcA">此处</a>，提取码：t3jc</p>
+</div>
+<div id="memo" class="section level3">
+<h3><span class="header-section-number">1.1.5</span> 单层次有中介的调节效应</h3>
+<p>本小节的Mplus语法参考于<span class="citation">(刘东, 张震, and 汪默 <a href="#ref-liudong2012:StochProc" role="doc-biblioref">2012</a>)</span>。</p>
+<p>1 Tpye I Mediated Moderation</p>
+<p>1.1 统计方程式</p>
+<p><img src="figs/1151.png" /></p>
+<p><span class="math display">\[
+m=a_{0}+a_{1}x+a_{2}w+a_{3}xw(1)
+\]</span></p>
+<p><span class="math display">\[
+y=b_{0}+b_{1}x+b_{2}m+b_{3}w+b_{4}xw(2)
+\]</span></p>
+<p>将(1)带入(2)，整理得：</p>
+<p><span class="math display">\[
+y=(b_{0}+a_{0}b_{2})+(b_{1}+a_{1}b_{2})x+(a_{2}b_{2}+b_{3})w+(b_{4}+a_{3}b_{2})xw(3)
+\]</span></p>
+<p>其中，<span class="math inline">\(b_{4}\)</span>为调节效应，<span class="math inline">\(a_{3}b_{2}\)</span>为有中介的调节效应。</p>
+<p>1.2 在Mplus中的实现</p>
+<pre><code>TITLE:
+Tpye I Mediated Moderation;
+
+DEFINE:
+xw=(x-3)*(w-4); !x和w的中心化后的相互项 
+centering x(grandmean); 
+centering m(grandmean); 
+centering w(grandmean); 
+
+DATA:
+file = example.csv;
+
+VARIABLE:
+names = x m w y;
+usevar = x m w y xw;
+
+ANALUSIS：
+bootstrap = 10000;
+
+MODEL:
+m on x w
+     xw(a);
+y on m(b)
+     x w xw;
+
+MODEL CONSTRAINT:
+new(ind);
+ind = a*b;
+
+OUTPUTE:
+sampstat;
+cinterval(bcbootstrap);</code></pre>
+<p>2 Tpye II Mediated Moderation</p>
+<p>2.1 统计方程式</p>
+<p><img src="figs/1152.png" /></p>
+<pre><code>TITLE:
+Tpye II Mediated Moderation;
+
+DEFINE:
+xw=(x-3)*(w-4); !x和w的中心化后的相互项 
+xm=(x-3)*(m-2.5); !x和m的中心化后的相互项 
+centering x(grandmean); 
+centering m(grandmean); 
+centering w(grandmean); 
+
+DATA:
+file = example.csv;
+
+VARIABLE:
+names = x m w y;
+usevar = x m w y xw xm;
+
+ANALUSIS：
+bootstrap = 10000;
+
+MODEL:
+m on w(a)
+     x;
+y on xm(b)
+     m x w xw;
+
+MODEL CONSTRAINT:
+new(ind);
+ind = a*b;
+
+OUTPUTE:
+sampstat;
+cinterval(bcbootstrap);</code></pre>
+</div>
+</div>
+<div id="nonlinear" class="section level2">
+<h2><span class="header-section-number">1.2</span> 非线性关系</h2>
+<div id="有调节的倒u型效应" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> 有调节的倒U型效应</h3>
+<p>有调节的倒U型概念模型如下所示：</p>
+<p><img src="figs/1121.png" /></p>
+<ol style="list-style-type: decimal">
+<li>构建方程(1)：</li>
+</ol>
+<p><span class="math display">\[
+y=b_{0}+b_{1}x+b_{2}x^{2}(1)
+\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>加入调节变量<span class="math inline">\(w\)</span>后，构建方程(2):</li>
+</ol>
+<p><span class="math display">\[
+y=b_{0}+b_{1}x+b_{2}x^{2}+b_{3}w+b_{4}xw+b_{5}x^{2}w(2)
+\]</span></p>
+<p>如果系数<span class="math inline">\(b_{5}\)</span>为负且显著，那么倒U型调节效应成立。</p>
+<p>整理(2)式，得:</p>
+<p><span class="math display">\[
+y=(b_{0}+b_{3}w)+(b_{1}+b_{4}w)x+(b_{2}+b_{5}w)x^{2}(3)
+\]</span></p>
+<p>如果需要画出抛物线的调节效应图，只需要在(3)式中，将<span class="math inline">\(w\)</span>取两个不同的数值(一般为均值加减一个标准差)，分别构建两个方程，就可以在Excel中绘制出来了。这与线性的调节效应图的绘制逻辑类似。</p>
+<p>此外，我们通常需要计算inflection point=<span class="math inline">\(-\frac{b_{1}+b_{4}w}{2(b_{2}+b_{5}w)}\)</span>和conditional simple slope(即下面的<span class="math inline">\(\theta\)</span>)的显著性。</p>
+<p><span class="math display">\[
+\theta=\frac{\partial y}{\partial x}=b_{1}+b_{4}w+2(b_{2}+b_{5}w)x
+\]</span></p>
+<p><span class="math inline">\(\theta\)</span>是<span class="math inline">\(y\)</span>关于<span class="math inline">\(x\)</span>的偏导数，即<span class="math inline">\(x\)</span>改变1个单位时， <span class="math inline">\(y\)</span>改变了多少。</p>
+<p>当<span class="math inline">\(w\)</span>取高和低不同的值时候，the shift of the inflection point = <span class="math inline">\((-\frac{b_{1}+b_{4}w_{高}}{2(b_{2}+b_{5}w_{高})})\)</span> - <span class="math inline">\((-\frac{b_{1}+b_{4}w_{低}}{2(b_{2}+b_{5}w_{低})})\)</span></p>
+<p>本小节内容参考了<span class="citation">(Lin, Law, and Zhou <a href="#ref-Lin2017:RNG" role="doc-biblioref">2017</a>)</span>和<span class="citation">(Hu et al. <a href="#ref-Hu2019:RNG" role="doc-biblioref">2019</a>)</span>相关内容。</p>
+</div>
+<div id="有调节的倒u型中介效应" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> 有调节的倒U型中介效应</h3>
+<p>有调节的倒U型中介效应</p>
+<ol style="list-style-type: decimal">
+<li>U型关系</li>
+</ol>
+<p><span class="math display">\[
+y=b_{0}+b_{1}x+b_{2}x^{2}(1)
+\]</span></p>
+<p>方程(1)的系数<span class="math inline">\(b_{2}\)</span>显著，<span class="math inline">\(y\)</span>对<span class="math inline">\(x\)</span>的非线性关系成立。在显著的情形下，如果<span class="math inline">\(b_{2}\)</span>为负，那么为倒U型关系；如果<span class="math inline">\(b_{2}\)</span>为正，即为U型关系。下面所谈及的倒U型效应的图大致是这样的：</p>
+<p><img src="figs/1221.png" /></p>
+<p>知道了这的确是一条抛物线关系后，我们还想进一步地知道：</p>
+<p>inflection point=<span class="math inline">\(-\frac{b_{1}}{2b_{2}}\)</span>的显著性,这将会告诉我们: 当<span class="math inline">\(x\)</span>小于<span class="math inline">\(-\frac{b_{1}}{2b_{2}}\)</span>时,<span class="math inline">\(y\)</span>是上升的趋势；当<span class="math inline">\(x\)</span>大于 <span class="math inline">\(-\frac{b_{1}}{2b_{2}}\)</span>时,<span class="math inline">\(y\)</span>是下降的趋势。通过inflection point，我们可以大致了解抛物线的形状。</p>
+<ol start="2" style="list-style-type: decimal">
+<li>第一阶段倒U型中介效应</li>
+</ol>
+<p><img src="figs/1222.png" /></p>
+<p>首先构建方程：</p>
+<p><span class="math display">\[
+m=a_{0}+a_{1}x+a_{2}x^{2}(1)
+\]</span></p>
+<p>其次构建方程：</p>
+<p><span class="math display">\[
+y=b_{0}+b_{1}m+c^{&#39;}_{1}x+c^{&#39;}_{2}x^{2}(2)
+\]</span></p>
+<p>中介效应<span class="math inline">\(\theta\)</span>为：</p>
+<p><span class="math display">\[
+\theta=\frac{\partial{m}}{\partial{x}}{\times}\frac{\partial{y}}{\partial{m}}=(a_{1}+2a_{2}x)b_{1}(3)
+\]</span></p>
+<p>根据(3)式，中介效应的大小还要取决于<span class="math inline">\(m\)</span>。<span class="math inline">\(m\)</span>分别取低和高不同的值，就可以得到不同的<span class="math inline">\(\theta\)</span>。如果它们间存在显著差异，中介效应就可以得到验证。</p>
+<ol start="3" style="list-style-type: decimal">
+<li>第二阶段倒U型中介效应</li>
+</ol>
+<p><img src="figs/1223.png" /></p>
+<p>首先构建方程：</p>
+<p><span class="math display">\[
+m=a_{0}+a_{1}x(1)
+\]</span></p>
+<p>其次构建方程：</p>
+<p><span class="math display">\[
+y=b_{0}+b_{1}m+b_{2}m^{2}+c^{&#39;}x(2)
+\]</span></p>
+<p>中介效应<span class="math inline">\(\theta\)</span>为：</p>
+<p><span class="math display">\[
+\theta=\frac{\partial{m}}{\partial{x}}{\times}\frac{\partial{y}}{\partial{m}}=a_{1}(b_{1}+2b_{2}m)(3)
+\]</span></p>
+<p>根据(3)式，中介效应的大小还要取决于<span class="math inline">\(m\)</span>。<span class="math inline">\(m\)</span>分别取低和高不同的值，就可以得到不同的<span class="math inline">\(\theta\)</span>。如果它们间存在显著差异，中介效应就可以得到验证。</p>
+<ol start="4" style="list-style-type: decimal">
+<li>第一阶段有调节的倒U型中介效应</li>
+</ol>
+<p><img src="figs/1224.png" /></p>
+<p>构建方程(1)：</p>
+<p><span class="math display">\[
+m=a_{0}+a_{1}x+a_{2}x^{2}(1)
+\]</span></p>
+<p>加入调节变量<span class="math inline">\(w\)</span>后，构建方程(2):</p>
+<p><span class="math display">\[
+m=a_{0}+a_{1}x+a_{2}x^{2}+a_{3}w+a_{4}xw+a_{5}x^{2}w(2)
+\]</span></p>
+<p>构建方程(3):</p>
+<p><span class="math display">\[
+y=b_{0}+b_{1}m+c^{&#39;}_{1}x+c^{&#39;}_{2}x^{2}(3)
+\]</span></p>
+<p>由方程(2)和方程(3)可知:</p>
+<p><span class="math display">\[
+\frac{\partial m}{\partial x}{\times}\frac{\partial y}{\partial m}=(a_{1}+a_{4}w+2(a_{2}+a_{5}w)x)b_{1}
+\]</span></p>
+<p>所以第一阶段有调节的倒U型中介效应为:</p>
+<p><span class="math display">\[
+\theta=(a_{1}+a_{4}w+2(a_{2}+a_{5}w)x)b_{1}
+\]</span></p>
+<p>可以看出，第一阶段有调节的倒U型中介效应大小不仅取决于调节变量<span class="math inline">\(w\)</span>，也取决于自变量<span class="math inline">\(x\)</span>。如下表所示，我们需要分别取<span class="math inline">\(w\)</span>和<span class="math inline">\(x\)</span>的低和高的值，来判断第一阶段有调节的倒U型中介效应是否显著。</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><span class="math inline">\(w\)</span></th>
+<th align="left"><span class="math inline">\(x\)</span></th>
+<th align="left"><span class="math inline">\(\theta\)</span></th>
+<th align="left">置信区间</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">低</td>
+<td align="left">低</td>
+<td align="left"><span class="math inline">\(\theta_{x低w低}\)</span></td>
+<td align="left"><span class="math inline">\(\theta_{x低w低}\)</span>对应的置信区间</td>
+</tr>
+<tr class="even">
+<td align="left">低</td>
+<td align="left">高</td>
+<td align="left"><span class="math inline">\(\theta_{x低w高}\)</span></td>
+<td align="left"><span class="math inline">\(\theta_{x低w高}\)</span>对应的置信区间</td>
+</tr>
+<tr class="odd">
+<td align="left">高</td>
+<td align="left">低</td>
+<td align="left"><span class="math inline">\(\theta_{x高w低}\)</span></td>
+<td align="left"><span class="math inline">\(\theta_{x高w低}\)</span>对应的置信区间</td>
+</tr>
+<tr class="even">
+<td align="left">高</td>
+<td align="left">高</td>
+<td align="left"><span class="math inline">\(\theta_{x高w高}\)</span></td>
+<td align="left"><span class="math inline">\(\theta_{x高w高}\)</span>对应的置信区间</td>
+</tr>
+</tbody>
+</table>
+<p>显著的标准是：</p>
+<ul>
+<li><p><span class="math inline">\(\theta_{1}=\theta_{x低w高}-\theta_{x低w低}\)</span>显著；</p></li>
+<li><p><span class="math inline">\(\theta_{2}=\theta_{x高w高}-\theta_{x高w低}\)</span>显著；</p></li>
+<li><p><span class="math inline">\(\theta_{1}\)</span>与<span class="math inline">\(\theta_{2}\)</span>的差异显著。</p></li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>第二阶段有调节的倒U型中介效应</li>
+</ol>
+<p><img src="figs/1225.png" /></p>
+<p>构建方程(1)：</p>
+<p><span class="math display">\[
+m=a_{0}+a_{1}x(1)
+\]</span></p>
+<p>加入调节变量<span class="math inline">\(w\)</span>后，构建方程(2):</p>
+<p><span class="math display">\[
+y=b_{0}+b_{1}m+b_{2}m^{2}+c^{&#39;}x(2)
+\]</span></p>
+<p>构建方程(3):</p>
+<p><span class="math display">\[
+y=b_{0}+b_{1}m+b_{2}m^{2}+b_{3}w+b_{4}mw+b_{5}m^{2}w+c^{&#39;}x(3)
+\]</span></p>
+<p>由方程(1)和方程(3)可知:</p>
+<p><span class="math display">\[
+\frac{\partial m}{\partial x}{\times}\frac{\partial y}{\partial m}=a_{1}(b_{1}+b_{4}w+2(b_{2}+b_{5}w)m)
+\]</span></p>
+<p>所以第一阶段有调节的倒U型中介效应为:</p>
+<p><span class="math display">\[
+\theta=a_{1}(b_{1}+b_{4}w+2(b_{2}+b_{5}w)m)
+\]</span></p>
+<p>可以看出，第一阶段有调节的倒U型中介效应大小不仅取决于调节变量<span class="math inline">\(w\)</span>，也取决于自变量<span class="math inline">\(m\)</span>。如下表所示，我们需要分别取<span class="math inline">\(w\)</span>和<span class="math inline">\(m\)</span>的低和高的值，来判断第一阶段有调节的倒U型中介效应是否显著。</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><span class="math inline">\(m\)</span></th>
+<th align="left"><span class="math inline">\(w\)</span></th>
+<th align="left"><span class="math inline">\(\theta\)</span></th>
+<th align="left">置信区间</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">低</td>
+<td align="left">低</td>
+<td align="left"><span class="math inline">\(\theta_{x低w低}\)</span></td>
+<td align="left"><span class="math inline">\(\theta_{x低w低}\)</span>对应的置信区间</td>
+</tr>
+<tr class="even">
+<td align="left">低</td>
+<td align="left">高</td>
+<td align="left"><span class="math inline">\(\theta_{x低w高}\)</span></td>
+<td align="left"><span class="math inline">\(\theta_{x低w高}\)</span>对应的置信区间</td>
+</tr>
+<tr class="odd">
+<td align="left">高</td>
+<td align="left">低</td>
+<td align="left"><span class="math inline">\(\theta_{x高w低}\)</span></td>
+<td align="left"><span class="math inline">\(\theta_{x高w低}\)</span>对应的置信区间</td>
+</tr>
+<tr class="even">
+<td align="left">高</td>
+<td align="left">高</td>
+<td align="left"><span class="math inline">\(\theta_{x高w高}\)</span></td>
+<td align="left"><span class="math inline">\(\theta_{x高w高}\)</span>对应的置信区间</td>
+</tr>
+</tbody>
+</table>
+<p>显著的标准是：</p>
+<ul>
+<li><p><span class="math inline">\(\theta_{1}=\theta_{x低w高}-\theta_{x低w低}\)</span>显著；</p></li>
+<li><p><span class="math inline">\(\theta_{2}=\theta_{x高w高}-\theta_{x高w低}\)</span>显著；</p></li>
+<li><p><span class="math inline">\(\theta_{1}\)</span>与<span class="math inline">\(\theta_{2}\)</span>的差异显著。</p></li>
+</ul>
+<p>本小节内容参考了<span class="citation">(Lin, Law, and Zhou <a href="#ref-Lin2017:RNG" role="doc-biblioref">2017</a>)</span>和<span class="citation">(Hu et al. <a href="#ref-Hu2019:RNG" role="doc-biblioref">2019</a>)</span>相关内容。</p>
+</div>
+</div>
+<div id="modplot" class="section level2">
+<h2><span class="header-section-number">1.3</span> 绘制调节效应图</h2>
+<div id="spssmplusexcel计算简单斜率并绘制调节效应图" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> SPSS+Mplus+Excel计算简单斜率并绘制调节效应图</h3>
+<p>本小节采用的数据来源于发表在Journal of Applied Psychology的文章<span class="citation">(Liu et al. <a href="#ref-Liu2020:RNG" role="doc-biblioref">2020</a>)</span>。</p>
+<p>本文主要follow原文的study 1。原文提供的数据是Stata格式，已转换成了SPSS格式数据。数据中变量的相关信息如下：</p>
+<table>
+<colgroup>
+<col width="36%" />
+<col width="63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">变量类型</th>
+<th align="left">详细信息</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">控制变量</td>
+<td align="left">EMP_GENDER; EMP_AGE; EMP_EDU; EMP_TenSup</td>
+</tr>
+<tr class="even">
+<td align="left">自变量(的条目)</td>
+<td align="left">EMP_MC_mean (EMP_MC1; EMP_MC2; EMP_MC3)</td>
+</tr>
+<tr class="odd">
+<td align="left">因变量(的条目)</td>
+<td align="left">SUP_ECREA_mean (SUP_ECREA1; SUP_ECREA2; SUP_ECREA3; SUP_ECREA4; SUP_ECREA5; SUP_ECREA6; SUP_ECREA7; SUP_ECREA8; SUP_ECREA9; SUP_ECREA10; SUP_ECREA11; SUP_ECREA12; SUP_ECREA13)</td>
+</tr>
+<tr class="even">
+<td align="left">调节变量(的条目)</td>
+<td align="left">EMP_SUPEL_mean (EMP_SUPEL1; EMP_SUPEL2; EMP_SUPEL3; EMP_SUPEL4; EMP_SUPEL5; EMP_SUPEL6; EMP_SUPEL7; EMP_SUPEL8; EMP_SUPEL9; EMP_SUPEL10)</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li>利用SPSS的Syntax进行相关分析</li>
+</ol>
+<p><img src="figs/1311.png" /></p>
+<p>如上表所示，相关分析表格中需要<span class="math inline">\(\alpha\)</span>系数、均值、标准差和变量之间的相关系数。</p>
+<p>在SPSS的语法中，计算变量的<span class="math inline">\(\alpha\)</span>值语法为：</p>
+<pre><code>*计算MC的alpha信度.
+RELIABILITY
+  /VARIABLES=EMP_MC1 EMP_MC2 EMP_MC3
+  /SCALE(&#39;ALL VARIABLES&#39;) ALL
+  /MODEL=ALPHA.
+
+*计算EL的alpha信度.
+RELIABILITY
+  /VARIABLES=EMP_SUPEL1 EMP_SUPEL2 EMP_SUPEL3 EMP_SUPEL4 EMP_SUPEL5 EMP_SUPEL6 EMP_SUPEL7 
+    EMP_SUPEL8 EMP_SUPEL9 EMP_SUPEL10
+  /SCALE(&#39;ALL VARIABLES&#39;) ALL
+  /MODEL=ALPHA.
+
+*计算CREA的alpha信度.
+RELIABILITY
+  /VARIABLES=SUP_ECREA1 SUP_ECREA2 SUP_ECREA3 SUP_ECREA4 SUP_ECREA5 SUP_ECREA6 SUP_ECREA7 
+    SUP_ECREA8 SUP_ECREA9 SUP_ECREA10 SUP_ECREA11 SUP_ECREA12 SUP_ECREA13
+  /SCALE(&#39;ALL VARIABLES&#39;) ALL
+  /MODEL=ALPHA.</code></pre>
+<p>输出结果为：</p>
+<p><img src="figs/1312.png" /></p>
+<p><img src="figs/1313.png" /></p>
+<p><img src="figs/1314.png" /></p>
+<p>变量的均值、标准差语法为：</p>
+<pre><code>*计算变量的均值和标准差.
+DESCRIPTIVES VARIABLES=EMP_GENDER EMP_AGE EMP_EDU EMP_TenSup EMP_MC_mean EMP_SUPEL_mean 
+    SUP_ECREA_mean
+  /STATISTICS=MEAN STDDEV.</code></pre>
+<p>输出结果为：</p>
+<p><img src="figs/1315.png" /></p>
+<p>变量之间的相关系数语法为：</p>
+<pre><code>*计算变量间的相关系数.
+CORRELATIONS
+  /VARIABLES=EMP_GENDER EMP_AGE EMP_EDU EMP_TenSup EMP_MC_mean EMP_SUPEL_mean SUP_ECREA_mean
+  /PRINT=TWOTAIL NOSIG
+  /MISSING=PAIRWISE.</code></pre>
+<p>输出结果为：</p>
+<p><img src="figs/1316.png" /></p>
+<p>把上述结果复制到Excel中加以整理，然后再复制到WORD中，就可以得到类似原文的相关系数表了。在Excel中，我初步整理的结果如下：</p>
+<p><img src="figs/1317.png" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>利用SPSS的Syntax进行层级回归分析</li>
+</ol>
+<p>在进行层级回归分析前，首先对自变量和调节变量进行中心化。中心化可以有效减少自变量和调节变量的交互项与它们(自变量和调节变量)的共线性。关于中心化，一般是均值中心化，并且只有自变量和调节变量需要中心化，因变量是不需要中心化的(但中心化也没什么太大的问题，只不过没有必要这么做)。</p>
+<p>SPSS的中心化语法为：</p>
+<pre><code>*计算变量MC和EL的均值.
+AGGREGATE
+  /OUTFILE=* MODE=ADDVARIABLES
+  /BREAK=
+  /MC_mean=MEAN(EMP_MC_mean) 
+  /EL_mean=MEAN(EMP_SUPEL_mean).
+
+*变量MC和EL进行均值中心化.
+COMPUTE MC_mc=EMP_MC_mean-MC_mean.
+COMPUTE EL_mc=EMP_SUPEL_mean-EL_mean.
+EXECUTE.</code></pre>
+<p>接下来计算交互项：</p>
+<pre><code>*计算交互项.
+COMPUTE INTERACTION=MC_mc*EL_mc.
+EXECUTE.</code></pre>
+<p>然后就可以进行层级回归分析了：</p>
+<pre><code>*层级回归.
+REGRESSION
+  /MISSING LISTWISE
+  /STATISTICS COEFF OUTS R ANOVA CHANGE
+  /CRITERIA=PIN(.05) POUT(.10)
+  /NOORIGIN 
+  /DEPENDENT SUP_ECREA_mean
+  /METHOD=ENTER EMP_GENDER EMP_AGE EMP_EDU EMP_TenSup
+  /METHOD=ENTER EMP_GENDER EMP_AGE EMP_EDU EMP_TenSup MC_mc
+  /METHOD=ENTER EMP_GENDER EMP_AGE EMP_EDU EMP_TenSup MC_mc EL_mc INTERACTION.</code></pre>
+<p>结果如下：</p>
+<p><img src="figs/1318.png" /></p>
+<p>上述这张表主要是输出回归系数(原文的Model 2的截距项系数是6.27,这是变量未中心化的回归分析结果，但Model 3原文又采用了中心化后的回归分析结果。此处存疑)。</p>
+<p>模型的<span class="math inline">\(R^{2}\)</span>和<span class="math inline">\(\triangle R^{2}\)</span>由下面这张表输出来：</p>
+<p><img src="figs/1319.png" /></p>
+<p>把上述结果复制到Excel中加以整理，然后再复制到WORD中，就可以得到类似原文的层级回归分析表了。EXCEL中的初步整理如下：</p>
+<p><img src="figs/13110.png" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>利用Mplus的Syntax进行简单斜率检验</li>
+</ol>
+<p>3.1 原理</p>
+<p>一般的线性回归方程为(<span class="math inline">\(w\)</span>为调节变量)：</p>
+<p><span class="math display">\[
+y=b_{0}+b_{1}x+b_{2}w+b_{3}x{\times}w
+\]</span></p>
+<p>整理后可得：</p>
+<p><span class="math display">\[
+y=(b_{0}+b_{2}w)+(b_{1}+b_{3}w)x
+\]</span></p>
+<p>所以<span class="math inline">\(x\)</span>对<span class="math inline">\(y\)</span>的影响在于系数<span class="math inline">\(b_{1}+b_{3}w\)</span>是否显著，而这个系数并不是固定的，取决于<span class="math inline">\(w\)</span>的大小。我们通常取<span class="math inline">\(w\)</span>的均值加一个标准差和均值减一个标准差。即当<span class="math inline">\(w_{high}=M_{w}+SD_{w}\)</span>和<span class="math inline">\(w_{low}=M_{w}-SD_{w}\)</span>时，我们可以得到两个方程(两条直线)，只需要检验这两条直线斜率以及斜率的差异是否显著，就可以判断<span class="math inline">\(w\)</span>在不同情形下<span class="math inline">\(x\)</span>对<span class="math inline">\(y\)</span>的影响是否显著。</p>
+<p>其他软件进行简单斜率检验非常困难，但在Mplus中，很容易实现，且语法的书写逻辑非常流畅。</p>
+<p>3.2 语法</p>
+<p>首先将SPSS格式数据转换成.csv格式数据。Mplus的语法如下：</p>
+<pre><code>DATA: FILE = data.csv;
+
+VARIABLE:
+MISSING = ALL(-999);   !定义数据中的-999为缺失值,本数据中没有缺失值,但建议写
+
+NAMES = SUP_ECREA1 SUP_ECREA2 SUP_ECREA3 SUP_ECREA4 SUP_ECREA5 SUP_ECREA6 SUP_ECREA7
+SUP_ECREA8 SUP_ECREA9 SUP_ECREA10 SUP_ECREA11 SUP_ECREA12 SUP_ECREA13 EMP_MC1  
+EMP_MC2  EMP_MC3  EMP_SUPEL1 EMP_SUPEL2 EMP_SUPEL3 EMP_SUPEL4  EMP_SUPEL5  
+EMP_SUPEL6 EMP_SUPEL7 EMP_SUPEL8 EMP_SUPEL9  EMP_SUPEL10 EMP_AGE EMP_GENDER  
+EMP_EDU  EMP_TenSup EMP_MC_mean EMP_SUPEL_mean SUP_ECREA_mean 
+MC_mean  EL_mean  MC_mc EL_mc INTERACTION;
+
+USEVAR = EMP_AGE EMP_GENDER  EMP_EDU  EMP_TenSup 
+MC_mc EL_mc SUP_ECREA_mean INTERACTION;
+
+ANALYSIS:
+TYPE = GENERAL;
+ESTIMATOR = ML;
+BOOTSTRAP = 1000;     !bootstrap次数为1000
+
+MODEL:
+[SUP_ECREA_mean](b0);            !估计SUP_ECREA_mean的截距,系数为b0
+SUP_ECREA_mean ON EMP_GENDER
+                  EMP_AGE   
+                  EMP_EDU  
+                  EMP_TenSup 
+                  MC_mc(b1)
+                  EL_mc(b2)
+                  INTERACTION(b3);
+
+MODEL CONSTRAINT:
+NEW(HIGH_SLOP LOW_SLOP DIFF H_INTERCEPT L_INTERCEPT);
+HIGH_SLOP = b1 + b3*1.08996;        !调节变量取其均值加一个标准差(即1.08996)
+LOW_SLOP = b1 + b3*(-1.08996);      !调节变量取其均值加一个标准差(即-1.08996)
+DIFF = HIGH_SLOP - LOW_SLOP;        !可以理解为简单斜率检验
+
+H_INTERCEPT = b0 + b2*1.08996;     !调节变量为HIGH时的截距
+L_INTERCEPT = b0 + b2*(-1.08996);  !调节变量为LOW时的截距
+
+OUTPUT:
+!输出变量基本统计量,标准化系数,Boostrap置信区间,缺失值描述
+SAMPSTAT STDYX CINTERVAL(BCBOOTSTRAP) PATTERNS;</code></pre>
+<p>解释下为什么需要计算两条直线的截距[H_INTERCEPT = b0 + b2 <span class="math inline">\(\times\)</span> 1.08996; L_INTERCEPT = b0 + b2 <span class="math inline">\(\times\)</span> (-1.08996)]。实际上我们根本不关心截距的显著性，但为了后续能够直观地写出方程(如果不让软件帮你计算截距项，你就得自己手工计算)，还是在语法中添加了计算截距项的语法。</p>
+<p>至于调节变量的均值和标准差，可以在SPSS中完成，其语法为：</p>
+<pre><code>*计算中心化后的调节变量的均值和标准差.
+DESCRIPTIVES VARIABLES=EL_mc
+  /STATISTICS=MEAN STDDEV.</code></pre>
+<p>Mplus的输出结果如下：</p>
+<p><img src="figs/13111.png" /></p>
+<p>以上结果表明，当EL高时，斜率<em>B</em> = -0.149, <em>p</em> &gt; 0.1，即不显著；当EL低时，斜率<em>B</em> = -0.457, <em>p</em> &lt; 0.001。这与原文报告的结果一致。</p>
+<p><img src="figs/13112.png" /></p>
+<p>我们还可以查看两条直线斜率的偏差校正的置信区间：</p>
+<p><img src="figs/13113.png" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>利用Excel绘制调节效应图</li>
+</ol>
+<p>至少50%的人只使用了Excel的50%的功能。Excel对数据结果的整理非常友善，我们以Mplus输出的两条直线在Excel中绘制调节效应图。逻辑很简单，我们已经有了当调节变量(EL)为高和低时的两条直线，接下来我们只需要在Excel中画出这两条直线就可以了。</p>
+<p><img src="figs/13114.png" /></p>
+<p>根据上述Mplus的输出结果，我们可以知道：</p>
+<p>当EL=1.08996(调节变量为高情形,因为EL进行了中心化,所以均值为0)时，直线方程为：</p>
+<p>CREAT=5.659-0.149*MC</p>
+<p>当EL=-1.08996(调节变量为低情形)时，直线方程为：</p>
+<p>CREAT=4.687-0.457*MC</p>
+<p>两点确定一条直线，因为原文是李克特7点量表，所以就选取MC=1和MC=7两点，带入方程后求得对应的CREAT值。</p>
+<p>选取好了点后，我们就可以在Excel中绘图了。效果如下：</p>
+<p><img src="figs/13115.png" /></p>
+<p>在Excel中进行操作的静音视频如下，帮助大家理解绘制的过程：</p>
+<iframe width="560" height="315" src="https://www.bilibili.com/video/BV1ga4y1e7wZ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>本小节的数据存放在<a href="https://pan.baidu.com/s/1gxaa4SfN4IKnMy3bydmuXQ">此处</a>，提取码：ugmh</p>
+</div>
+<div id="利用r作调节效应图" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> 利用R作调节效应图</h3>
+
+</div>
+</div>
+</div>
+<h3> 参考文献</h3>
+<div id="refs" class="references">
+<div id="ref-Baron1986:RNG">
+<p>Baron, R. M., and D. A. Kenny. 1986. “The Moderator-Mediator Variable Distinction in Social Psychological Research: Conceptual, Strategic, and Statistical Considerations.” <em>Journal of Personality and Social Psychology</em> 51 (6): 1173–82.</p>
+</div>
+<div id="ref-Hu2019:RNG">
+<p>Hu, J., Z. Zhang, K. Jiang, and W. Chen. 2019. “Getting Ahead, Getting Along, and Getting Prosocial: Examining Extraversion Facets, Peer Reactions, and Leadership Emergence.” <em>Journal of Applied Psychology</em> 104 (11): 1369–86.</p>
+</div>
+<div id="ref-Lin2017:RNG">
+<p>Lin, B., K. Law, and J. Zhou. 2017. “Why Is Underemployment Related to Creativity and Ocb? A Task Crafting Explanation of the Curvilinear Moderated Relations.” <em>Academy of Management Journal</em> 60 (1): 156–77.</p>
+</div>
+<div id="ref-Liu2020:RNG">
+<p>Liu, x., H. liao, R. Derfler-Rozin, X. Zheng, and E. X.M. Wee. 2020. “In Line and Out of the Box: How Ethical Leaders Help Offset the Negative Effect of Morality on Creativity.” <em>Journal of Applied Psychology</em>.</p>
+</div>
+<div id="ref-liudong2012:StochProc">
+<p>刘东, 张震, and 汪默. 2012. <em>被调节的中介和被中介的调节：理论构建与模型检验</em>. 北京大学出版社.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="multilevel.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["mybook1.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
