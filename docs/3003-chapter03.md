@@ -150,6 +150,12 @@ $$
 
 ![](figs/3143.png)
 
+$$
+\bar{Z_r}={\sum_{i=1}^kw_iFisherZ_i\over{\sum_{i=1}^kw_i}}
+$$
+
+
+
 **(2) 相对权重分析**
 
 相对权重分析(relative weight analysis)能够通过数据转换、相关分析和回归分析，计算各自变量对因变量的独立作用[@xuyan2019:RNG]。
