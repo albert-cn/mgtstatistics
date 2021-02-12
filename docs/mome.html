@@ -24,7 +24,7 @@
 <meta name="author" content="Albert Cao" />
 
 
-<meta name="date" content="2021-02-11" />
+<meta name="date" content="2021-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -92,7 +92,7 @@ MathJax.Hub.Config({
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="mome.html"><a href="mome.html#modplot"><i class="fa fa-check"></i><b>1.3</b> 绘制调节效应图</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="mome.html"><a href="mome.html#spssmplusexcel计算简单斜率并绘制调节效应图"><i class="fa fa-check"></i><b>1.3.1</b> SPSS+Mplus+Excel计算简单斜率并绘制调节效应图</a></li>
-<li class="chapter" data-level="1.3.2" data-path="mome.html"><a href="mome.html#利用r作调节效应图"><i class="fa fa-check"></i><b>1.3.2</b> 利用R作调节效应图</a></li>
+<li class="chapter" data-level="1.3.2" data-path="mome.html"><a href="mome.html#johnson-neyman图"><i class="fa fa-check"></i><b>1.3.2</b> Johnson-Neyman图</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="multilevel.html"><a href="multilevel.html"><i class="fa fa-check"></i><b>2</b> 多层次线性回归模型</a><ul>
@@ -101,10 +101,10 @@ MathJax.Hub.Config({
 <li class="chapter" data-level="3" data-path="meta.html"><a href="meta.html"><i class="fa fa-check"></i><b>3</b> 元分析</a><ul>
 <li class="chapter" data-level="3.1" data-path="meta.html"><a href="meta.html#meta-concept"><i class="fa fa-check"></i><b>3.1</b> 元分析中的常见概念及原理</a></li>
 <li class="chapter" data-level="3.2" data-path="meta.html"><a href="meta.html#meta-practice"><i class="fa fa-check"></i><b>3.2</b> 手把手的元分析实战</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="meta.html"><a href="meta.html#mian-effect-test"><i class="fa fa-check"></i><b>3.2.1</b> 主效应检验</a></li>
-<li class="chapter" data-level="3.2.2" data-path="meta.html"><a href="meta.html#B-F"><i class="fa fa-check"></i><b>3.2.2</b> Bajaut plot和forest plot</a></li>
-<li class="chapter" data-level="3.2.3" data-path="meta.html"><a href="meta.html#bias"><i class="fa fa-check"></i><b>3.2.3</b> 出版偏倚的检验</a></li>
-<li class="chapter" data-level="3.2.4" data-path="meta.html"><a href="meta.html#调节效应分析-meta-moderator"><i class="fa fa-check"></i><b>3.2.4</b> 调节效应分析 {meta-moderator}</a></li>
+<li class="chapter" data-level="3.2.1" data-path="meta.html"><a href="meta.html#主效应检验"><i class="fa fa-check"></i><b>3.2.1</b> 主效应检验</a></li>
+<li class="chapter" data-level="3.2.2" data-path="meta.html"><a href="meta.html#bajaut-plot和forest-plot"><i class="fa fa-check"></i><b>3.2.2</b> Bajaut plot和forest plot</a></li>
+<li class="chapter" data-level="3.2.3" data-path="meta.html"><a href="meta.html#出版偏倚的检验"><i class="fa fa-check"></i><b>3.2.3</b> 出版偏倚的检验</a></li>
+<li class="chapter" data-level="3.2.4" data-path="meta.html"><a href="meta.html#调节效应分析"><i class="fa fa-check"></i><b>3.2.4</b> 调节效应分析</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="参考文献.html"><a href="参考文献.html"><i class="fa fa-check"></i><b>4</b> 参考文献</a></li>
@@ -1157,8 +1157,70 @@ DESCRIPTIVES VARIABLES=EL_mc
 </iframe>
 <p>本小节的数据存放在<a href="https://pan.baidu.com/s/1gxaa4SfN4IKnMy3bydmuXQ">此处</a>，提取码：ugmh</p>
 </div>
-<div id="利用r作调节效应图" class="section level3">
-<h3><span class="header-section-number">1.3.2</span> 利用R作调节效应图</h3>
+<div id="johnson-neyman图" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Johnson-Neyman图</h3>
+<p><strong>1.利用Mplus作Johnson-Neyman图</strong></p>
+<p>概念模型如下：</p>
+<p><img src="figs/1321.png" /></p>
+<p>其中<code>custrej</code>和<code>feedback</code>为IV，<code>apathy</code>为mediator，<code>jobsat</code>为DV，<code>empower</code>为moderator，<code>fbxemp</code>为<code>feedback</code>和<code>apathy</code>的乘积项。</p>
+<p>Mplus8.3版本的语法：</p>
+<pre><code>TITLE: Moderated Mediation;
+DATA:  FILE IS factorscores_C.dat;
+VARIABLE: NAMES ARE 
+        JOBCAT CustRej JobSat 
+        Feedback Apathy Empower;
+        USEVARIABLES ARE CustRej-Empower FBxEMP;
+        MISSING ARE ALL (999);
+DEFINE: STANDARDIZE CustRej JobSat Empower 
+        Feedback Apathy;
+        FBxEMP = Feedback * Empower;
+MODEL:  JobSat ON CustRej Empower Apathy; 
+        JobSat ON Feedback;
+        JobSat ON FBxEMP;
+        Apathy ON CustRej Empower; 
+        Apathy ON Feedback; 
+        Apathy ON FBxEMP;
+        MODEL INDIRECT: 
+        JobSat MOD Apathy Empower (-3 3 0.1) FBxEMP Apathy(1 0);
+        !DV MOD Mediator Moderator (-3 3 0.1) xTerm IV(1 0);
+PLOT:   TYPE IS PLOT2;
+OUTPUT: STANDARDIZED (ALL) MODINDICES(2) CINTERVAL (BCBOOTSTRAP);</code></pre>
+<p>Johnson-Neyman图形输出如下：</p>
+<p><img src="figs/1322.png" /></p>
+<p><strong>2.利用R作Johnson-Neyman图</strong></p>
+<p>调节变量为二分类时：</p>
+<pre><code>x&lt;-c(0,1,0,1,0,1)
+w&lt;-c(1.592,1.592,2.80,2.80,5.20,5.20)
+y&lt;-c(2.619,2.377,2.746,2.747,2.998,3.482)
+plot(y=y,x=w,pch=15,col=&quot;white&quot;,xlab=&quot;Climate Change Skepticism (W)&quot;,
+ylab=&quot;Negative Justifications (Y)&quot;)
+legend.txt&lt;-c(&quot;Natural causes (X=0)&quot;,&quot;Climate change (X=1)&quot;)
+legend(&quot;topleft&quot;,legend=legend.txt,lty=c(3,1),lwd=c(3,2))
+lines(w[x==0],y[x==0],lwd=3,lty=3)
+lines(w[x==1],y[x==1],lwd=2,lty=1)</code></pre>
+<p>输出结果如下：</p>
+<p><img src="figs/1323.png" /></p>
+<p>还可以生成Johnson-Neyman图，skeptic、effect、llci、ulci是利用process宏生成的数据：</p>
+<pre><code>skeptic&lt;-c(1,1.171,1.4,1.8,2.2,2.6,3,3.4,3.8,3.934,4.2,
+        4.6,5,5.4,5.8,6.2,6.6,7,7.4,7.8,8.2,8.6,9)
+effect&lt;-c(-.361,-.327,-.281,-.200,-.120,-.039,.041,.122,.202,.229,.282,
+       .363,.443,.524,.604,.685,.765,.846,.926,1.007,1.087,1.168,1.248)
+llci&lt;-c(-.702,-.654,-.589,-.481,-.376,-.276,-.184,-.099,-.024,0,.044,.105,
+       .161,.212,.261,.307,.351,.394,.436,.477,.518,.558,.597)
+ulci&lt;-c(-.021,0,.028,.080,.136,.197,.266,.343,.428,.458,.521,.621,.726,.836,
+       .948,1.063,1.180,1.298,1.417,1.537,1.657,1.778,1.899)  
+plot(skeptic,effect,type=&quot;l&quot;,pch=19,ylim=c(-1,1.5),xlim=c(1,6),lwd=3,
+ylab=&quot;Conditional effect of disaster frame&quot;,
+xlab=&quot;Climate Change Skepticism (W)&quot;)
+points(skeptic,llci,lwd=2,lty=2,type=&quot;l&quot;)
+points(skeptic,ulci,lwd=2,lty=2,type=&quot;l&quot;)
+abline(h=0,untf=FALSE,lty=3,lwd=1)
+abline(v=1.171,untf=FALSE,lty=3,lwd=1)
+abline(v=3.934,untf=FALSE,lty=3,lwd=1)
+text(1.171,-1,&quot;1.171&quot;,cex=0.8)
+text(3.934,-1,&quot;3.934&quot;,cex=0.8)</code></pre>
+<p>输出如下：</p>
+<p><img src="figs/1324.png" /></p>
 
 </div>
 </div>

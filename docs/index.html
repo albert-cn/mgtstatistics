@@ -24,7 +24,7 @@
 <meta name="author" content="Albert Cao" />
 
 
-<meta name="date" content="2021-02-11" />
+<meta name="date" content="2021-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -92,7 +92,7 @@ MathJax.Hub.Config({
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="mome.html"><a href="mome.html#modplot"><i class="fa fa-check"></i><b>1.3</b> 绘制调节效应图</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="mome.html"><a href="mome.html#spssmplusexcel计算简单斜率并绘制调节效应图"><i class="fa fa-check"></i><b>1.3.1</b> SPSS+Mplus+Excel计算简单斜率并绘制调节效应图</a></li>
-<li class="chapter" data-level="1.3.2" data-path="mome.html"><a href="mome.html#利用r作调节效应图"><i class="fa fa-check"></i><b>1.3.2</b> 利用R作调节效应图</a></li>
+<li class="chapter" data-level="1.3.2" data-path="mome.html"><a href="mome.html#johnson-neyman图"><i class="fa fa-check"></i><b>1.3.2</b> Johnson-Neyman图</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="multilevel.html"><a href="multilevel.html"><i class="fa fa-check"></i><b>2</b> 多层次线性回归模型</a><ul>
@@ -101,10 +101,10 @@ MathJax.Hub.Config({
 <li class="chapter" data-level="3" data-path="meta.html"><a href="meta.html"><i class="fa fa-check"></i><b>3</b> 元分析</a><ul>
 <li class="chapter" data-level="3.1" data-path="meta.html"><a href="meta.html#meta-concept"><i class="fa fa-check"></i><b>3.1</b> 元分析中的常见概念及原理</a></li>
 <li class="chapter" data-level="3.2" data-path="meta.html"><a href="meta.html#meta-practice"><i class="fa fa-check"></i><b>3.2</b> 手把手的元分析实战</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="meta.html"><a href="meta.html#mian-effect-test"><i class="fa fa-check"></i><b>3.2.1</b> 主效应检验</a></li>
-<li class="chapter" data-level="3.2.2" data-path="meta.html"><a href="meta.html#B-F"><i class="fa fa-check"></i><b>3.2.2</b> Bajaut plot和forest plot</a></li>
-<li class="chapter" data-level="3.2.3" data-path="meta.html"><a href="meta.html#bias"><i class="fa fa-check"></i><b>3.2.3</b> 出版偏倚的检验</a></li>
-<li class="chapter" data-level="3.2.4" data-path="meta.html"><a href="meta.html#调节效应分析-meta-moderator"><i class="fa fa-check"></i><b>3.2.4</b> 调节效应分析 {meta-moderator}</a></li>
+<li class="chapter" data-level="3.2.1" data-path="meta.html"><a href="meta.html#主效应检验"><i class="fa fa-check"></i><b>3.2.1</b> 主效应检验</a></li>
+<li class="chapter" data-level="3.2.2" data-path="meta.html"><a href="meta.html#bajaut-plot和forest-plot"><i class="fa fa-check"></i><b>3.2.2</b> Bajaut plot和forest plot</a></li>
+<li class="chapter" data-level="3.2.3" data-path="meta.html"><a href="meta.html#出版偏倚的检验"><i class="fa fa-check"></i><b>3.2.3</b> 出版偏倚的检验</a></li>
+<li class="chapter" data-level="3.2.4" data-path="meta.html"><a href="meta.html#调节效应分析"><i class="fa fa-check"></i><b>3.2.4</b> 调节效应分析</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="参考文献.html"><a href="参考文献.html"><i class="fa fa-check"></i><b>4</b> 参考文献</a></li>
@@ -128,7 +128,7 @@ MathJax.Hub.Config({
 <div id="header">
 <h1 class="title">管理学统计分析快速上手指南</h1>
 <p class="author"><em>Albert Cao</em></p>
-<p class="date"><em>2021-02-11</em></p>
+<p class="date"><em>2021-02-12</em></p>
 </div>
 <div id="简介与前言" class="section level1 unnumbered">
 <h1>简介与前言</h1>
@@ -139,8 +139,8 @@ MathJax.Hub.Config({
 <p>在管理学研究中，如果能辅以科学严谨的研究设计，用规范的研究方法把研究问题呈现在读者眼前，那么研究应该是不错的。</p>
 <p>我一直在想，我的所学也是基于老师与同学们的无私帮助，应该以某种形式反馈给他人，所以便有了这本书。值得一提的是，本小册子的发布，符合互联网思维时代的趋势，能够及时修改，并具有文字与视频兼备的功能。</p>
 <p>最后想说明的是，小册子的某些数据没有公开，这是考虑到之前这些内容是以付费的形式在公众号<strong>管理研究方法</strong>发布，如果完全免费，可能对之前购买文章的读者不太公平。而且本小册子讲解的算是比较清晰，不需要示例数据也可以弄懂。</p>
-<p>发布此小册子，算是纪念曾经的读书时光吧！</p>
-<p>谨以此文，献给曾无私帮助我的老师以及同学们。</p>
+<p>发布此小册子，算是纪念曾经的读书时光吧！写作时，参考了一些他山之石，引用中如有遗漏，可以私信告诉我，有其他好的想法，也欢迎留言。联系邮箱：<a href="mailto:mgt_training@163.com" class="email">mgt_training@163.com</a></p>
+<p>谨以此书，献给曾无私帮助我的老师以及同学们。</p>
 
 </div>
             </section>
