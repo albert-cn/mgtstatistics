@@ -213,20 +213,20 @@ H=\sqrt{Q\over{k-1}}
 <p><strong>(1) 如何计算效应值</strong></p>
 <p>在固定效应模型中，首先通过<span class="math inline">\(FisherZ\)</span>转换将每一个研究的相关系数<span class="math inline">\(r\)</span>转换成<span class="math inline">\(Z\)</span>值，转换后的<span class="math inline">\(Z\)</span>值可以通过下面的公式计算加权平均效应值<span class="math inline">\(\bar{Z_{r}}\)</span>：</p>
 <p><span class="math display">\[
-\bar{Z_r}={{\sum_{i=1}^k(n_i-3)FisherZ_i}\over{\sum_{i=1}^k(n_i-3)}}
+\bar{Z_r}={\sum_{i=1}^k(n_i-3)FisherZ_i\over{\sum_{i=1}^k(n_i-3)}}
 \]</span></p>
-<p>其中，<span class="math inline">\({1}\over{n_{i}-3}\)</span>是计算的权重值，同时也是不同的研究样本内方差(Within-Study Variance)。</p>
-<p>而在随机效应模型中，不仅需要考虑研究样本内方差，同时也要考虑研究样本间方差(Between-Study Variance ,用<span class="math inline">\(\tau^{2}\)</span>表示 )，计算公式为：</p>
+<p>其中，<span class="math inline">\(1\over{n_i-3}\)</span>是计算的权重值，同时也是不同的研究样本内方差(Within-Study Variance)。</p>
+<p>而在随机效应模型中，不仅需要考虑研究样本内方差，同时也要考虑研究样本间方差(Between-Study Variance ,用<span class="math inline">\(\tau^2\)</span>表示 )，计算公式为：</p>
 <p><span class="math display">\[
-\tau^{2}={{Q-(k-1)}\over{\sum_{i=1}^{k}(n_{i}-3)-{{\sum_{i=1}^{k}(n_{i}-3)^{2}}\over{\sum_{i=1}^{k}(n_{i}-3)}}}}
+\tau^2={Q-(k-1)\over{\sum_{i=1}^k(n_{i}-3)-{{\sum_{i=1}^{k}(n_{i}-3)^{2}}\over{\sum_{i=1}^{k}(n_{i}-3)}}}}
 \]</span></p>
 <p>随机效应模型中的权重值<span class="math inline">\(w_{i}\)</span>等于：</p>
 <p><span class="math display">\[
-w_{i}={{1}\over{{{1}\over{n_{i}-3}}+\tau^{2}}}
+w_i={1\over{{1\over{n_i-3}}+\tau^2}}
 \]</span></p>
 <p>所以，随机效应模型的加权平均效应值<span class="math inline">\(\bar{Z_{r}}\)</span>为：</p>
 <p><span class="math display">\[
-\bar{Z_{r}}={{\sum_{i=1}^{k}w_{i}FisherZ_{i}}\over{\sum_{i=1}^{k}w_{i}}}
+\bar{Z_r}={\sum_{i=1}^kw_iFisherZ_i\over{\sum_{i=1}^kw_i}}
 \]</span></p>
 <p><strong>(2) 相对权重分析</strong></p>
 <p>相对权重分析(relative weight analysis)能够通过数据转换、相关分析和回归分析，计算各自变量对因变量的独立作用<span class="citation">(胥彦 and 李超平 <a href="#ref-xuyan2019:RNG" role="doc-biblioref">2019</a>)</span>。</p>
