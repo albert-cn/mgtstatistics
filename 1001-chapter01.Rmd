@@ -1230,7 +1230,7 @@ CREAT=4.687-0.457*MC
 <iframe width="560" height="315"
 src="https://www.bilibili.com/video/BV1ga4y1e7wZ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-本小节的数据存放在[此处](https://pan.baidu.com/s/1gxaa4SfN4IKnMy3bydmuXQ)，提取码：ugmh
+本小节的数据存放在[此处](https://pan.baidu.com/s/1gxaa4SfN4IKnMy3bydmuXQ)，提取码：
 
 
 ### Johnson-Neyman图
