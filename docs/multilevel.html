@@ -97,7 +97,10 @@ MathJax.Hub.Config({
 </ul></li>
 <li class="chapter" data-level="2" data-path="multilevel.html"><a href="multilevel.html"><i class="fa fa-check"></i><b>2</b> 多层次线性回归模型</a><ul>
 <li class="chapter" data-level="2.1" data-path="multilevel.html"><a href="multilevel.html#multiconcept"><i class="fa fa-check"></i><b>2.1</b> 相关概念介绍</a></li>
-<li class="chapter" data-level="2.2" data-path="multilevel.html"><a href="multilevel.html#R2"><i class="fa fa-check"></i><b>2.2</b> HLM的R Square</a></li>
+<li class="chapter" data-level="2.2" data-path="multilevel.html"><a href="multilevel.html#R2"><i class="fa fa-check"></i><b>2.2</b> HLM的R Square</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="multilevel.html"><a href="multilevel.html#普通线性回归模型中的r2"><i class="fa fa-check"></i><b>2.2.1</b> 普通线性回归模型中的<span class="math inline">\(R^2\)</span></a></li>
+<li class="chapter" data-level="2.2.2" data-path="multilevel.html"><a href="multilevel.html#多层线性回归模型中的伪r2"><i class="fa fa-check"></i><b>2.2.2</b> 多层线性回归模型中的伪<span class="math inline">\(R^2\)</span></a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="meta.html"><a href="meta.html"><i class="fa fa-check"></i><b>3</b> 元分析</a><ul>
 <li class="chapter" data-level="3.1" data-path="meta.html"><a href="meta.html#meta-concept"><i class="fa fa-check"></i><b>3.1</b> 元分析中的常见概念及原理</a><ul>
@@ -259,6 +262,8 @@ Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij} + r_{ij}
 <p>在普通的线性回归分析中，模型的<span class="math inline">\(R^2\)</span>是判断模型好坏的非常有用的一个指标，它告诉我们模型中所有自变量到底能够解释因变量的多少方差。</p>
 <p>但是在HLM中(以两层的线性回归模型为例)，Level 1是一个线性回归分析，Level 2是一个交叉在Level 1参数中的又一个线性回归分析。因此，当我们说自变量能解释因变量多少的方差时，就会显得很困惑。其实，HLM是没有模型的<span class="math inline">\(R^2\)</span>的，我们一般所见的是所谓的“伪R平方”(pseudo R-square)。</p>
 <p>在探讨多层线性回归模型的伪R平方前，首先介绍一下普通线性回归模型中的R平方。</p>
+<div id="普通线性回归模型中的r2" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> 普通线性回归模型中的<span class="math inline">\(R^2\)</span></h3>
 <p>普通的线性回归方程一般表示为：</p>
 <p><span class="math display">\[
 y=b_0+b_1x+ \varepsilon
@@ -288,7 +293,97 @@ SS_{tot}=SS_{reg}+SS_{res}
 R^{2}={SS_{reg}\over{SS_{tot}}}
 \]</span>
 它也被称为决定系数(coefficient of determination)。</p>
+</div>
+<div id="多层线性回归模型中的伪r2" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> 多层线性回归模型中的伪<span class="math inline">\(R^2\)</span></h3>
+<p>在多层线性回归模型中，常用的方法是通过比较拟合模型的残差估计值和基准模型的残差估计值，在自变量加入后模型的残差减少比例得到的一个伪<span class="math inline">\(R^2\)</span>。</p>
+<p>基准模型(baseline model, M1)：</p>
+<p><span class="math display">\[
+\begin{aligned} 
+       y_{ij} = \beta_{0j} + r_{ij} \\
+       \beta_{0j} = \gamma_{00} + u_{0j}  
+\end{aligned}
+\]</span>
+在模型M1基础上，增加一个第二层的自变量，成为模型M2：</p>
+<p><span class="math display">\[
+\begin{aligned} 
+       y_{ij} = \beta_{0j} + r_{ij} \\
+       \beta_{0j} = \gamma_{00} +\gamma_{01}{\bar{x}_{.j}}+ u_{0j} 
+\end{aligned}
+\]</span>
+在模型M1基础上，增加一个第一层的自变量，成为模型M3：</p>
+<p><span class="math display">\[
+\begin{aligned} 
+       y_{ij} = \beta_{0j} + \beta_{1j}(x_{ij}-\bar{x}_{.j}) +  r_{ij} \\
+       \beta_{0j} = \gamma_{00} + u_{0j} \\
+       \beta_{1j} = \gamma_{10} + u_{1j} 
+\end{aligned}
+\]</span></p>
+<p>假设4个模型的分析结果如下：</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">变量</th>
+<th align="left">方差</th>
+<th align="left">M1</th>
+<th align="left">M2</th>
+<th align="left">M3</th>
+<th align="left">M4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(r_{ij}\)</span></td>
+<td align="left"><span class="math inline">\(\sigma^2\)</span></td>
+<td align="left">39.15</td>
+<td align="left">39.16</td>
+<td align="left">36.71</td>
+<td align="left">36.71</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(u_{0j}\)</span></td>
+<td align="left"><span class="math inline">\(\tau_{00}\)</span></td>
+<td align="left">8.62</td>
+<td align="left">2.64</td>
+<td align="left">8.68</td>
+<td align="left">2.65</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(u_{1j}\)</span></td>
+<td align="left"><span class="math inline">\(\tau_{11}\)</span></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">0.68</td>
+<td align="left">0.66</td>
+</tr>
+</tbody>
+</table>
+<p>当比较基准模型M1的<span class="math inline">\(\tau_{00}\)</span>时，则：</p>
+<p><span class="math display">\[
+比率一={{\tau_{00}(M1)}\over{\tau_{00}(M1)+\sigma^{2}(M1)}}=0.1804
+\]</span>
+这代表<span class="math inline">\(y\)</span>的误差方差中，有18%是由第二层产生的，有82%是由第一层产生的。</p>
+<p>比较M1和模型M3的<span class="math inline">\(\sigma^2\)</span>，有：</p>
+<p><span class="math display">\[
+比率二={{\sigma^{2}(M1)-\sigma^{2}(M3)}\over{\sigma^{2}(M1)}}=0.0623
+\]</span>
+这代表<span class="math inline">\(y\)</span>的方差中，自变量<span class="math inline">\(x\)</span>解释了6%的方差。</p>
+<p>比较M1和M2的<span class="math inline">\(\tau_{00}\)</span>时，则有：</p>
+<p><span class="math display">\[
+比率三={{\tau_{00}(M1)-\tau_{00}(M2)}\over{\tau_{00}(M1)}}=0.6937
+\]</span>
+这代表<span class="math inline">\(y\)</span>的组间方差中，不同的小组解释了69%的变异。说明了<span class="math inline">\(y\)</span>的方差主要是由自变量<span class="math inline">\(x\)</span>的组间方差来解释，自变量的组内方差解释能力很低。</p>
+<p>比较M3和M4的<span class="math inline">\(\tau_{00}\)</span>和<span class="math inline">\(\tau_{11}\)</span>，有：</p>
+<p><span class="math display">\[
+\begin{aligned} 
+比率四={{\tau_{00}(M3)-\tau_{00}(M4)}\over{\tau_{00}(M3)}}=0.6947 \\
+比率五={{\tau_{11}(M3)-\tau_{11}(M4)}\over{\tau_{11}(M3)}}=0.0294
+\end{aligned}
+\]</span></p>
+<p>这代表在加入了小组的<span class="math inline">\(x\)</span>平均以后，解释了69%的截距的方差，但仅解释了3%的斜率的方差。</p>
+<p>以上就是用在增加变量后减少误差的能力多少来估计伪<span class="math inline">\(R^2\)</span>，这也是分析报告中较为常见的多层线性回归模型的<span class="math inline">\(R^2\)</span>形式。</p>
 
+</div>
 </div>
 </div>
 <h3> 参考文献</h3>
