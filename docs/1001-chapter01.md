@@ -645,7 +645,7 @@ SAMPSTAT STDYX CINTERVAL(BCBOOTSTRAP);
 
 由上面的两张图片的结果可以看出，在ese_mc为低时，estress_mc→affect_mc→withdraw的中介效应显著(Index=0.189, p<0.01)，95%CI=[0.084, 0.330]；在ese_mc为高时，estress_mc→affect_mc→withdraw的中介效应不显著(Index=0.061, p>0.1), 95%CI=[-0.045, 0.163]；ese_mc为高和为低时，中介效应的差异不显著(Index=-0.128, p>0.1), 95%CI=[-0.342, 0.020]。
 
-本小节涉及的数据和语法存放在[此处](https://pan.baidu.com/s/18CvdyI59eLxmkC-_8bDrcA)，提取码：t3jc
+本小节涉及的数据和语法存放在[此处](https://pan.baidu.com/s/18CvdyI59eLxmkC-_8bDrcA)，提取码：
 
 ### 单层次有中介的调节效应 {#memo}
 

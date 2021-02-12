@@ -101,6 +101,15 @@ MathJax.Hub.Config({
 <li class="chapter" data-level="2.2.1" data-path="multilevel.html"><a href="multilevel.html#普通线性回归模型中的r2"><i class="fa fa-check"></i><b>2.2.1</b> 普通线性回归模型中的<span class="math inline">\(R^2\)</span></a></li>
 <li class="chapter" data-level="2.2.2" data-path="multilevel.html"><a href="multilevel.html#多层线性回归模型中的伪r2"><i class="fa fa-check"></i><b>2.2.2</b> 多层线性回归模型中的伪<span class="math inline">\(R^2\)</span></a></li>
 </ul></li>
+<li class="chapter" data-level="2.3" data-path="multilevel.html"><a href="multilevel.html#构建一个完整的hlm"><i class="fa fa-check"></i><b>2.3</b> 构建一个完整的HLM</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="multilevel.html"><a href="multilevel.html#利用spss计算r_wg"><i class="fa fa-check"></i><b>2.3.1</b> 利用SPSS计算<span class="math inline">\(R_{wg}\)</span></a></li>
+<li class="chapter" data-level="2.3.2" data-path="multilevel.html"><a href="multilevel.html#利用mplus计算icc1"><i class="fa fa-check"></i><b>2.3.2</b> 利用Mplus计算ICC(1)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="multilevel.html"><a href="multilevel.html#一步步地构建完整的hlm模型"><i class="fa fa-check"></i><b>2.3.3</b> 一步步地构建完整的HLM模型</a></li>
+<li class="chapter" data-level="2.3.4" data-path="multilevel.html"><a href="multilevel.html#means-as-outcomes-regression"><i class="fa fa-check"></i><b>2.3.4</b> means-as-outcomes regression</a></li>
+<li class="chapter" data-level="2.3.5" data-path="multilevel.html"><a href="multilevel.html#random-coefficients-regression-model"><i class="fa fa-check"></i><b>2.3.5</b> random-coefficients regression model</a></li>
+<li class="chapter" data-level="2.3.6" data-path="multilevel.html"><a href="multilevel.html#full-model"><i class="fa fa-check"></i><b>2.3.6</b> full model</a></li>
+<li class="chapter" data-level="2.3.7" data-path="multilevel.html"><a href="multilevel.html#整理汇报结果"><i class="fa fa-check"></i><b>2.3.7</b> 整理汇报结果</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="meta.html"><a href="meta.html"><i class="fa fa-check"></i><b>3</b> 元分析</a><ul>
 <li class="chapter" data-level="3.1" data-path="meta.html"><a href="meta.html#meta-concept"><i class="fa fa-check"></i><b>3.1</b> 元分析中的常见概念及原理</a><ul>
@@ -216,13 +225,11 @@ H=\sqrt{Q\over{k-1}}
 <h3><span class="header-section-number">3.1.4</span> 主效应检验</h3>
 <p><strong>(1) 如何计算效应值</strong></p>
 <p>在固定效应模型中，首先通过<span class="math inline">\(FisherZ\)</span>转换将每一个研究的相关系数<span class="math inline">\(r\)</span>转换成<span class="math inline">\(Z\)</span>值，转换后的<span class="math inline">\(Z\)</span>值可以通过下面的公式计算加权平均效应值<span class="math inline">\(\bar{Z_{r}}\)</span>：</p>
-<p><img src="figs/3141.png" /></p>
 <p><span class="math display">\[
 \bar{Z_r}=$\sum_{i=1}^k(n_i-3)FisherZ_i\over{\sum_{i=1}^k(n_i-3)}$
 \]</span></p>
 <p>其中，<span class="math inline">\(1\over{n_i-3}\)</span>是计算的权重值，同时也是不同的研究样本内方差(Within-Study Variance)。</p>
 <p>而在随机效应模型中，不仅需要考虑研究样本内方差，同时也要考虑研究样本间方差(Between-Study Variance ,用<span class="math inline">\(\tau^2\)</span>表示 )，计算公式为：</p>
-<p><img src="figs/3142.png" /></p>
 <p><span class="math display">\[
 \tau^2={Q-(k-1)\over{\sum_{i=1}^k(n_i-3)-{\sum_{i=1}^k(n_i-3)^2\over{\sum_{i=1}^k(n_i-3)}}}}
 \]</span></p>

@@ -302,7 +302,434 @@ $$
 以上就是用在增加变量后减少误差的能力多少来估计伪$R^2$，这也是分析报告中较为常见的多层线性回归模型的$R^2$形式。
 
 
+## 构建一个完整的HLM
 
+### 利用SPSS计算$R_{wg}$  
+
+关于$R_{wg}$的概念，前文已经详细阐述，此处不再赘述。SPss的语法如下：
+
+```
+*******************************************************************
+*指定输出数据的存储位置，修改'H:\RwgOutcome.sav'，切勿将引号删除.
+*根据数据文件中的分组变量对数据进行分组.
+*需要修改的地方1：分组变量名称，请将Team修改为分组变量.
+*需要修改的地方2：每一维度所包括的变量的名称，请将RD1,RD2,RD3,RD4,RD5,RD6……修改为您研究中该维度所包括的变量的名称.
+
+AGGREGATE
+ /OUTFILE='H:\RwgOutcome.sav'
+ /BREAK=Team
+ /sdx1=SD(RD1)
+ /sdx2=SD(RD2)
+ /sdx3=SD(RD3)
+ /sdx4=SD(RD4)
+ /sdx5=SD(RD5)
+ /sdx6=SD(RD6).
+EXECUTE.
+
+*******************************************************************
+*计算每一个变量的方差，即标准差的平方.
+*需要修改的地方1：请根据维度所包括的变量的名称进行相应的修改.
+
+GET FILE='H:\RwgOutcome.sav'.
+COMPUTE varx1=sdx1*sdx1.
+COMPUTE varx2=sdx2*sdx2.
+COMPUTE varx3=sdx3*sdx3.
+COMPUTE varx4=sdx4*sdx4.
+COMPUTE varx5=sdx5*sdx5.
+COMPUTE varx6=sdx6*sdx6.
+
+COMPUTE mvar=MEAN(varx1,varx2,varx3,varx4,varx5,varx6).
+
+COMPUTE nvar=6.
+COMPUTE rwg=nvar*(1-(mvar/2))/(nvar*(1-(mvar/2))+mvar/2).
+EXECUTE.
+
+```
+
+上述的语法是计算数据中的RD变量的$R_{wg}$。如果你要计算自己数据中变量的$R_{wg}$ ，只需要根据注释修改相应的部分就可以了。
+
+运行SPSS的语法后，在H盘中，会得到名为`RwgOutcome.sav`的SPSS数据。从`RwgOutcome.sav`的输出结果可以看到，有一些$R_{wg}$的数值小于0，还有一些大于1。我们需要将小于0的数值视为0，大于1的数值视为1，生成调整后的$R_{wg}$，rwg_adjusted。SPSS的语法如下：
+
+```
+*=================NOTE=================== =.
+*=========================================.
+*计算调整后的Rwg. 如果Rwg小于0或大于1,则将小于0的值视为0，大于1的值视为1.
+
+RECODE rwg (Lowest thru 0=0) (1 thru Highest=1) (ELSE=Copy) INTO rwg_adjusted.
+EXECUTE.
+```
+
+所以，$R_{wg}$(即rwg_adjusted)的平均值和中位数分别为0.61和0.78。一般来说需要 $R_{wg}$的平均值和中位数越接近于1越好，一般建议值是大于0.7，就可以将低层面的变量聚合到高层次中去。因为RD的中位数大于0.7，所以有理由将其聚合(上升)到高层次中去。只需要依据分组变量(Team)，分别求出每组的均值就可以了，即RD_mean代表每组的RD。SPSS的语法如下：
+
+```
+AGGREGATE
+  /OUTFILE=* MODE=ADDVARIABLES OVERWRITEVARS=YES
+  /BREAK=Team
+  /RD_mean=MEAN(RD).
+```
+
+### 利用Mplus计算ICC(1)
+
+关于ICC(1)的介绍，前文已经比较详细，也不再阐述。之所以利用Mplus计算，主要也是因为ICC(1)的code也是多层线性模型的最基础模型(零模型, null model)，其实也就是one-way ANOVA(单因素方差分析)。Mplus Code如下：
+
+```
+TITLE: one-way ANOVA with random effects for depend;
+
+DATA: FILE = study1.csv;
+
+VARIABLE:
+MISSING = ALL(-999);
+
+NAMES = Team Name Gender_r Age EDU Marital
+BL1 BL2 BL3 BL4 BL5 BL6 BL7 BL8 BL9 BL10 BL11
+RD1 RD2 RD3 RD4 RD5 RD6
+AL1 AL2 AL3 AL4 AL5 AL6 AL7 AL8 AL9
+Depen1 Depen2 Depen3 Depen4 Depen5 Depen6
+BL RD AL DEPEN RD_mean;
+
+USEVAR = Team DEPEN;
+
+CLUSTER = Team;
+
+WITHIN =;
+
+BETWEEN =;
+
+ANALYSIS:
+TYPE = TWOLEVEL;
+ESTIMATOR = ML;
+
+MODEL:
+%WITHIN%
+DEPEN;
+
+%BETWEEN%
+DEPEN;
+
+OUTPUT:
+SAMPSTAT;
+```
+
+输出结果主要看`Summary of Data`这部分：
+
+![](figs/2321.png)
+
+当然，我们也可以通过Model Results的输出结果进行手工计算：
+
+![](figs/2322.png)
+
+$ICC(1)={0.251\over{1.249+0.251}}=0.168$，表明组间的变异占总变异的16.8%。通常来说，ICC(1)大于0.12，就表示变量可能不仅受组内因素的影响，也会受到组间因素的影响。
+
+
+### 一步步地构建完整的HLM模型
+
+**(1)one-way ANOVA with random effects**
+
+也就是零模型(单因素方差分析)，方程如下：
+
+Level 1:
+
+$$
+DEPEN_{ij}=\beta_{0j}+r_{ij}
+$$
+
+Level 2:
+
+$$
+\beta_{0j}=\gamma_{00} +u_{0j}
+$$
+
+Mplus Code请见利用Mplus计算ICC(1)这一部分。通过输出结果可知：$\sigma^{2}$($r_{ij}$的方差)=1.245，$\tau_{00}$($u_{0j}$的方差)=0.251，$\gamma_{00}$=3.499。
+
+**(2) one-way ANCOVA with random effects**
+
+也就是协方差分析，方程如下：
+
+Level 1: 
+
+$$
+DEPEN_{ij}=\beta_{0j}+ \beta_{1j}BL + r_{ij}
+$$
+Level 2:
+
+$$
+\begin{aligned} 
+        \beta_{0j} = \gamma_{00} + u_{0j} \\
+        \beta_{1j} = \gamma_{10}       
+\end{aligned}
+$$
+Mplus Code如下：
+
+```
+TITLE: one-way ANCOVA with random effects for depend;
+
+DATA: FILE = study1.csv;
+
+VARIABLE:
+MISSING = ALL(-999);
+
+NAMES = Team Name Gender_r Age EDU Marital
+BL1 BL2 BL3 BL4 BL5 BL6 BL7 BL8 BL9 BL10 BL11
+RD1 RD2 RD3 RD4 RD5 RD6
+AL1 AL2 AL3 AL4 AL5 AL6 AL7 AL8 AL9
+Depen1 Depen2 Depen3 Depen4 Depen5 Depen6
+BL RD AL DEPEN RD_mean;
+
+USEVAR = Team BL DEPEN;
+
+CLUSTER = Team;
+
+WITHIN = BL;
+
+BETWEEN =;
+
+DEFINE:
+CENTER BL(GROUPMEAN);
+
+ANALYSIS:
+
+TYPE = TWOLEVEL;
+ESTIMATOR = ML;
+
+MODEL:
+%WITHIN%
+DEPEN ON BL;
+
+%BETWEEN%
+DEPEN;
+
+OUTPUT:
+SAMPSTAT;
+```
+
+值得注意的是，第一层的自变量进行了分组平均值中心化(Group Mean Centering)。输出结果如下：
+
+![](figs/2323.png)
+
+通过输出结果可知：$\sigma^{2}$=1.238，$\tau_{00}$=0.252；$\gamma_{00}$=3.499，$\gamma_{10}$=0.083。
+
+
+### means-as-outcomes regression
+
+即认为第一层的变量DEPEN会受到第二层的变量RD的影响。之所以会称之为均值为结果的回归，是因为变量DEPEN虽然是第一层的变量，但出现在第二层中，是将其均值与RD进行回归的(其实也就是截距$\beta_{0j}$)。方程如下：
+
+Level 1: 
+
+$$
+DEPEN_{ij}=\beta_{0j}+ r_{ij}
+$$
+
+Level 2:
+
+$$
+\beta_{0j}=\gamma_{00}+ \gamma_{01}RD + u_{0j}
+$$
+
+Mplus Code如下：
+
+```
+TITLE: means-as-outcomes regression;
+
+DATA: FILE = study1.csv;
+
+VARIABLE:
+MISSING = ALL(-999);
+
+NAMES = Team Name Gender_r Age EDU Marital
+BL1 BL2 BL3 BL4 BL5 BL6 BL7 BL8 BL9 BL10 BL11
+RD1 RD2 RD3 RD4 RD5 RD6
+AL1 AL2 AL3 AL4 AL5 AL6 AL7 AL8 AL9
+Depen1 Depen2 Depen3 Depen4 Depen5 Depen6
+BL RD AL DEPEN RD_mean;
+
+USEVAR = Team DEPEN RD_mean;
+
+CLUSTER = Team;
+
+WITHIN =;
+
+BETWEEN = RD_mean;
+
+ANALYSIS:
+TYPE = TWOLEVEL;
+ESTIMATOR = ML;
+
+MODEL:
+%WITHIN%
+DEPEN;
+
+%BETWEEN%
+DEPEN ON RD_mean;
+
+OUTPUT:
+SAMPSTAT;
+```
+
+输出结果如下：
+
+![](figs/2324.png)
+
+通过输出结果可知：$\sigma^{2}$=1.245，$\tau_{00}$=0.251，$\gamma_{00}$=3.957，$\gamma_{01}$=-0.084。
+
+
+### random-coefficients regression model
+
+随机系数回归模型，即第一层回归方程的截距和系数不是固定不变的，而是在不同的组中是随机变化的。方程如下：
+
+Level 1: 
+
+$$
+DEPEN_{ij}=\beta_{0j}+ \beta_{1j}BL + r_{ij}
+$$
+Level 2:
+
+$$
+\begin{aligned} 
+        \beta_{0j} = \gamma_{00} + u_{0j} \\
+        \beta_{1j} = \gamma_{10} + u_{1j}       
+\end{aligned}
+$$
+Mplus Code如下：
+
+```
+TITLE: random-coefficients regression model;
+
+DATA: FILE = study1.csv;
+
+VARIABLE:
+MISSING = ALL(-999);
+
+NAMES = Team Name Gender_r Age EDU Marital
+BL1 BL2  BL3  BL4  BL5  BL6  BL7 BL8 BL9 BL10 BL11
+RD1 RD2  RD3  RD4  RD5 RD6
+AL1 AL2 AL3 AL4 AL5 AL6 AL7 AL8 AL9
+Depen1 Depen2 Depen3 Depen4 Depen5 Depen6
+BL RD AL DEPEN RD_mean;
+
+USEVAR = Team BL DEPEN;
+
+CLUSTER = Team;
+
+WITHIN = BL;
+
+BETWEEN =;
+
+DEFINE:
+CENTER BL(GROUPMEAN);
+
+ANALYSIS:
+TYPE = TWOLEVEL RANDOM;
+ESTIMATOR = ML;
+
+MODEL:
+%WITHIN%
+S | DEPEN ON BL;
+
+%BETWEEN%
+DEPEN;
+S;
+DEPEN WITH S;
+
+OUTPUT:
+SAMPSTAT;
+```
+
+输出结果如下：
+
+![](figs/2325.png)
+
+通过输出结果可知：$\sigma^{2}$=1.149，$\tau_{00}$=0.274，$\tau_{11}$=0.145；$\gamma_{00}$=3.501，$\gamma_{01}$=0.061。
+
+
+### full model
+
+第一层回归方程的截距和系数不是固定不变的，是随着第二层的自变量的变化而发生改变。方程如下：
+
+Level 1: 
+
+$$
+DEPEN_{ij}=\beta_{0j}+ \beta_{1j}BL + r_{ij}
+$$
+
+Level 2:
+
+$$
+\begin{aligned} 
+        \beta_{0j} = \gamma_{00} + \gamma_{01}RD + u_{0j} \\
+        \beta_{1j} = \gamma_{10} + \gamma_{11}RD +u_{1j}       
+\end{aligned}
+$$
+
+Mplus Code如下：
+
+```
+TITLE: full model;
+
+DATA: FILE = study1.csv;
+
+VARIABLE:
+MISSING = ALL(-999);
+
+NAMES = Team Name Gender_r Age EDU Marital
+BL1 BL2 BL3 BL4 BL5 BL6 BL7 BL8 BL9 BL10 BL11
+RD1 RD2 RD3 RD4 RD5 RD6
+AL1 AL2 AL3 AL4 AL5 AL6 AL7 AL8 AL9
+Depen1 Depen2 Depen3 Depen4  Depen5 Depen6
+BL RD AL DEPEN RD_mean;
+
+USEVAR = Team BL DEPEN RD_mean;
+
+CLUSTER = Team;
+
+WITHIN = BL;
+
+BETWEEN = RD_mean;
+
+DEFINE:
+CENTER BL(GROUPMEAN);
+CENTER RD_mean(GRANDMEAN);
+
+ANALYSIS:
+TYPE = TWOLEVEL RANDOM;
+ESTIMATOR = MLR;
+
+ MODEL:
+%WITHIN%
+S | DEPEN ON BL;
+
+%BETWEEN%
+DEPEN ON RD_mean;
+S ON RD_mean;
+DEPEN WITH S;
+
+OUTPUT:
+SAMPSTAT;
+```
+
+输出结果如下：
+
+![](figs/2326.png)
+
+通过输出结果可知：$\sigma^{2}$=1.122，$\tau_{00}$=0.273，$\tau_{11}$=0.129；$\gamma_{00}$=3.501，$\gamma_{01}$=-0.081；$\gamma_{10}$=0.037，$\gamma_{11}$=-0.218。
+
+值得说明的是，因变量没有指定隶属的层次，所以可在两个水平参与子模型的构建。在组间层次，即是随机截距($\beta_{0j}$)。实际上，因变量的Level-1的方程截距的随机变化，表现在组间的不同，方差存在于Level-2。
+
+Level-1部分只会输出$\sigma^{2}$，因为其他的参数都是Level-2的要素，所以结果会呈现在Level-2部分。
+
+
+### 整理汇报结果
+
+将上述的5个回归模型输出结果整理成如下表所示：
+
+![](figs/2327.png)
+
+注意的是，$R^2={组间误差的方差\over组间误差的方差+组内误差的方差}={\tau\over{\tau+\sigma^2}}$
+
+组间误差的方差通常只考虑随机截距的误差方差($\tau_{00}$)，忽略随机斜率的误差方差(如$\tau_{11}$)。因为估计随机斜率$R^2$非常麻烦，而且纳入随机斜率后，$R^2$一般不会发生太大的变化。所以简单的方法是忽略随机斜率，以固定的部分，即随机截距估计  。
+
+在实际建模的过程中，可以采取步进的策略，进行试验性的建模。至少要以零模型为基础，并通过模型比较检验，突出某些重点解释变量的作用。随机效应也是在固定效应显著之后才考虑加入的。
+
+本小节涉及的数据和语法存放在[此处](https://pan.baidu.com/s/1uLkrIdgnMDdXoSqeNW--mQ)，提取码：
 
 
 
