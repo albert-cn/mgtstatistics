@@ -97,6 +97,7 @@ MathJax.Hub.Config({
 </ul></li>
 <li class="chapter" data-level="2" data-path="multilevel.html"><a href="multilevel.html"><i class="fa fa-check"></i><b>2</b> 多层次线性回归模型</a><ul>
 <li class="chapter" data-level="2.1" data-path="multilevel.html"><a href="multilevel.html#multiconcept"><i class="fa fa-check"></i><b>2.1</b> 相关概念介绍</a></li>
+<li class="chapter" data-level="2.2" data-path="multilevel.html"><a href="multilevel.html#R2"><i class="fa fa-check"></i><b>2.2</b> HLM的R Square</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="meta.html"><a href="meta.html"><i class="fa fa-check"></i><b>3</b> 元分析</a><ul>
 <li class="chapter" data-level="3.1" data-path="meta.html"><a href="meta.html#meta-concept"><i class="fa fa-check"></i><b>3.1</b> 元分析中的常见概念及原理</a><ul>
@@ -252,6 +253,41 @@ Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij} + r_{ij}
 <p><span class="math inline">\(R_{wg}\)</span>和<span class="math inline">\(ICC\)</span>都是判断能否进行分层线性回归模型分析的指标。</p>
 <p><span class="math inline">\(R_{wg}\)</span>是组内评分者信度指标(within-group interrater reliability)，<span class="math inline">\(j\)</span>一般是指构念量表的题目数量。它是判断低层面的变量是否有足够的信度上升(聚合)到高层面中去的依据。理论上来说，<span class="math inline">\(R_{wg}\)</span>介于0和1之间，大于0.7较为理想。但实际操作中，也有可能出现小于0或大于1的现象。这种情况下，一般可将小于0的值视为0，大于1的值视为1<span class="citation">(罗胜强 and 姜嬿 <a href="#ref-law2014:StochProc" role="doc-biblioref">2014</a>)</span>。</p>
 <p><span class="math inline">\(ICC\)</span>是组内相关系数(intra-class correlation)，分为<span class="math inline">\(ICC(1)\)</span>和<span class="math inline">\(ICC(1)\)</span>。二者的区别简单来说是：<span class="math inline">\(ICC(1)\)</span>是小组内不同成员的评分的信度；<span class="math inline">\(ICC(2)\)</span>是小组的平均评分的信度。对于<span class="math inline">\(ICC(2)\)</span>的理解，我们可以这样来看：当我们从<span class="math inline">\(n\)</span>个组内随机从每个组内抽取<span class="math inline">\(k\)</span>个成员，计算每一组的平均。理论上我们可以重复上述步骤再做一次。这样我们就会有两个样本，每个样本都有<span class="math inline">\(n\)</span>个组，每个组有<span class="math inline">\(k\)</span>个成员的平均分。<span class="math inline">\(ICC(2)\)</span>就可以看成是这两个样本的<span class="math inline">\(n\)</span>个平均的相关系数。通常来说，<span class="math inline">\(ICC(1)\)</span>大于0.12、<span class="math inline">\(ICC(2)\)</span>大于0.7较为合适。关于聚合建议值标准的阐述，希望可以引用相关的参考文献，这样比较有理有据。跨层分析的文献有很多，可以从中去引用。不一一赘述。</p>
+</div>
+<div id="R2" class="section level2">
+<h2><span class="header-section-number">2.2</span> HLM的R Square</h2>
+<p>在普通的线性回归分析中，模型的<span class="math inline">\(R^2\)</span>是判断模型好坏的非常有用的一个指标，它告诉我们模型中所有自变量到底能够解释因变量的多少方差。</p>
+<p>但是在HLM中(以两层的线性回归模型为例)，Level 1是一个线性回归分析，Level 2是一个交叉在Level 1参数中的又一个线性回归分析。因此，当我们说自变量能解释因变量多少的方差时，就会显得很困惑。其实，HLM是没有模型的<span class="math inline">\(R^2\)</span>的，我们一般所见的是所谓的“伪R平方”(pseudo R-square)。</p>
+<p>在探讨多层线性回归模型的伪R平方前，首先介绍一下普通线性回归模型中的R平方。</p>
+<p>普通的线性回归方程一般表示为：</p>
+<p><span class="math display">\[
+y=b_0+b_1x+ \varepsilon
+\]</span>
+其中，<span class="math inline">\(\varepsilon\)</span>是自变量不能解释的部分，就是所谓的误差(或称残差)。<span class="math inline">\(y\)</span>的<span class="math inline">\(\varepsilon\)</span>等于<span class="math inline">\(y\)</span>减去估计值<span class="math inline">\(\hat{y}\)</span>。所以<span class="math inline">\(y\)</span>离开它的平均值<span class="math inline">\(\bar{y}\)</span>可以分解如下：</p>
+<p><span class="math display">\[
+y-\bar{y}=(\hat{y}-\bar{y})+(y-\hat{y})
+\]</span>
+可以进一步整理：</p>
+<p><span class="math display">\[
+(y-\bar{y})^{2}=(\hat{y}-\bar{y})^{2}+(y-\hat{y})^{2}+2(\hat{y}-\bar{y})(y-\hat{y})
+\]</span></p>
+<p>所以在普通线性回归模型中有：</p>
+<p><span class="math display">\[
+\sum(y-\bar{y})^{2}=\sum(\hat{y}-\bar{y})^{2}+\sum(y-\hat{y})^{2}+2\sum(\hat{y}-\bar{y})(y-\hat{y})
+\]</span>
+在普通最小二乘法(OLS)分析下，<span class="math inline">\(\sum(\hat{y}-\bar{y})(y-\hat{y})\)</span>=0。最终，可得到如下的方程：</p>
+<p><span class="math display">\[
+\sum(y-\bar{y})^{2}=\sum(\hat{y}-\bar{y})^{2}+\sum(y-\hat{y})^{2}
+\]</span></p>
+<p>在线性回归分析中，<span class="math inline">\(\sum(y-\bar{y})^{2}\)</span>称为总平方和(total sum of square,<span class="math inline">\(SS_{tot}\)</span>)，它其实等价于<span class="math inline">\(y\)</span>的方差(只要再除以样本数<span class="math inline">\(n\)</span>)。<span class="math inline">\(\sum(\hat{y}-\bar{y})^{2}\)</span>称为回归的平方和(regression sum of square,<span class="math inline">\(SS_{reg}\)</span>)，它是回归模型能够解释<span class="math inline">\(y\)</span>变异的部分。<span class="math inline">\(\sum(y-\hat{y})^{2}\)</span>称为残差的平方和(residual sum of square,<span class="math inline">\(SS_{res}\)</span>)，它其实就是估计的误差，即模型不能解释<span class="math inline">\(y\)</span>变异的部分。所以就会有：</p>
+<p><span class="math display">\[
+SS_{tot}=SS_{reg}+SS_{res}
+\]</span>
+模型的<span class="math inline">\(R^2\)</span>就产生了：</p>
+<p><span class="math display">\[
+R^{2}={SS_{reg}\over{SS_{tot}}}
+\]</span>
+它也被称为决定系数(coefficient of determination)。</p>
 
 </div>
 </div>
