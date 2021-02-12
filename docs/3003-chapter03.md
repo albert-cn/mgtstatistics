@@ -85,7 +85,7 @@ $I^{2}$描述了研究间变异占总变异的百分比，计算公式为：
 
 $$
 \left\{ \begin{aligned} 
-        I^{2} = {{{Q-df}\over{Q}},Q>df} \\
+        I^{2} = {{Q-df\over{Q}},Q>df} \\
         I^{2} = 0,{Q}\leqslant{df}
 \end{aligned} \right.
 $$
