@@ -217,15 +217,20 @@ H=\sqrt{Q\over{k-1}}
 <p><strong>(1) 如何计算效应值</strong></p>
 <p>在固定效应模型中，首先通过<span class="math inline">\(FisherZ\)</span>转换将每一个研究的相关系数<span class="math inline">\(r\)</span>转换成<span class="math inline">\(Z\)</span>值，转换后的<span class="math inline">\(Z\)</span>值可以通过下面的公式计算加权平均效应值<span class="math inline">\(\bar{Z_{r}}\)</span>：</p>
 <p><img src="figs/3141.png" /></p>
+<p><span class="math display">\[
+\bar{Z_r}=$\sum_{i=1}^k(n_i-3)FisherZ_i\over{\sum_{i=1}^k(n_i-3)}$
+\]</span></p>
 <p>其中，<span class="math inline">\(1\over{n_i-3}\)</span>是计算的权重值，同时也是不同的研究样本内方差(Within-Study Variance)。</p>
 <p>而在随机效应模型中，不仅需要考虑研究样本内方差，同时也要考虑研究样本间方差(Between-Study Variance ,用<span class="math inline">\(\tau^2\)</span>表示 )，计算公式为：</p>
 <p><img src="figs/3142.png" /></p>
+<p><span class="math display">\[
+\tau^2={Q-(k-1)\over{\sum_{i=1}^k(n_i-3)-{\sum_{i=1}^k(n_i-3)^2\over{\sum_{i=1}^k(n_i-3)}}}}
+\]</span></p>
 <p>随机效应模型中的权重值<span class="math inline">\(w_{i}\)</span>等于：</p>
 <p><span class="math display">\[
 w_i={1\over{{1\over{n_i-3}}+\tau^2}}
 \]</span></p>
 <p>所以，随机效应模型的加权平均效应值<span class="math inline">\(\bar{Z_{r}}\)</span>为：</p>
-<p><img src="figs/3143.png" /></p>
 <p><span class="math display">\[
 \bar{Z_r}={\sum_{i=1}^kw_iFisherZ_i\over{\sum_{i=1}^kw_i}}
 \]</span></p>
