@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 心理学与管理学中的实验分析：简介与实操 | 管理学统计分析快速上手指南</title>
+  <meta name="description" content="这是用R的bookdown功能制作中文图书，输出格式为bookdown::gitbook和bookdown::pdf_book." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 心理学与管理学中的实验分析：简介与实操 | 管理学统计分析快速上手指南" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="这是用R的bookdown功能制作中文图书，输出格式为bookdown::gitbook和bookdown::pdf_book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 心理学与管理学中的实验分析：简介与实操 | 管理学统计分析快速上手指南" />
+  
+  <meta name="twitter:description" content="这是用R的bookdown功能制作中文图书，输出格式为bookdown::gitbook和bookdown::pdf_book." />
+  
+
+<meta name="author" content="Albert Cao" />
+
+
+<meta name="date" content="2021-02-14" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="meta.html"/>
+<link rel="next" href="参考文献.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>简介与前言</a></li>
+<li class="chapter" data-level="1" data-path="mome.html"><a href="mome.html"><i class="fa fa-check"></i><b>1</b> 调节与中介分析</a><ul>
+<li class="chapter" data-level="1.1" data-path="mome.html"><a href="mome.html#linear"><i class="fa fa-check"></i><b>1.1</b> 线性关系</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="mome.html"><a href="mome.html#momesteps"><i class="fa fa-check"></i><b>1.1.1</b> 调节与中介效果的检验步骤</a></li>
+<li class="chapter" data-level="1.1.2" data-path="mome.html"><a href="mome.html#mocode"><i class="fa fa-check"></i><b>1.1.2</b> 管理学研究常用调节效应检验Mplus Code</a></li>
+<li class="chapter" data-level="1.1.3" data-path="mome.html"><a href="mome.html#normme"><i class="fa fa-check"></i><b>1.1.3</b> 常见中介效应</a></li>
+<li class="chapter" data-level="1.1.4" data-path="mome.html"><a href="mome.html#firstmome"><i class="fa fa-check"></i><b>1.1.4</b> 第一阶段有调节的中介、第二阶段有调节的中介、两阶段有调节的中介</a></li>
+<li class="chapter" data-level="1.1.5" data-path="mome.html"><a href="mome.html#memo"><i class="fa fa-check"></i><b>1.1.5</b> 单层次有中介的调节效应</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="mome.html"><a href="mome.html#nonlinear"><i class="fa fa-check"></i><b>1.2</b> 非线性关系</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="mome.html"><a href="mome.html#有调节的倒u型效应"><i class="fa fa-check"></i><b>1.2.1</b> 有调节的倒U型效应</a></li>
+<li class="chapter" data-level="1.2.2" data-path="mome.html"><a href="mome.html#有调节的倒u型中介效应"><i class="fa fa-check"></i><b>1.2.2</b> 有调节的倒U型中介效应</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="mome.html"><a href="mome.html#modplot"><i class="fa fa-check"></i><b>1.3</b> 绘制调节效应图</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="mome.html"><a href="mome.html#spssmplusexcel计算简单斜率并绘制调节效应图"><i class="fa fa-check"></i><b>1.3.1</b> SPSS+Mplus+Excel计算简单斜率并绘制调节效应图</a></li>
+<li class="chapter" data-level="1.3.2" data-path="mome.html"><a href="mome.html#johnson-neyman图"><i class="fa fa-check"></i><b>1.3.2</b> Johnson-Neyman图</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="multilevel.html"><a href="multilevel.html"><i class="fa fa-check"></i><b>2</b> 多层次线性回归模型</a><ul>
+<li class="chapter" data-level="2.1" data-path="multilevel.html"><a href="multilevel.html#multiconcept"><i class="fa fa-check"></i><b>2.1</b> 相关概念介绍</a></li>
+<li class="chapter" data-level="2.2" data-path="multilevel.html"><a href="multilevel.html#R2"><i class="fa fa-check"></i><b>2.2</b> HLM的R Square</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="multilevel.html"><a href="multilevel.html#普通线性回归模型中的r2"><i class="fa fa-check"></i><b>2.2.1</b> 普通线性回归模型中的<span class="math inline">\(R^2\)</span></a></li>
+<li class="chapter" data-level="2.2.2" data-path="multilevel.html"><a href="multilevel.html#多层线性回归模型中的伪r2"><i class="fa fa-check"></i><b>2.2.2</b> 多层线性回归模型中的伪<span class="math inline">\(R^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="multilevel.html"><a href="multilevel.html#构建一个完整的hlm"><i class="fa fa-check"></i><b>2.3</b> 构建一个完整的HLM</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="multilevel.html"><a href="multilevel.html#利用spss计算r_wg"><i class="fa fa-check"></i><b>2.3.1</b> 利用SPSS计算<span class="math inline">\(R_{wg}\)</span></a></li>
+<li class="chapter" data-level="2.3.2" data-path="multilevel.html"><a href="multilevel.html#利用mplus计算icc1"><i class="fa fa-check"></i><b>2.3.2</b> 利用Mplus计算ICC(1)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="multilevel.html"><a href="multilevel.html#一步步地构建完整的hlm模型"><i class="fa fa-check"></i><b>2.3.3</b> 一步步地构建完整的HLM模型</a></li>
+<li class="chapter" data-level="2.3.4" data-path="multilevel.html"><a href="multilevel.html#means-as-outcomes-regression"><i class="fa fa-check"></i><b>2.3.4</b> means-as-outcomes regression</a></li>
+<li class="chapter" data-level="2.3.5" data-path="multilevel.html"><a href="multilevel.html#random-coefficients-regression-model"><i class="fa fa-check"></i><b>2.3.5</b> random-coefficients regression model</a></li>
+<li class="chapter" data-level="2.3.6" data-path="multilevel.html"><a href="multilevel.html#full-model"><i class="fa fa-check"></i><b>2.3.6</b> full model</a></li>
+<li class="chapter" data-level="2.3.7" data-path="multilevel.html"><a href="multilevel.html#整理汇报结果"><i class="fa fa-check"></i><b>2.3.7</b> 整理汇报结果</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="meta.html"><a href="meta.html"><i class="fa fa-check"></i><b>3</b> 元分析</a><ul>
+<li class="chapter" data-level="3.1" data-path="meta.html"><a href="meta.html#meta-concept"><i class="fa fa-check"></i><b>3.1</b> 元分析中的常见概念及原理</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="meta.html"><a href="meta.html#同质性检验"><i class="fa fa-check"></i><b>3.1.1</b> 同质性检验</a></li>
+<li class="chapter" data-level="3.1.2" data-path="meta.html"><a href="meta.html#发表偏倚检验"><i class="fa fa-check"></i><b>3.1.2</b> 发表偏倚检验</a></li>
+<li class="chapter" data-level="3.1.3" data-path="meta.html"><a href="meta.html#敏感性分析"><i class="fa fa-check"></i><b>3.1.3</b> 敏感性分析</a></li>
+<li class="chapter" data-level="3.1.4" data-path="meta.html"><a href="meta.html#主效应检验"><i class="fa fa-check"></i><b>3.1.4</b> 主效应检验</a></li>
+<li class="chapter" data-level="3.1.5" data-path="meta.html"><a href="meta.html#调节效应检验"><i class="fa fa-check"></i><b>3.1.5</b> 调节效应检验</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="meta.html"><a href="meta.html#meta-practice"><i class="fa fa-check"></i><b>3.2</b> 手把手的元分析实战</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="meta.html"><a href="meta.html#主效应检验-1"><i class="fa fa-check"></i><b>3.2.1</b> 主效应检验</a></li>
+<li class="chapter" data-level="3.2.2" data-path="meta.html"><a href="meta.html#bajaut-plot和forest-plot"><i class="fa fa-check"></i><b>3.2.2</b> Bajaut plot和forest plot</a></li>
+<li class="chapter" data-level="3.2.3" data-path="meta.html"><a href="meta.html#出版偏倚的检验"><i class="fa fa-check"></i><b>3.2.3</b> 出版偏倚的检验</a></li>
+<li class="chapter" data-level="3.2.4" data-path="meta.html"><a href="meta.html#调节效应分析"><i class="fa fa-check"></i><b>3.2.4</b> 调节效应分析</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="experiment.html"><a href="experiment.html"><i class="fa fa-check"></i><b>4</b> 心理学与管理学中的实验分析：简介与实操</a><ul>
+<li class="chapter" data-level="4.1" data-path="experiment.html"><a href="experiment.html#introduction"><i class="fa fa-check"></i><b>4.1</b> 心理学研究中的实验法简单介绍</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="experiment.html"><a href="experiment.html#基本原则随机化与复制性"><i class="fa fa-check"></i><b>4.1.1</b> 基本原则：随机化与复制性</a></li>
+<li class="chapter" data-level="4.1.2" data-path="experiment.html"><a href="experiment.html#常见内部效度威胁因素"><i class="fa fa-check"></i><b>4.1.2</b> 常见内部效度威胁因素</a></li>
+<li class="chapter" data-level="4.1.3" data-path="experiment.html"><a href="experiment.html#常见外部效度威胁因素"><i class="fa fa-check"></i><b>4.1.3</b> 常见外部效度威胁因素</a></li>
+<li class="chapter" data-level="4.1.4" data-path="experiment.html"><a href="experiment.html#实验研究设计形式"><i class="fa fa-check"></i><b>4.1.4</b> 实验研究设计形式</a></li>
+<li class="chapter" data-level="4.1.5" data-path="experiment.html"><a href="experiment.html#准实验研究"><i class="fa fa-check"></i><b>4.1.5</b> 准实验研究</a></li>
+<li class="chapter" data-level="4.1.6" data-path="experiment.html"><a href="experiment.html#实验研究中的常用方法及效应量effect-size"><i class="fa fa-check"></i><b>4.1.6</b> 实验研究中的常用方法及效应量(effect size)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="experiment.html"><a href="experiment.html#example"><i class="fa fa-check"></i><b>4.2</b> 实际操作</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="参考文献.html"><a href="参考文献.html"><i class="fa fa-check"></i><b>5</b> 参考文献</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">管理学统计分析快速上手指南</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="experiment" class="section level1">
+<h1><span class="header-section-number">4</span> 心理学与管理学中的实验分析：简介与实操</h1>
+<p>在内容开始之前，想阐明一下研究设计的概念，这很重要。</p>
+<p>研究设计是调查的计划和结构，用于得到问题的答案。一个好的研究设计通常需要达到两个目标：一是控制差异，二是确保效度。</p>
+<p><code>关于差异</code>。差异(variance)主要有系统变异(systematic variance)、外生变异(extraneous variance)和误差变异(error variance)。简单来说，系统变异是由于我们关心的变量导致的差异，外生变异是我们在研究中没有考虑到的因素产生的变异，误差变异是我们在研究设计中不能掌控的一种误差变异。在研究设计中，我们需要：最大化系统变异、控制外生变异和最小化误差变异。</p>
+<p><code>关于效度</code>。效度是测量的准确性，主要分为内部效度、统计结论效度和外部效度。内部效度是指结果是否真由假设原因所导致的；统计结论效度是以统计检验对假设的关系进行解释的可信度；而外部效度是假设的因果关系能否应用到对因果变量的其他测量方法，推广到不同类型的人(who)、环境(where)和时间(when)当中。</p>
+<div id="introduction" class="section level2">
+<h2><span class="header-section-number">4.1</span> 心理学研究中的实验法简单介绍</h2>
+<div id="基本原则随机化与复制性" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> 基本原则：随机化与复制性</h3>
+<p>随机化是指实验材料(包括被试)在各个实验组之间的分配、被试的实验顺序是随机的。而复制是指在相同的处理下，独立重复实验能够得到类似的实验结果。随机化与复制性是统计分析的基础，同时也是实验高效度的保证。</p>
+</div>
+<div id="常见内部效度威胁因素" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> 常见内部效度威胁因素</h3>
+<p><strong>1. 被试选择偏差</strong></p>
+<p>被试被主观意愿或者客观条件左右，进入到不同的实验组。</p>
+<p><strong>2. 实验者偏差</strong></p>
+<p>这是由于实验者本身的行为导致的偏差。</p>
+<p><strong>3. 成熟程度</strong></p>
+<p>随着年龄的增长，人们的心理和生理会逐渐成熟，进而对实验产生影响。</p>
+<p><strong>4. 偶然减员</strong></p>
+<p>在实验的进行过程中，一些被试可能会退出实验，进而可能会影响测试结果。</p>
+<p><strong>5. 测试关联</strong></p>
+<p>在测后测试(posttest)之前进行相关度比较高的测前测试(pretest)，这可能会使被试对实验更加熟悉和敏感，从而提高测试成绩。这时应该加入对照组。</p>
+</div>
+<div id="常见外部效度威胁因素" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> 常见外部效度威胁因素</h3>
+<p><strong>1. 样本不具代表性</strong></p>
+<p>作为样本的被试不能代表总体的情况。</p>
+<p><strong>2. 霍桑效应</strong></p>
+<p>当研究人员存在时，由于紧张等原因，被试的表现会与平时表现得不一样，这会影响结果的外部效度。</p>
+<p><strong>3. 需求特性</strong></p>
+<p>被试在参与实验时会去猜测实验者的目的，从而在实验中能引导被试做出猜测的线索。</p>
+<p><strong>4. 安慰剂效应</strong></p>
+<p>被试即使没有真的接受实验，也会给出有效结果的反馈。</p>
+</div>
+<div id="实验研究设计形式" class="section level3">
+<h3><span class="header-section-number">4.1.4</span> 实验研究设计形式</h3>
+<p><strong>1. 组间设计</strong></p>
+<p>即参加不同实验组的人是不同的。</p>
+<p><strong>2. 组内设计</strong></p>
+<p>即被试参与所有实验组。</p>
+<p><strong>3. 因子设计</strong></p>
+<p>即同时操控两个或两个以上的实验设计。</p>
+</div>
+<div id="准实验研究" class="section level3">
+<h3><span class="header-section-number">4.1.5</span> 准实验研究</h3>
+<p>实验对象被随机分配到实验组和控制组，通常来说是不实际可行的。有一些研究在设计上可能比真正的实验的内部效度低一些，但仍可以在一定程度上支持因果推论，这种设计被成为准实验(quasi experiment)。简言之，准实验就是没有随机分配实验对象到实验组和控制组的实验。</p>
+</div>
+<div id="实验研究中的常用方法及效应量effect-size" class="section level3">
+<h3><span class="header-section-number">4.1.6</span> 实验研究中的常用方法及效应量(effect size)</h3>
+<p><strong>1. 检验</strong></p>
+<p>t检验主要是用于检验两组之间的均值是否具有差异。主要分为单样本t检验(比较一组数据与一个特定数值之间的差异)、独立样本t检验(分析定类数据与定量数据之间的差异)、配对样本t检验(分析配对定量数据之间的差异对比关系)。</p>
+<p><strong>2. 方差分析</strong></p>
+<p>方差分析(Analysis of Variance, ANOVA)，主要用于两组及以上样本均值差异的显著性检验。在进行方差分析时，我们通常需要进行简单效应分析。因为交互效应显著时，我们不知道在何种条件下哪个实验组得分更高，因此需要控制一个变量的一个水平，比较另一个变量的各水平差异。</p>
+<p>通过比较t检验和方差分析，我们就可以知道：当研究涉及到两组均值比较的时候，我们一般会选t检验；涉及两组及以上的时候，我们就要选择方差分析。</p>
+<p><strong>3. 效应量</strong></p>
+<p>效应量就是“效应”的大小。比如研究的是均值的比较，那么效应量就是均值的差异。无论你研究什么，你所研究的这个“效应”的大小就是effect size。效应量越大，就越容易把这个效应测出来，对应的“统计功效”(power)也就会越大。</p>
+<p>在t检验中，如果要得到effect size，要基于得到的t值和样本的df进一步计算出cohen’s <span class="math inline">\(d\)</span>，<span class="math inline">\(d\)</span>是t检验分析中常用的效应量。<span class="math inline">\(d\)</span>通常的建议值是：0.20 较小，0.50中等，0.80较高。</p>
+<p>在F检验中，<span class="math inline">\(\eta_p^2\)</span>(Partial Eta Squared)是方差分析中常用的效应量。</p>
+<p>在SPSS中，可以输出<span class="math inline">\(\eta_p^2\)</span>。但无法输出<span class="math inline">\(d\)</span>，更不要说其置信区间了。但可以通过SPSS输出的相关数值在如下的网址中得到 。网址是：<a href="https://www.socscistatistics.com/effectsize/default3.aspx" class="uri">https://www.socscistatistics.com/effectsize/default3.aspx</a></p>
+</div>
+</div>
+<div id="example" class="section level2">
+<h2><span class="header-section-number">4.2</span> 实际操作</h2>
+<p>数据来源于下面这篇文章(作者在文末Open practices处提供了原始数据)：Thai, M., Borgella, A. M., &amp; Sanchez, M. S. It’s only funny if we say it: Disparagement humor is better received if it originates from a member of the group being disparaged[J]. Journal of Experimental Social Psychology, 2019.</p>
+<p>文章做了三个实验(study1, study2, study3)。基本逻辑都是一样的，主要利用了方差分析，并进行了简单效应检验，报告了<span class="math inline">\(\eta_p^2\)</span>和Cohen’s <span class="math inline">\(d\)</span>两个效应量。此外，还给出了实验研究中典型的柱状图形式的交互效应图。</p>
+<p>我们主要Follow论文中的study1。主要有以下两个原因：一是三个实验的逻辑都是一样的，学会了其中一个的逻辑，剩下的也自然明白了；二是study1中有数据整理的一部分，想介绍下如何通过SPSS的syntax(语法)快速进行数据的整理。</p>
+<p>简单介绍下SPSS的语法：一条命令的结束以<code>.</code>结尾，在执行命令时需要加上<code>EXECUTE.</code>此外，如果要添加注释，通常是以<code>*</code>开始，<code>.</code>结束。</p>
+<p><img src="figs/421.png" /></p>
+<p>黄色高亮部分首先指出论文达到0.8的功效(power)需要多少的样本量。接着作者指出study1有166名参与了实验，有6名未通过操控检验(manipulation check)。</p>
+<p><img src="figs/422.png" /></p>
+<p>如上图所示，study1是个2(joke type, 原始数据中的变量是joke)$$2(source sexual orientation, 原始数据中的变量是condition)的实验。模拟情景是一个叫Jack Miller的白种男性在两种情景下分别是gay和straight。首先进行操控检验，如果被试在各自的情景中判断错误，比如处在gay情景中的被试判断Jack Miller是straight，那么就删除这个被试。操控检验的变量是MC。删除与condition答案不一致的MC，也就是将MC和condition数字一致的被试保留。因为study1原始数据中condition是字符串变量，所以先将其转换成数字型变量(f6.2意思是宽度为6，小数位数为2的数字型变量)。SPSS的语法如下：</p>
+<pre><code>*将字符串变量转换成数字型变量.
+ALTER TYPE Condition(f6.2).
+
+*将MC = Condition的个案保留.
+SELECT IF(MC = Condition).    
+EXECUTE.</code></pre>
+<p>Acceptability(原始数据是Acc)的第三个题项是反向选择，所以重新编码：</p>
+<pre><code>RECODE Accp3 (1=7) (2=6) (3=5) (5=3) (6=2) (7=1).
+EXECUTE.</code></pre>
+<p>接下来计算Accp的均值作为Acceptability:</p>
+<pre><code>COMPUTE Accp=mean(Accp1 to Accp3).
+EXECUTE.</code></pre>
+<p>现在，我们可以进行方差分析了：</p>
+<pre><code>UNIANOVA Accp BY Joke Condition
+  /METHOD=SSTYPE(3)
+  /INTERCEPT=INCLUDE
+  /PRINT=DESCRIPTIVE HOMOGENEITY ETASQ
+  /CRITERIA=ALPHA(0.05)
+  /DESIGN=Joke Condition Joke*Condition.</code></pre>
+<p>当你在分析时，只需要替换下图的红色横线处变量：</p>
+<p><img src="figs/423.png" /></p>
+<p>做完方差分析后，在SPSS的输出里，会得出如下的一张表：</p>
+<p><img src="figs/424.png" /></p>
+<p>其中，偏Eta平方就是<span class="math inline">\(\eta_p^2\)</span>。</p>
+<p><img src="figs/425.png" /></p>
+<p>1处F(1,156)=57.29, P&lt;.001, <span class="math inline">\(\eta_p^2\)</span>=0.27就是condtion那一行相应的数值(结果保留两位小数)。2处significant source sexual orientation × joke type interaction指的是joke*condition的那一行交互项相应的数值。</p>
+<p>各水平及交互项显著了之后，我们就需要通过简单效应检验来比较在joke的不同水平下，condition的水平之间(condition1和2)的差异，也即论文中的3处做的分析。简单效应检验只需要在方差分析的语法中加入<code>/EMMEANS=TABLES(Joke*Condition)</code>、<code>COMPARE(Condition) ADJ(SIDAK)</code>、<code>/PLOT=PROFILE(Joke*Condition)</code>【选加】这两条(三条)语句，所以整体的简单效应的语法如下：</p>
+<pre><code>UNIANOVA Accp BY Joke Condition
+  /METHOD=SSTYPE(3)
+  /INTERCEPT=INCLUDE
+  /EMMEANS=TABLES(Joke*Condition) COMPARE(Condition) ADJ(SIDAK)
+  /PLOT=PROFILE(Joke*Condition)
+  /PRINT=DESCRIPTIVE HOMOGENEITY ETASQ
+  /CRITERIA=ALPHA(.05)
+  /DESIGN=Joke Condition Joke*Condition.</code></pre>
+<p>在SPSS的输出里，会得到如下的两张表：</p>
+<p><img src="figs/426.png" /></p>
+<p><img src="figs/427.png" /></p>
+<p>红色画圈意思是在joke=2的水平下，condition(source sexual orientation)不同水平(condition=1, condition=2)间是否有差异，实质上也就是对condition=1和condition=2这两组进行t检验。对应的原文是: Source sexual orientation did not impact on perceived acceptability when a non-disparaging control joke was made, F(1, 156)=3.45, p=.065, <span class="math inline">\(\eta_p^2\)</span>=0.02, <span class="math inline">\(d\)</span>=0.39.其中<span class="math inline">\(d\)</span>=0.39可通过在上述的网站中输入相应的数值即可得出。我们需要从SPSS输出中得出如下红色圆圈中的数值：</p>
+<p><img src="figs/428.png" /></p>
+<p>然后将数值粘贴到上述的网址中计算cohen’s <span class="math inline">\(d\)</span>，网址如下：
+<a href="https://www.socscistatistics.com/effectsize/default3.aspx" class="uri">https://www.socscistatistics.com/effectsize/default3.aspx</a></p>
+<p>在点击<code>Calculate</code>后，输出的结果如下：</p>
+<p><img src="figs/429.png" /></p>
+<p>保留两位小数就是原文中的0.39。</p>
+<p>如法炮制。当joke=1的水平下，conditon=1和condion=2两组就有了显著差异。对应4处的原文：However, it was perceived to be more acceptable for a gay source to make a disparaging gay joke than a straight source, F(1, 156)=77.57, p &lt; .001, <span class="math inline">\(\eta_p^2\)</span>=0.33, d=2.08.</p>
+<p>最后，讲述下如何在EXCEL中绘制如fig.4.的交互效应图。</p>
+<p>第一步，将SPSS输出结果(描述统计)复制到EXCEL中，如下：</p>
+<p><img src="figs/4210.png" /></p>
+<p>第二步，根据绘制分组柱形图的需要，整理数据的排列方式，如下：</p>
+<p><img src="figs/4211.png" /></p>
+<p>第三步，因为误差棒(error bars)是均值的95%置信区间，我们只有通过手工计算得到。均值(就是Accp)的置信区间为<span class="math inline">\(\bar{X}\pm t\times \frac{S}{\sqrt{N}}\)</span>。误差的意思就是变量在一定的区间内上下浮动，比如误差是标准差的话，只需要<span class="math inline">\(\bar{X}\pm SD\)</span>。所以想要知道均值的95%置信区间的话，我们只需要计算<span class="math inline">\(t\times \frac{S}{\sqrt{N}}\)</span>。看下图就知道如何在EXCEL中计算了：</p>
+<p><img src="figs/4212.png" /></p>
+<p>在添加误差线的时候，选择<code>自定义指定值</code>将上图的绿色高亮数值选定(注意不同组的误差线要一一对应，不要选错。即当joke=1时，condition不同水平的误差线；joke=2时，condition不同水平的误差线)就可以设置95%置信区间的误差线了。同理，如果想要标准差(SD)的误差线，只需要将指定值设置成相应的标准差。</p>
+<p>具体绘制的步骤在下面的视频中：</p>
+<iframe width="560" height="315" src="https://www.bilibili.com/video/BV12E411c7jr" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="meta.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="参考文献.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["mybook1.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
