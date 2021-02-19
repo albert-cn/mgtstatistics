@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 元分析 | 管理学统计分析快速上手指南</title>
   <meta name="description" content="这是用R的bookdown功能制作中文图书，输出格式为bookdown::gitbook和bookdown::pdf_book." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 元分析 | 管理学统计分析快速上手指南" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="这是用R的bookdown功能制作中文图书，输出格式为bookdown::gitbook和bookdown::pdf_book." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Albert Cao" />
 
 
-<meta name="date" content="2021-02-14" />
+<meta name="date" content="2022-05-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,8 @@
   
 <link rel="prev" href="multilevel.html"/>
 <link rel="next" href="experiment.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,7 +49,9 @@
 
 
 
-
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX","output/SVG"],
@@ -65,6 +67,29 @@ MathJax.Hub.Config({
 
 
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 </head>
 
 <body>
@@ -77,31 +102,38 @@ MathJax.Hub.Config({
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>简介与前言</a></li>
-<li class="chapter" data-level="1" data-path="mome.html"><a href="mome.html"><i class="fa fa-check"></i><b>1</b> 调节与中介分析</a><ul>
-<li class="chapter" data-level="1.1" data-path="mome.html"><a href="mome.html#linear"><i class="fa fa-check"></i><b>1.1</b> 线性关系</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>序言</a></li>
+<li class="chapter" data-level="1" data-path="mome.html"><a href="mome.html"><i class="fa fa-check"></i><b>1</b> 调节与中介分析</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="mome.html"><a href="mome.html#linear"><i class="fa fa-check"></i><b>1.1</b> 线性关系</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="mome.html"><a href="mome.html#momesteps"><i class="fa fa-check"></i><b>1.1.1</b> 调节与中介效果的检验步骤</a></li>
 <li class="chapter" data-level="1.1.2" data-path="mome.html"><a href="mome.html#mocode"><i class="fa fa-check"></i><b>1.1.2</b> 管理学研究常用调节效应检验Mplus Code</a></li>
 <li class="chapter" data-level="1.1.3" data-path="mome.html"><a href="mome.html#normme"><i class="fa fa-check"></i><b>1.1.3</b> 常见中介效应</a></li>
 <li class="chapter" data-level="1.1.4" data-path="mome.html"><a href="mome.html#firstmome"><i class="fa fa-check"></i><b>1.1.4</b> 第一阶段有调节的中介、第二阶段有调节的中介、两阶段有调节的中介</a></li>
 <li class="chapter" data-level="1.1.5" data-path="mome.html"><a href="mome.html#memo"><i class="fa fa-check"></i><b>1.1.5</b> 单层次有中介的调节效应</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="mome.html"><a href="mome.html#nonlinear"><i class="fa fa-check"></i><b>1.2</b> 非线性关系</a><ul>
+<li class="chapter" data-level="1.2" data-path="mome.html"><a href="mome.html#nonlinear"><i class="fa fa-check"></i><b>1.2</b> 非线性关系</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="mome.html"><a href="mome.html#有调节的倒u型效应"><i class="fa fa-check"></i><b>1.2.1</b> 有调节的倒U型效应</a></li>
 <li class="chapter" data-level="1.2.2" data-path="mome.html"><a href="mome.html#有调节的倒u型中介效应"><i class="fa fa-check"></i><b>1.2.2</b> 有调节的倒U型中介效应</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="mome.html"><a href="mome.html#modplot"><i class="fa fa-check"></i><b>1.3</b> 绘制调节效应图</a><ul>
+<li class="chapter" data-level="1.3" data-path="mome.html"><a href="mome.html#modplot"><i class="fa fa-check"></i><b>1.3</b> 绘制调节效应图</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="mome.html"><a href="mome.html#spssmplusexcel计算简单斜率并绘制调节效应图"><i class="fa fa-check"></i><b>1.3.1</b> SPSS+Mplus+Excel计算简单斜率并绘制调节效应图</a></li>
 <li class="chapter" data-level="1.3.2" data-path="mome.html"><a href="mome.html#johnson-neyman图"><i class="fa fa-check"></i><b>1.3.2</b> Johnson-Neyman图</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="multilevel.html"><a href="multilevel.html"><i class="fa fa-check"></i><b>2</b> 多层次线性回归模型</a><ul>
+<li class="chapter" data-level="2" data-path="multilevel.html"><a href="multilevel.html"><i class="fa fa-check"></i><b>2</b> 多层次线性回归模型</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="multilevel.html"><a href="multilevel.html#multiconcept"><i class="fa fa-check"></i><b>2.1</b> 相关概念介绍</a></li>
-<li class="chapter" data-level="2.2" data-path="multilevel.html"><a href="multilevel.html#R2"><i class="fa fa-check"></i><b>2.2</b> HLM的R Square</a><ul>
+<li class="chapter" data-level="2.2" data-path="multilevel.html"><a href="multilevel.html#R2"><i class="fa fa-check"></i><b>2.2</b> HLM的R Square</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="multilevel.html"><a href="multilevel.html#普通线性回归模型中的r2"><i class="fa fa-check"></i><b>2.2.1</b> 普通线性回归模型中的<span class="math inline">\(R^2\)</span></a></li>
 <li class="chapter" data-level="2.2.2" data-path="multilevel.html"><a href="multilevel.html#多层线性回归模型中的伪r2"><i class="fa fa-check"></i><b>2.2.2</b> 多层线性回归模型中的伪<span class="math inline">\(R^2\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="multilevel.html"><a href="multilevel.html#构建一个完整的hlm"><i class="fa fa-check"></i><b>2.3</b> 构建一个完整的HLM</a><ul>
+<li class="chapter" data-level="2.3" data-path="multilevel.html"><a href="multilevel.html#构建一个完整的hlm"><i class="fa fa-check"></i><b>2.3</b> 构建一个完整的HLM</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="multilevel.html"><a href="multilevel.html#利用spss计算r_wg"><i class="fa fa-check"></i><b>2.3.1</b> 利用SPSS计算<span class="math inline">\(R_{wg}\)</span></a></li>
 <li class="chapter" data-level="2.3.2" data-path="multilevel.html"><a href="multilevel.html#利用mplus计算icc1"><i class="fa fa-check"></i><b>2.3.2</b> 利用Mplus计算ICC(1)</a></li>
 <li class="chapter" data-level="2.3.3" data-path="multilevel.html"><a href="multilevel.html#一步步地构建完整的hlm模型"><i class="fa fa-check"></i><b>2.3.3</b> 一步步地构建完整的HLM模型</a></li>
@@ -111,23 +143,28 @@ MathJax.Hub.Config({
 <li class="chapter" data-level="2.3.7" data-path="multilevel.html"><a href="multilevel.html#整理汇报结果"><i class="fa fa-check"></i><b>2.3.7</b> 整理汇报结果</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="meta.html"><a href="meta.html"><i class="fa fa-check"></i><b>3</b> 元分析</a><ul>
-<li class="chapter" data-level="3.1" data-path="meta.html"><a href="meta.html#meta-concept"><i class="fa fa-check"></i><b>3.1</b> 元分析中的常见概念及原理</a><ul>
+<li class="chapter" data-level="3" data-path="meta.html"><a href="meta.html"><i class="fa fa-check"></i><b>3</b> 元分析</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="meta.html"><a href="meta.html#meta-concept"><i class="fa fa-check"></i><b>3.1</b> 元分析中的常见概念及原理</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="meta.html"><a href="meta.html#同质性检验"><i class="fa fa-check"></i><b>3.1.1</b> 同质性检验</a></li>
 <li class="chapter" data-level="3.1.2" data-path="meta.html"><a href="meta.html#发表偏倚检验"><i class="fa fa-check"></i><b>3.1.2</b> 发表偏倚检验</a></li>
 <li class="chapter" data-level="3.1.3" data-path="meta.html"><a href="meta.html#敏感性分析"><i class="fa fa-check"></i><b>3.1.3</b> 敏感性分析</a></li>
 <li class="chapter" data-level="3.1.4" data-path="meta.html"><a href="meta.html#主效应检验"><i class="fa fa-check"></i><b>3.1.4</b> 主效应检验</a></li>
 <li class="chapter" data-level="3.1.5" data-path="meta.html"><a href="meta.html#调节效应检验"><i class="fa fa-check"></i><b>3.1.5</b> 调节效应检验</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="meta.html"><a href="meta.html#meta-practice"><i class="fa fa-check"></i><b>3.2</b> 手把手的元分析实战</a><ul>
+<li class="chapter" data-level="3.2" data-path="meta.html"><a href="meta.html#meta-practice"><i class="fa fa-check"></i><b>3.2</b> 手把手的元分析实战</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="meta.html"><a href="meta.html#主效应检验-1"><i class="fa fa-check"></i><b>3.2.1</b> 主效应检验</a></li>
 <li class="chapter" data-level="3.2.2" data-path="meta.html"><a href="meta.html#bajaut-plot和forest-plot"><i class="fa fa-check"></i><b>3.2.2</b> Bajaut plot和forest plot</a></li>
 <li class="chapter" data-level="3.2.3" data-path="meta.html"><a href="meta.html#出版偏倚的检验"><i class="fa fa-check"></i><b>3.2.3</b> 出版偏倚的检验</a></li>
 <li class="chapter" data-level="3.2.4" data-path="meta.html"><a href="meta.html#调节效应分析"><i class="fa fa-check"></i><b>3.2.4</b> 调节效应分析</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="experiment.html"><a href="experiment.html"><i class="fa fa-check"></i><b>4</b> 心理学与管理学中的实验分析：简介与实操</a><ul>
-<li class="chapter" data-level="4.1" data-path="experiment.html"><a href="experiment.html#introduction"><i class="fa fa-check"></i><b>4.1</b> 心理学研究中的实验法简单介绍</a><ul>
+<li class="chapter" data-level="4" data-path="experiment.html"><a href="experiment.html"><i class="fa fa-check"></i><b>4</b> 心理学与管理学中的实验分析：简介与实操</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="experiment.html"><a href="experiment.html#introduction"><i class="fa fa-check"></i><b>4.1</b> 心理学研究中的实验法简单介绍</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="experiment.html"><a href="experiment.html#基本原则随机化与复制性"><i class="fa fa-check"></i><b>4.1.1</b> 基本原则：随机化与复制性</a></li>
 <li class="chapter" data-level="4.1.2" data-path="experiment.html"><a href="experiment.html#常见内部效度威胁因素"><i class="fa fa-check"></i><b>4.1.2</b> 常见内部效度威胁因素</a></li>
 <li class="chapter" data-level="4.1.3" data-path="experiment.html"><a href="experiment.html#常见外部效度威胁因素"><i class="fa fa-check"></i><b>4.1.3</b> 常见外部效度威胁因素</a></li>
@@ -155,12 +192,12 @@ MathJax.Hub.Config({
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="meta" class="section level1">
-<h1><span class="header-section-number">3</span> 元分析</h1>
-<div id="meta-concept" class="section level2">
-<h2><span class="header-section-number">3.1</span> 元分析中的常见概念及原理</h2>
-<div id="同质性检验" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> 同质性检验</h3>
+<div id="meta" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> 元分析<a href="meta.html#meta" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="meta-concept" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> 元分析中的常见概念及原理<a href="meta.html#meta-concept" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="同质性检验" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> 同质性检验<a href="meta.html#同质性检验" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>同质性检验回答的是不同的研究样本是否来自于同一个总体。如果所收集的文献中的研究样本来自于同一个总体，那么在接下来的分析中应当选用固定效应模型；如果不是来自于同一个总体，后续分析中应当选用随机效应模型。</p>
 <p>从以上的论述中可以看出：固定效应模型(Fixed Effect Model)假设元分析中所包含的研究样本都来自于同一个样本总体。因为这个总体的平均效应值是固定的，所以来自这个总体的不同研究样本所得出的效应值在理论上应该也是同质(Homogeneous)的；随机效应模型(Random Effect Model)假设元分析中的研究样本是来自于不同的总体，由于不同总体存在不同的效应值，那么不同研究样本的效应值在理论上应该是异质的(heterogeneous)。</p>
 <p>固定效应模型认为误差主要是由于同一总体的抽样误差所造成的；而随机效应模型则认为误差不仅存在于抽样误差，同时也包括不同总体间的效应值的差异。</p>
@@ -202,15 +239,15 @@ H=\sqrt{Q\over{k-1}}
 <p><strong>(2.3) <span class="math inline">\(I^{2}\)</span>统计量</strong></p>
 <p><span class="math inline">\(I^{2}\)</span>描述了研究间变异占总变异的百分比，计算公式为：</p>
 <p><span class="math display">\[
-\left\{ \begin{aligned} 
+\left\{ \begin{aligned}
         I^{2} = {{Q-df\over{Q}},Q&gt;df} \\
         I^{2} = 0,{Q}\leqslant{df}
 \end{aligned} \right.
 \]</span></p>
 <p>其中，<span class="math inline">\(df\)</span>是<span class="math inline">\(Q\)</span>统计量的自由度。当<span class="math inline">\(I^2\)</span>=0%时，研究间无异质性；25%为轻度异质性；50%为中度异质性；75%为高度异质性。</p>
 </div>
-<div id="发表偏倚检验" class="section level3">
-<h3><span class="header-section-number">3.1.2</span> 发表偏倚检验</h3>
+<div id="发表偏倚检验" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> 发表偏倚检验<a href="meta.html#发表偏倚检验" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>(1) 漏斗图</strong></p>
 <p>漏斗图(funnel plot)，是使用效应值和样本量作为坐标系，将各个研究绘制在坐标系里的散点图。对于样本量越大的研究样本来说，其效应值估计也就越准确，误差也越小。呈现在漏斗图中，样本量大的研究样本会集中在图的上方、平均效应值的周围；而样本量小的研究样本则会散落在漏斗图的底部，距离平均效应值较远。</p>
 <p>具体来说，如果图形呈现一个倒着的漏斗形状，则表明发表偏差不太可能存在；如果漏斗图不对称，有缺角，则表明发表偏差可能存在。</p>
@@ -219,19 +256,19 @@ H=\sqrt{Q\over{k-1}}
 <p>剪补法(Trim and Fill)是将不对称的漏斗图中的研究样本进行删减，使其变成对称的漏斗，并对校正后的样本重新估计。基本过程主要包括：剪掉引起漏斗图中不对成的小样本研究；用修剪后的对称部分估计漏斗图的中心值；然后沿中心两侧添补被剪切的以及相应的估计缺失研究。剪补法既可以估计缺失研究的数目，也可以将缺失研究纳入重新进行Meta分析。</p>
 <p>剪补法是基于发表偏倚会造成漏斗图不对称这一研究假设，采用迭代方法估计缺失研究的数量。其意义不是估计缺失研究的具体数目，而在于判断结果的稳健性。在添补一部分研究后，重新进行Meta分析。如果合并效应量估计值与剪补之前的变化不明显，说明发表偏倚不是很严重，结果比较稳健。</p>
 <p><strong>(3) 失安全系数</strong></p>
-<p>因为结果不显著的研究成果是很难发表的。在解释元分析的结果时, 应该充分考虑这种“发表偏倚”或“抽屉文件效应”(file-drawer effect, 指结果不显著的研究成果最终只能锁在抽屉里)。</p>
+<p>因为结果不显著的研究成果是很难发表的。在解释元分析的结果时, 应该充分考虑这种”发表偏倚”或”抽屉文件效应”(file-drawer effect, 指结果不显著的研究成果最终只能锁在抽屉里)。</p>
 <p>失安全系数(fail-safe N, Nfs)，估计还需要存在多少未发表的研究才能将现有的研究结果从显著变得不显著。Nfs越大, 说明元分析的结果越稳定, 结论被推翻的可能性就越小。</p>
 <p><strong>(4) 森林图和累积森林图</strong></p>
-<p>森林图(forest plot)，让研究者“既见树木又见森林”。它有助于研究者正确解释分析结果，并能发现纳入研究的一些异常情况(如某个极端值)，可以视森林图为发表偏倚的初步视觉印象。</p>
+<p>森林图(forest plot)，让研究者”既见树木又见森林”。它有助于研究者正确解释分析结果，并能发现纳入研究的一些异常情况(如某个极端值)，可以视森林图为发表偏倚的初步视觉印象。</p>
 <p>累积Meta分析是把纳入的研究作为一个连续的整体，将各个纳入的研究按一定的次序(如研究发表的时间、样本量大小、研究质量评分)，依次地加在一个研究上，进行多次Meta分析。每当有新的研究发表后，就可以进行一次Meta分析。累积Meta分析可以反映研究结果的动态变化趋势，有助于尽早发现有统计学意义的干预措施，同时也能被应用于评估发表偏倚或小样本研究对效应量估计产生的潜在影响。累积Meta分析作出来的森林图即是累积森林图。</p>
 </div>
-<div id="敏感性分析" class="section level3">
-<h3><span class="header-section-number">3.1.3</span> 敏感性分析</h3>
-<p>敏感性分析(Sensitivity Analysis)，是在一定条件下检验所获结果稳健性的方法，改变某些影响合并结果的重要性(如纳入标准、研究质量的高低、不同统计方法和不同效应量等)，重新进行Meta分析之后，与改变条件之前的Meta分析进行比较，观察前后是否发生变化。如果前后结果没有本质上改变(无改变或改变不大)，说明Meta分析结果较为可信；反之，则不太可信<span class="citation">(张翼, 樊耘, and 赵菁 <a href="#ref-zhangyi2009:RNG" role="doc-biblioref">2009</a>)</span>。</p>
+<div id="敏感性分析" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> 敏感性分析<a href="meta.html#敏感性分析" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>敏感性分析(Sensitivity Analysis)，是在一定条件下检验所获结果稳健性的方法，改变某些影响合并结果的重要性(如纳入标准、研究质量的高低、不同统计方法和不同效应量等)，重新进行Meta分析之后，与改变条件之前的Meta分析进行比较，观察前后是否发生变化。如果前后结果没有本质上改变(无改变或改变不大)，说明Meta分析结果较为可信；反之，则不太可信<span class="citation">(<a href="#ref-zhangyi2009:RNG" role="doc-biblioref">张翼, 樊耘, and 赵菁 2009</a>)</span>。</p>
 <p>剪补法和失安全系数法其实就是两种常见的敏感性分析方法。</p>
 </div>
-<div id="主效应检验" class="section level3">
-<h3><span class="header-section-number">3.1.4</span> 主效应检验</h3>
+<div id="主效应检验" class="section level3 hasAnchor" number="3.1.4">
+<h3><span class="header-section-number">3.1.4</span> 主效应检验<a href="meta.html#主效应检验" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>(1) 如何计算效应值</strong></p>
 <p>在固定效应模型中，首先通过<span class="math inline">\(FisherZ\)</span>转换将每一个研究的相关系数<span class="math inline">\(r\)</span>转换成<span class="math inline">\(Z\)</span>值，转换后的<span class="math inline">\(Z\)</span>值可以通过下面的公式计算加权平均效应值<span class="math inline">\(\bar{Z_{r}}\)</span>：</p>
 <p><span class="math display">\[
@@ -251,17 +288,17 @@ w_i={1\over{{1\over{n_i-3}}+\tau^2}}
 \bar{Z_r}={\sum_{i=1}^kw_iFisherZ_i\over{\sum_{i=1}^kw_i}}
 \]</span></p>
 <p><strong>(2) 相对权重分析</strong></p>
-<p>相对权重分析(relative weight analysis)能够通过数据转换、相关分析和回归分析，计算各自变量对因变量的独立作用<span class="citation">(胥彦 and 李超平 <a href="#ref-xuyan2019:RNG" role="doc-biblioref">2019</a>)</span>。</p>
-<p>在进行元分析时，可以通过以往的元分析和实证研究结果，形成研究变量间的相关矩阵。通过相关矩阵，可以计算出相对权重。<span class="citation">(Lebreton and Tonidandel <a href="#ref-Lebreton2008:RNG" role="doc-biblioref">2008</a>)</span>提供了SPSS语法，利用输入的相关矩阵计算相对权重。</p>
+<p>相对权重分析(relative weight analysis)能够通过数据转换、相关分析和回归分析，计算各自变量对因变量的独立作用<span class="citation">(<a href="#ref-xuyan2019:RNG" role="doc-biblioref">胥彦 and 李超平 2019</a>)</span>。</p>
+<p>在进行元分析时，可以通过以往的元分析和实证研究结果，形成研究变量间的相关矩阵。通过相关矩阵，可以计算出相对权重。<span class="citation">(<a href="#ref-Lebreton2008:RNG" role="doc-biblioref">Lebreton and Tonidandel 2008</a>)</span>提供了SPSS语法，利用输入的相关矩阵计算相对权重。</p>
 </div>
-<div id="调节效应检验" class="section level3">
-<h3><span class="header-section-number">3.1.5</span> 调节效应检验</h3>
+<div id="调节效应检验" class="section level3 hasAnchor" number="3.1.5">
+<h3><span class="header-section-number">3.1.5</span> 调节效应检验<a href="meta.html#调节效应检验" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>针对类别变量，通常采用分组比较分析(subgroup analysis)。分组比较在统计上通常来说具有更大的功效(power)。</p>
 <p>针对连续型变量，主要采用加权回归分析(weighted regression analysis)。具体来说，把每个研究样本的效应值(或校正后的效应值)作为因变量，把潜在的调节变量作为自变量。与此同时，根据每个研究的样本量大小对每一个研究在回归分析中所占权重进行赋值。如果潜在调节变量对效应值的回归系数是显著的，那么就说明调节作用存在。如果有足够多的研究样本，建议采用加权回归分析方法。如果调节效应存在，可以进一步运用分组比较分析观察不同组的显著性。</p>
 </div>
 </div>
-<div id="meta-practice" class="section level2">
-<h2><span class="header-section-number">3.2</span> 手把手的元分析实战</h2>
+<div id="meta-practice" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> 手把手的元分析实战<a href="meta.html#meta-practice" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>在开始之前，首先设置R的工作路径：</p>
 <pre><code>setwd(&quot;C:/Users/ASUS/Desktop/meta data&quot;)</code></pre>
 <p>工作路径设置在桌面的<code>meta data</code>文件夹里。
@@ -272,8 +309,8 @@ w_i={1\over{{1\over{n_i-3}}+\tau^2}}
 library(&quot;metafor&quot;)
 library(&quot;dplyr&quot;)</code></pre>
 <p>下面，开始正式进入元分析的操作过程。</p>
-<div id="主效应检验-1" class="section level3">
-<h3><span class="header-section-number">3.2.1</span> 主效应检验</h3>
+<div id="主效应检验-1" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> 主效应检验<a href="meta.html#主效应检验-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>首先，通过FisherZ转换，将每个研究的相关系数r转化成z：</p>
 <pre><code>dat &lt;- escalc(measure=&quot;ZCOR&quot;, ri=ri, ni=ni, data=dat, 
               slab=paste(authors, year, sep=&quot;, &quot;)) </code></pre>
@@ -301,8 +338,8 @@ library(&quot;dplyr&quot;)</code></pre>
 fes
 predict(fes, digits=4, transf=transf.ztor)</code></pre>
 </div>
-<div id="bajaut-plot和forest-plot" class="section level3">
-<h3><span class="header-section-number">3.2.2</span> Bajaut plot和forest plot</h3>
+<div id="bajaut-plot和forest-plot" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Bajaut plot和forest plot<a href="meta.html#bajaut-plot和forest-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>在知道元分析结果具有较大异质性后，我们可以进一步利用Bajaut plot可视化异质性结果，查看哪些研究具有较大的异质性：</p>
 <pre><code>#根据study_id进行标记
 b_res &lt;- rma(yi, vi, data=dat, slab=study_id)  
@@ -318,10 +355,10 @@ baujat(b_res)</code></pre>
 text( 1.6, 18, &quot;Correlation [95% CI]&quot;, pos=2, cex=.8)</code></pre>
 <p>绘制出的森林图如下：</p>
 <p><img src="figs/3222.png" /></p>
-<p>垂直于刻度0的虚线称之为“无效应线”。越靠近这条线，说明研究的效应越小。“无效应线”的左边效应为负，右边为正。从上图可以看出，利用随机效应模型估计的总体效应为0.149， 95%CI=[0.088, 0.209]。</p>
+<p>垂直于刻度0的虚线称之为”无效应线”。越靠近这条线，说明研究的效应越小。“无效应线”的左边效应为负，右边为正。从上图可以看出，利用随机效应模型估计的总体效应为0.149， 95%CI=[0.088, 0.209]。</p>
 </div>
-<div id="出版偏倚的检验" class="section level3">
-<h3><span class="header-section-number">3.2.3</span> 出版偏倚的检验</h3>
+<div id="出版偏倚的检验" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> 出版偏倚的检验<a href="meta.html#出版偏倚的检验" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>3.1 利用funnel plot(漏斗图)主观判断是否存在出版偏倚</strong></p>
 <pre><code>funnel(res, xlab = &quot;Correlation coefficient&quot;)</code></pre>
 <p>输出的图形如下：</p>
@@ -361,8 +398,8 @@ funnel(res.tf, xlab = &quot;Correlation coefficient&quot;)</code></pre>
 <p><img src="figs/3235.png" /></p>
 <p>上图中，白色的5个圆点是补进去的研究，当补进去这5个研究后，才不会出现出版偏倚情形。</p>
 </div>
-<div id="调节效应分析" class="section level3">
-<h3><span class="header-section-number">3.2.4</span> 调节效应分析</h3>
+<div id="调节效应分析" class="section level3 hasAnchor" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> 调节效应分析<a href="meta.html#调节效应分析" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>4.1 使用元回归模型(meta-regression model)进行分析</strong></p>
 <p>通常适用于调节变量为连续型变量。以下判断age是否是可能的调节变量：</p>
 <pre><code>res.modage &lt;- rma(yi, vi, mods = ~ meanage, data=dat) 
@@ -398,20 +435,21 @@ res.mes </code></pre>
 <p><img src="figs/3243.png" /></p>
 <p>由上图可以看出，controls调节效应是显著的(P&lt;0.001)。所以我们接下来想要了解每组的显著情况，亚组比较分析结果如下：</p>
 <p><img src="figs/3244.png" /></p>
+<p>本小节涉及的数据和语法存放在<a href="https://pan.baidu.com/s/1uLkrIdgnMDdXoSqeNW--mQ">此处</a>，提取码：</p>
 
 </div>
 </div>
 </div>
-<h3> 参考文献</h3>
-<div id="refs" class="references">
-<div id="ref-Lebreton2008:RNG">
-<p>Lebreton, J. M., and S. Tonidandel. 2008. “Multivariate Relative Importance: Extending Relative Weight Analysis to Multivariate Criterion Spaces.” <em>Journal of Applied Psychology</em> 93 (2): 329–45.</p>
+<h3> 参考文献<a href="参考文献.html#参考文献" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Lebreton2008:RNG" class="csl-entry">
+Lebreton, J. M., and S. Tonidandel. 2008. <span>“Multivariate Relative Importance: Extending Relative Weight Analysis to Multivariate Criterion Spaces.”</span> <em>Journal of Applied Psychology</em> 93 (2): 329–45.
 </div>
-<div id="ref-zhangyi2009:RNG">
-<p>张翼, 樊耘, and 赵菁. 2009. “国外管理学研究中的元分析评介.” <em>外国经济与管理</em> 31 (7): 1–8.</p>
+<div id="ref-zhangyi2009:RNG" class="csl-entry">
+张翼, 樊耘, and 赵菁. 2009. <span>“国外管理学研究中的元分析评介.”</span> <em>外国经济与管理</em> 31 (7): 1–8.
 </div>
-<div id="ref-xuyan2019:RNG">
-<p>胥彦, and 李超平. 2019. “领导风格与敬业度关系的元分析.” <em>心理科学进展</em> 27 (8): 1363–83.</p>
+<div id="ref-xuyan2019:RNG" class="csl-entry">
+胥彦, and 李超平. 2019. <span>“领导风格与敬业度关系的元分析.”</span> <em>心理科学进展</em> 27 (8): 1363–83.
 </div>
 </div>
             </section>
@@ -424,7 +462,6 @@ res.mes </code></pre>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -443,6 +480,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -463,6 +501,10 @@ gitbook.start({
 "text": null
 },
 "download": ["mybook1.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

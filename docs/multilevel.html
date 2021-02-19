@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 多层次线性回归模型 | 管理学统计分析快速上手指南</title>
   <meta name="description" content="这是用R的bookdown功能制作中文图书，输出格式为bookdown::gitbook和bookdown::pdf_book." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 多层次线性回归模型 | 管理学统计分析快速上手指南" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="这是用R的bookdown功能制作中文图书，输出格式为bookdown::gitbook和bookdown::pdf_book." />
   
@@ -24,7 +23,7 @@
 <meta name="author" content="Albert Cao" />
 
 
-<meta name="date" content="2021-02-14" />
+<meta name="date" content="2022-05-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +32,8 @@
   
 <link rel="prev" href="mome.html"/>
 <link rel="next" href="meta.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,7 +49,9 @@
 
 
 
-
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX","output/SVG"],
@@ -65,6 +67,29 @@ MathJax.Hub.Config({
 
 
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 </head>
 
 <body>
@@ -77,31 +102,38 @@ MathJax.Hub.Config({
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>简介与前言</a></li>
-<li class="chapter" data-level="1" data-path="mome.html"><a href="mome.html"><i class="fa fa-check"></i><b>1</b> 调节与中介分析</a><ul>
-<li class="chapter" data-level="1.1" data-path="mome.html"><a href="mome.html#linear"><i class="fa fa-check"></i><b>1.1</b> 线性关系</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>序言</a></li>
+<li class="chapter" data-level="1" data-path="mome.html"><a href="mome.html"><i class="fa fa-check"></i><b>1</b> 调节与中介分析</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="mome.html"><a href="mome.html#linear"><i class="fa fa-check"></i><b>1.1</b> 线性关系</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="mome.html"><a href="mome.html#momesteps"><i class="fa fa-check"></i><b>1.1.1</b> 调节与中介效果的检验步骤</a></li>
 <li class="chapter" data-level="1.1.2" data-path="mome.html"><a href="mome.html#mocode"><i class="fa fa-check"></i><b>1.1.2</b> 管理学研究常用调节效应检验Mplus Code</a></li>
 <li class="chapter" data-level="1.1.3" data-path="mome.html"><a href="mome.html#normme"><i class="fa fa-check"></i><b>1.1.3</b> 常见中介效应</a></li>
 <li class="chapter" data-level="1.1.4" data-path="mome.html"><a href="mome.html#firstmome"><i class="fa fa-check"></i><b>1.1.4</b> 第一阶段有调节的中介、第二阶段有调节的中介、两阶段有调节的中介</a></li>
 <li class="chapter" data-level="1.1.5" data-path="mome.html"><a href="mome.html#memo"><i class="fa fa-check"></i><b>1.1.5</b> 单层次有中介的调节效应</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="mome.html"><a href="mome.html#nonlinear"><i class="fa fa-check"></i><b>1.2</b> 非线性关系</a><ul>
+<li class="chapter" data-level="1.2" data-path="mome.html"><a href="mome.html#nonlinear"><i class="fa fa-check"></i><b>1.2</b> 非线性关系</a>
+<ul>
 <li class="chapter" data-level="1.2.1" data-path="mome.html"><a href="mome.html#有调节的倒u型效应"><i class="fa fa-check"></i><b>1.2.1</b> 有调节的倒U型效应</a></li>
 <li class="chapter" data-level="1.2.2" data-path="mome.html"><a href="mome.html#有调节的倒u型中介效应"><i class="fa fa-check"></i><b>1.2.2</b> 有调节的倒U型中介效应</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="mome.html"><a href="mome.html#modplot"><i class="fa fa-check"></i><b>1.3</b> 绘制调节效应图</a><ul>
+<li class="chapter" data-level="1.3" data-path="mome.html"><a href="mome.html#modplot"><i class="fa fa-check"></i><b>1.3</b> 绘制调节效应图</a>
+<ul>
 <li class="chapter" data-level="1.3.1" data-path="mome.html"><a href="mome.html#spssmplusexcel计算简单斜率并绘制调节效应图"><i class="fa fa-check"></i><b>1.3.1</b> SPSS+Mplus+Excel计算简单斜率并绘制调节效应图</a></li>
 <li class="chapter" data-level="1.3.2" data-path="mome.html"><a href="mome.html#johnson-neyman图"><i class="fa fa-check"></i><b>1.3.2</b> Johnson-Neyman图</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="multilevel.html"><a href="multilevel.html"><i class="fa fa-check"></i><b>2</b> 多层次线性回归模型</a><ul>
+<li class="chapter" data-level="2" data-path="multilevel.html"><a href="multilevel.html"><i class="fa fa-check"></i><b>2</b> 多层次线性回归模型</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="multilevel.html"><a href="multilevel.html#multiconcept"><i class="fa fa-check"></i><b>2.1</b> 相关概念介绍</a></li>
-<li class="chapter" data-level="2.2" data-path="multilevel.html"><a href="multilevel.html#R2"><i class="fa fa-check"></i><b>2.2</b> HLM的R Square</a><ul>
+<li class="chapter" data-level="2.2" data-path="multilevel.html"><a href="multilevel.html#R2"><i class="fa fa-check"></i><b>2.2</b> HLM的R Square</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="multilevel.html"><a href="multilevel.html#普通线性回归模型中的r2"><i class="fa fa-check"></i><b>2.2.1</b> 普通线性回归模型中的<span class="math inline">\(R^2\)</span></a></li>
 <li class="chapter" data-level="2.2.2" data-path="multilevel.html"><a href="multilevel.html#多层线性回归模型中的伪r2"><i class="fa fa-check"></i><b>2.2.2</b> 多层线性回归模型中的伪<span class="math inline">\(R^2\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="multilevel.html"><a href="multilevel.html#构建一个完整的hlm"><i class="fa fa-check"></i><b>2.3</b> 构建一个完整的HLM</a><ul>
+<li class="chapter" data-level="2.3" data-path="multilevel.html"><a href="multilevel.html#构建一个完整的hlm"><i class="fa fa-check"></i><b>2.3</b> 构建一个完整的HLM</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="multilevel.html"><a href="multilevel.html#利用spss计算r_wg"><i class="fa fa-check"></i><b>2.3.1</b> 利用SPSS计算<span class="math inline">\(R_{wg}\)</span></a></li>
 <li class="chapter" data-level="2.3.2" data-path="multilevel.html"><a href="multilevel.html#利用mplus计算icc1"><i class="fa fa-check"></i><b>2.3.2</b> 利用Mplus计算ICC(1)</a></li>
 <li class="chapter" data-level="2.3.3" data-path="multilevel.html"><a href="multilevel.html#一步步地构建完整的hlm模型"><i class="fa fa-check"></i><b>2.3.3</b> 一步步地构建完整的HLM模型</a></li>
@@ -111,23 +143,28 @@ MathJax.Hub.Config({
 <li class="chapter" data-level="2.3.7" data-path="multilevel.html"><a href="multilevel.html#整理汇报结果"><i class="fa fa-check"></i><b>2.3.7</b> 整理汇报结果</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="meta.html"><a href="meta.html"><i class="fa fa-check"></i><b>3</b> 元分析</a><ul>
-<li class="chapter" data-level="3.1" data-path="meta.html"><a href="meta.html#meta-concept"><i class="fa fa-check"></i><b>3.1</b> 元分析中的常见概念及原理</a><ul>
+<li class="chapter" data-level="3" data-path="meta.html"><a href="meta.html"><i class="fa fa-check"></i><b>3</b> 元分析</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="meta.html"><a href="meta.html#meta-concept"><i class="fa fa-check"></i><b>3.1</b> 元分析中的常见概念及原理</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="meta.html"><a href="meta.html#同质性检验"><i class="fa fa-check"></i><b>3.1.1</b> 同质性检验</a></li>
 <li class="chapter" data-level="3.1.2" data-path="meta.html"><a href="meta.html#发表偏倚检验"><i class="fa fa-check"></i><b>3.1.2</b> 发表偏倚检验</a></li>
 <li class="chapter" data-level="3.1.3" data-path="meta.html"><a href="meta.html#敏感性分析"><i class="fa fa-check"></i><b>3.1.3</b> 敏感性分析</a></li>
 <li class="chapter" data-level="3.1.4" data-path="meta.html"><a href="meta.html#主效应检验"><i class="fa fa-check"></i><b>3.1.4</b> 主效应检验</a></li>
 <li class="chapter" data-level="3.1.5" data-path="meta.html"><a href="meta.html#调节效应检验"><i class="fa fa-check"></i><b>3.1.5</b> 调节效应检验</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="meta.html"><a href="meta.html#meta-practice"><i class="fa fa-check"></i><b>3.2</b> 手把手的元分析实战</a><ul>
+<li class="chapter" data-level="3.2" data-path="meta.html"><a href="meta.html#meta-practice"><i class="fa fa-check"></i><b>3.2</b> 手把手的元分析实战</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="meta.html"><a href="meta.html#主效应检验-1"><i class="fa fa-check"></i><b>3.2.1</b> 主效应检验</a></li>
 <li class="chapter" data-level="3.2.2" data-path="meta.html"><a href="meta.html#bajaut-plot和forest-plot"><i class="fa fa-check"></i><b>3.2.2</b> Bajaut plot和forest plot</a></li>
 <li class="chapter" data-level="3.2.3" data-path="meta.html"><a href="meta.html#出版偏倚的检验"><i class="fa fa-check"></i><b>3.2.3</b> 出版偏倚的检验</a></li>
 <li class="chapter" data-level="3.2.4" data-path="meta.html"><a href="meta.html#调节效应分析"><i class="fa fa-check"></i><b>3.2.4</b> 调节效应分析</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="experiment.html"><a href="experiment.html"><i class="fa fa-check"></i><b>4</b> 心理学与管理学中的实验分析：简介与实操</a><ul>
-<li class="chapter" data-level="4.1" data-path="experiment.html"><a href="experiment.html#introduction"><i class="fa fa-check"></i><b>4.1</b> 心理学研究中的实验法简单介绍</a><ul>
+<li class="chapter" data-level="4" data-path="experiment.html"><a href="experiment.html"><i class="fa fa-check"></i><b>4</b> 心理学与管理学中的实验分析：简介与实操</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="experiment.html"><a href="experiment.html#introduction"><i class="fa fa-check"></i><b>4.1</b> 心理学研究中的实验法简单介绍</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="experiment.html"><a href="experiment.html#基本原则随机化与复制性"><i class="fa fa-check"></i><b>4.1.1</b> 基本原则：随机化与复制性</a></li>
 <li class="chapter" data-level="4.1.2" data-path="experiment.html"><a href="experiment.html#常见内部效度威胁因素"><i class="fa fa-check"></i><b>4.1.2</b> 常见内部效度威胁因素</a></li>
 <li class="chapter" data-level="4.1.3" data-path="experiment.html"><a href="experiment.html#常见外部效度威胁因素"><i class="fa fa-check"></i><b>4.1.3</b> 常见外部效度威胁因素</a></li>
@@ -155,10 +192,10 @@ MathJax.Hub.Config({
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="multilevel" class="section level1">
-<h1><span class="header-section-number">2</span> 多层次线性回归模型</h1>
-<div id="multiconcept" class="section level2">
-<h2><span class="header-section-number">2.1</span> 相关概念介绍</h2>
+<div id="multilevel" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> 多层次线性回归模型<a href="multilevel.html#multilevel" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="multiconcept" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> 相关概念介绍<a href="multilevel.html#multiconcept" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>当研究涉及到不同的层面时，我们可能就需要构建跨层模型来验证研究假设。比如当我们想要讨论员工个性(personality)和员工创造力(creativity)之间的关系时，个体层面的personality→creativity之间的关系可能会受到团队层面的团队氛围(team climate)的影响。</p>
 <p>较为常见的是两层线性模型。即使是三层线性模型，都不是很常见。以下以常见的两层线性模型为例。</p>
 <ol style="list-style-type: decimal">
@@ -190,7 +227,7 @@ Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij} + r_{ij}
 <p>随之而来的一个问题是：跨层回归方程中如何进行中心化(centering)？中心化主要有两个目的：一是避免产生不合理的解释；二是避免共线性问题。在多层回归分析中，主要有总平均值中心化(Grand Mean Centering,<span class="math inline">\(x-\bar{x}_{ij}\)</span>,<span class="math inline">\(\bar{x}_{ij}\)</span>是所有数据的平均数 )和分组平均值中心化(Group Mean Centering,<span class="math inline">\(\bar{x}_{.j}\)</span>是第<span class="math inline">\(j\)</span>组的<span class="math inline">\(x_{ij}\)</span>值的平均数)。</p>
 <p>简言之，在第一层的方程中，我们希望进行组内中心化，主要有以下几个好处：一是小组之间截距(<span class="math inline">\(\beta_{0j}\)</span>)的方差=小组平均数(<span class="math inline">\(\bar{y}_{.j}\)</span>)的方差，这就方便了第二层中<span class="math inline">\(\gamma_{00}\)</span>的理解(<span class="math inline">\(\gamma_{00}\)</span>就是第二层变量<span class="math inline">\(W_j\)</span>对每一组的<span class="math inline">\(\bar{y}_{.j}\)</span>的影响)；二是区别开了组内效应和组间效应，组内效应是在第一层估计，组间效应就留给第二层估计。第一层采用分组平均值中心化后，第二组其实也就不太需要进行中心化了。所以，我们一般会把基本的<span class="math inline">\(HLM\)</span>表述为：</p>
 <p><span class="math display">\[
-\left\{ \begin{aligned} 
+\left\{ \begin{aligned}
         Y_{ij} = \beta_{0j} + \beta_{1j}(X_{ij} - \bar{X}_{.j}) + r_{ij} \\
         \beta_{0j} = \gamma_{00} + \gamma_{01}W_j + u_{0j} \\
          \beta_{ij} = \gamma_{10} + \gamma_{11}W_j + u_{1j}   
@@ -210,7 +247,7 @@ Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij} + r_{ij}
 </ol>
 <p>完整的两层线性模型：</p>
 <p><span class="math display">\[
-\left\{ \begin{aligned} 
+\left\{ \begin{aligned}
         Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij} + r_{ij} \\
         \beta_{0j} = \gamma_{00} + \gamma_{01}W_j + u_{0j} \\
          \beta_{ij} = \gamma_{10} + \gamma_{11}W_j + u_{1j}   
@@ -218,7 +255,7 @@ Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij} + r_{ij}
 \]</span></p>
 <p>3.1 变化之一：Model 1</p>
 <p><span class="math display">\[
-\left\{ \begin{aligned} 
+\left\{ \begin{aligned}
         Y_{ij} = \beta_{0j} + r_{ij} \\
         \beta_{0j} = \gamma_{00} + u_{0j}       
 \end{aligned} \right.
@@ -230,7 +267,7 @@ Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij} + r_{ij}
 <p>这实质上是方差分析(<span class="math inline">\(ANOVA\)</span>)。</p>
 <p>3.2 变化之二：Model 2</p>
 <p><span class="math display">\[
-\left\{ \begin{aligned} 
+\left\{ \begin{aligned}
         Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij}+ r_{ij} \\
         \beta_{0j} = \gamma_{00} + u_{0j} \\
         \beta_{1j} = \gamma_{10}       
@@ -244,7 +281,7 @@ Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij} + r_{ij}
 <p>这实质上是协方差分析(<span class="math inline">\(ANCOVA\)</span>)。</p>
 <p>3.3 变化之三： Model 3</p>
 <p><span class="math display">\[
-\left\{ \begin{aligned} 
+\left\{ \begin{aligned}
         Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij}+ r_{ij} \\
         \beta_{0j} = \gamma_{00} \\
         \beta_{1j} = \gamma_{10}       
@@ -257,7 +294,7 @@ Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij} + r_{ij}
 <p>Model 3中，第二层都是参数，所以其实就等同于一个单层的线性回归模型。</p>
 <p>3.4 变化之四：Model 4</p>
 <p><span class="math display">\[
-\left\{ \begin{aligned} 
+\left\{ \begin{aligned}
         Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij}+ r_{ij} \\
         \beta_{0j} = \gamma_{00} + u_{0j} \\
         \beta_{1j} = \gamma_{10} + u_{1j}       
@@ -274,16 +311,16 @@ Y_{ij} = \beta_{0j} + \beta_{1j}X_{ij} + r_{ij}
 <li><span class="math inline">\(R_{wg}\)</span>和<span class="math inline">\(ICC\)</span>的建议</li>
 </ol>
 <p><span class="math inline">\(R_{wg}\)</span>和<span class="math inline">\(ICC\)</span>都是判断能否进行分层线性回归模型分析的指标。</p>
-<p><span class="math inline">\(R_{wg}\)</span>是组内评分者信度指标(within-group interrater reliability)，<span class="math inline">\(j\)</span>一般是指构念量表的题目数量。它是判断低层面的变量是否有足够的信度上升(聚合)到高层面中去的依据。理论上来说，<span class="math inline">\(R_{wg}\)</span>介于0和1之间，大于0.7较为理想。但实际操作中，也有可能出现小于0或大于1的现象。这种情况下，一般可将小于0的值视为0，大于1的值视为1<span class="citation">(罗胜强 and 姜嬿 <a href="#ref-law2014:StochProc" role="doc-biblioref">2014</a>)</span>。</p>
+<p><span class="math inline">\(R_{wg}\)</span>是组内评分者信度指标(within-group interrater reliability)，<span class="math inline">\(j\)</span>一般是指构念量表的题目数量。它是判断低层面的变量是否有足够的信度上升(聚合)到高层面中去的依据。理论上来说，<span class="math inline">\(R_{wg}\)</span>介于0和1之间，大于0.7较为理想。但实际操作中，也有可能出现小于0或大于1的现象。这种情况下，一般可将小于0的值视为0，大于1的值视为1<span class="citation">(<a href="#ref-law2014:StochProc" role="doc-biblioref">罗胜强 and 姜嬿 2014</a>)</span>。</p>
 <p><span class="math inline">\(ICC\)</span>是组内相关系数(intra-class correlation)，分为<span class="math inline">\(ICC(1)\)</span>和<span class="math inline">\(ICC(1)\)</span>。二者的区别简单来说是：<span class="math inline">\(ICC(1)\)</span>是小组内不同成员的评分的信度；<span class="math inline">\(ICC(2)\)</span>是小组的平均评分的信度。对于<span class="math inline">\(ICC(2)\)</span>的理解，我们可以这样来看：当我们从<span class="math inline">\(n\)</span>个组内随机从每个组内抽取<span class="math inline">\(k\)</span>个成员，计算每一组的平均。理论上我们可以重复上述步骤再做一次。这样我们就会有两个样本，每个样本都有<span class="math inline">\(n\)</span>个组，每个组有<span class="math inline">\(k\)</span>个成员的平均分。<span class="math inline">\(ICC(2)\)</span>就可以看成是这两个样本的<span class="math inline">\(n\)</span>个平均的相关系数。通常来说，<span class="math inline">\(ICC(1)\)</span>大于0.12、<span class="math inline">\(ICC(2)\)</span>大于0.7较为合适。关于聚合建议值标准的阐述，希望可以引用相关的参考文献，这样比较有理有据。跨层分析的文献有很多，可以从中去引用。不一一赘述。</p>
 </div>
-<div id="R2" class="section level2">
-<h2><span class="header-section-number">2.2</span> HLM的R Square</h2>
+<div id="R2" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> HLM的R Square<a href="multilevel.html#R2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>在普通的线性回归分析中，模型的<span class="math inline">\(R^2\)</span>是判断模型好坏的非常有用的一个指标，它告诉我们模型中所有自变量到底能够解释因变量的多少方差。</p>
-<p>但是在HLM中(以两层的线性回归模型为例)，Level 1是一个线性回归分析，Level 2是一个交叉在Level 1参数中的又一个线性回归分析。因此，当我们说自变量能解释因变量多少的方差时，就会显得很困惑。其实，HLM是没有模型的<span class="math inline">\(R^2\)</span>的，我们一般所见的是所谓的“伪R平方”(pseudo R-square)。</p>
+<p>但是在HLM中(以两层的线性回归模型为例)，Level 1是一个线性回归分析，Level 2是一个交叉在Level 1参数中的又一个线性回归分析。因此，当我们说自变量能解释因变量多少的方差时，就会显得很困惑。其实，HLM是没有模型的<span class="math inline">\(R^2\)</span>的，我们一般所见的是所谓的”伪R平方”(pseudo R-square)。</p>
 <p>在探讨多层线性回归模型的伪R平方前，首先介绍一下普通线性回归模型中的R平方。</p>
-<div id="普通线性回归模型中的r2" class="section level3">
-<h3><span class="header-section-number">2.2.1</span> 普通线性回归模型中的<span class="math inline">\(R^2\)</span></h3>
+<div id="普通线性回归模型中的r2" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> 普通线性回归模型中的<span class="math inline">\(R^2\)</span><a href="multilevel.html#普通线性回归模型中的r2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>普通的线性回归方程一般表示为：</p>
 <p><span class="math display">\[
 y=b_0+b_1x+ \varepsilon
@@ -314,29 +351,29 @@ R^{2}={SS_{reg}\over{SS_{tot}}}
 \]</span>
 它也被称为决定系数(coefficient of determination)。</p>
 </div>
-<div id="多层线性回归模型中的伪r2" class="section level3">
-<h3><span class="header-section-number">2.2.2</span> 多层线性回归模型中的伪<span class="math inline">\(R^2\)</span></h3>
+<div id="多层线性回归模型中的伪r2" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> 多层线性回归模型中的伪<span class="math inline">\(R^2\)</span><a href="multilevel.html#多层线性回归模型中的伪r2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>在多层线性回归模型中，常用的方法是通过比较拟合模型的残差估计值和基准模型的残差估计值，在自变量加入后模型的残差减少比例得到的一个伪<span class="math inline">\(R^2\)</span>。</p>
 <p>基准模型(baseline model, M1)：</p>
 <p><span class="math display">\[
-\begin{aligned} 
+\begin{aligned}
        y_{ij} = \beta_{0j} + r_{ij} \\
        \beta_{0j} = \gamma_{00} + u_{0j}  
 \end{aligned}
 \]</span>
 在模型M1基础上，增加一个第二层的自变量，成为模型M2：</p>
 <p><span class="math display">\[
-\begin{aligned} 
+\begin{aligned}
        y_{ij} = \beta_{0j} + r_{ij} \\
-       \beta_{0j} = \gamma_{00} +\gamma_{01}{\bar{x}_{.j}}+ u_{0j} 
+       \beta_{0j} = \gamma_{00} +\gamma_{01}{\bar{x}_{.j}}+ u_{0j}
 \end{aligned}
 \]</span>
 在模型M1基础上，增加一个第一层的自变量，成为模型M3：</p>
 <p><span class="math display">\[
-\begin{aligned} 
+\begin{aligned}
        y_{ij} = \beta_{0j} + \beta_{1j}(x_{ij}-\bar{x}_{.j}) +  r_{ij} \\
        \beta_{0j} = \gamma_{00} + u_{0j} \\
-       \beta_{1j} = \gamma_{10} + u_{1j} 
+       \beta_{1j} = \gamma_{10} + u_{1j}
 \end{aligned}
 \]</span></p>
 <p>假设4个模型的分析结果如下：</p>
@@ -395,7 +432,7 @@ R^{2}={SS_{reg}\over{SS_{tot}}}
 这代表<span class="math inline">\(y\)</span>的组间方差中，不同的小组解释了69%的变异。说明了<span class="math inline">\(y\)</span>的方差主要是由自变量<span class="math inline">\(x\)</span>的组间方差来解释，自变量的组内方差解释能力很低。</p>
 <p>比较M3和M4的<span class="math inline">\(\tau_{00}\)</span>和<span class="math inline">\(\tau_{11}\)</span>，有：</p>
 <p><span class="math display">\[
-\begin{aligned} 
+\begin{aligned}
 比率四={\tau_{00}(M3)-\tau_{00}(M4)\over{\tau_{00}(M3)}}=0.6947 \\
 比率五={\tau_{11}(M3)-\tau_{11}(M4)\over{\tau_{11}(M3)}}=0.0294
 \end{aligned}
@@ -404,10 +441,10 @@ R^{2}={SS_{reg}\over{SS_{tot}}}
 <p>以上就是用在增加变量后减少误差的能力多少来估计伪<span class="math inline">\(R^2\)</span>，这也是分析报告中较为常见的多层线性回归模型的<span class="math inline">\(R^2\)</span>形式。</p>
 </div>
 </div>
-<div id="构建一个完整的hlm" class="section level2">
-<h2><span class="header-section-number">2.3</span> 构建一个完整的HLM</h2>
-<div id="利用spss计算r_wg" class="section level3">
-<h3><span class="header-section-number">2.3.1</span> 利用SPSS计算<span class="math inline">\(R_{wg}\)</span></h3>
+<div id="构建一个完整的hlm" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> 构建一个完整的HLM<a href="multilevel.html#构建一个完整的hlm" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="利用spss计算r_wg" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> 利用SPSS计算<span class="math inline">\(R_{wg}\)</span><a href="multilevel.html#利用spss计算r_wg" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>关于<span class="math inline">\(R_{wg}\)</span>的概念，前文已经详细阐述，此处不再赘述。SPss的语法如下：</p>
 <pre><code>*******************************************************************
 *指定输出数据的存储位置，修改&#39;H:\RwgOutcome.sav&#39;，切勿将引号删除.
@@ -458,8 +495,8 @@ EXECUTE.</code></pre>
   /BREAK=Team
   /RD_mean=MEAN(RD).</code></pre>
 </div>
-<div id="利用mplus计算icc1" class="section level3">
-<h3><span class="header-section-number">2.3.2</span> 利用Mplus计算ICC(1)</h3>
+<div id="利用mplus计算icc1" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> 利用Mplus计算ICC(1)<a href="multilevel.html#利用mplus计算icc1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>关于ICC(1)的介绍，前文已经比较详细，也不再阐述。之所以利用Mplus计算，主要也是因为ICC(1)的code也是多层线性模型的最基础模型(零模型, null model)，其实也就是one-way ANOVA(单因素方差分析)。Mplus Code如下：</p>
 <pre><code>TITLE: one-way ANOVA with random effects for depend;
 
@@ -502,8 +539,8 @@ SAMPSTAT;</code></pre>
 <p><img src="figs/2322.png" /></p>
 <p><span class="math inline">\(ICC(1)={0.251\over{1.249+0.251}}=0.168\)</span>，表明组间的变异占总变异的16.8%。通常来说，ICC(1)大于0.12，就表示变量可能不仅受组内因素的影响，也会受到组间因素的影响。</p>
 </div>
-<div id="一步步地构建完整的hlm模型" class="section level3">
-<h3><span class="header-section-number">2.3.3</span> 一步步地构建完整的HLM模型</h3>
+<div id="一步步地构建完整的hlm模型" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> 一步步地构建完整的HLM模型<a href="multilevel.html#一步步地构建完整的hlm模型" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>(1)one-way ANOVA with random effects</strong></p>
 <p>也就是零模型(单因素方差分析)，方程如下：</p>
 <p>Level 1:</p>
@@ -523,7 +560,7 @@ DEPEN_{ij}=\beta_{0j}+ \beta_{1j}BL + r_{ij}
 \]</span>
 Level 2:</p>
 <p><span class="math display">\[
-\begin{aligned} 
+\begin{aligned}
         \beta_{0j} = \gamma_{00} + u_{0j} \\
         \beta_{1j} = \gamma_{10}       
 \end{aligned}
@@ -572,8 +609,8 @@ SAMPSTAT;</code></pre>
 <p><img src="figs/2323.png" /></p>
 <p>通过输出结果可知：<span class="math inline">\(\sigma^{2}\)</span>=1.238，<span class="math inline">\(\tau_{00}\)</span>=0.252；<span class="math inline">\(\gamma_{00}\)</span>=3.499，<span class="math inline">\(\gamma_{10}\)</span>=0.083。</p>
 </div>
-<div id="means-as-outcomes-regression" class="section level3">
-<h3><span class="header-section-number">2.3.4</span> means-as-outcomes regression</h3>
+<div id="means-as-outcomes-regression" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> means-as-outcomes regression<a href="multilevel.html#means-as-outcomes-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>即认为第一层的变量DEPEN会受到第二层的变量RD的影响。之所以会称之为均值为结果的回归，是因为变量DEPEN虽然是第一层的变量，但出现在第二层中，是将其均值与RD进行回归的(其实也就是截距<span class="math inline">\(\beta_{0j}\)</span>)。方程如下：</p>
 <p>Level 1:</p>
 <p><span class="math display">\[
@@ -623,8 +660,8 @@ SAMPSTAT;</code></pre>
 <p><img src="figs/2324.png" /></p>
 <p>通过输出结果可知：<span class="math inline">\(\sigma^{2}\)</span>=1.245，<span class="math inline">\(\tau_{00}\)</span>=0.251，<span class="math inline">\(\gamma_{00}\)</span>=3.957，<span class="math inline">\(\gamma_{01}\)</span>=-0.084。</p>
 </div>
-<div id="random-coefficients-regression-model" class="section level3">
-<h3><span class="header-section-number">2.3.5</span> random-coefficients regression model</h3>
+<div id="random-coefficients-regression-model" class="section level3 hasAnchor" number="2.3.5">
+<h3><span class="header-section-number">2.3.5</span> random-coefficients regression model<a href="multilevel.html#random-coefficients-regression-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>随机系数回归模型，即第一层回归方程的截距和系数不是固定不变的，而是在不同的组中是随机变化的。方程如下：</p>
 <p>Level 1:</p>
 <p><span class="math display">\[
@@ -632,7 +669,7 @@ DEPEN_{ij}=\beta_{0j}+ \beta_{1j}BL + r_{ij}
 \]</span>
 Level 2:</p>
 <p><span class="math display">\[
-\begin{aligned} 
+\begin{aligned}
         \beta_{0j} = \gamma_{00} + u_{0j} \\
         \beta_{1j} = \gamma_{10} + u_{1j}       
 \end{aligned}
@@ -682,8 +719,8 @@ SAMPSTAT;</code></pre>
 <p><img src="figs/2325.png" /></p>
 <p>通过输出结果可知：<span class="math inline">\(\sigma^{2}\)</span>=1.149，<span class="math inline">\(\tau_{00}\)</span>=0.274，<span class="math inline">\(\tau_{11}\)</span>=0.145；<span class="math inline">\(\gamma_{00}\)</span>=3.501，<span class="math inline">\(\gamma_{01}\)</span>=0.061。</p>
 </div>
-<div id="full-model" class="section level3">
-<h3><span class="header-section-number">2.3.6</span> full model</h3>
+<div id="full-model" class="section level3 hasAnchor" number="2.3.6">
+<h3><span class="header-section-number">2.3.6</span> full model<a href="multilevel.html#full-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>第一层回归方程的截距和系数不是固定不变的，是随着第二层的自变量的变化而发生改变。方程如下：</p>
 <p>Level 1:</p>
 <p><span class="math display">\[
@@ -691,7 +728,7 @@ DEPEN_{ij}=\beta_{0j}+ \beta_{1j}BL + r_{ij}
 \]</span></p>
 <p>Level 2:</p>
 <p><span class="math display">\[
-\begin{aligned} 
+\begin{aligned}
         \beta_{0j} = \gamma_{00} + \gamma_{01}RD + u_{0j} \\
         \beta_{1j} = \gamma_{10} + \gamma_{11}RD +u_{1j}       
 \end{aligned}
@@ -744,8 +781,8 @@ SAMPSTAT;</code></pre>
 <p>值得说明的是，因变量没有指定隶属的层次，所以可在两个水平参与子模型的构建。在组间层次，即是随机截距(<span class="math inline">\(\beta_{0j}\)</span>)。实际上，因变量的Level-1的方程截距的随机变化，表现在组间的不同，方差存在于Level-2。</p>
 <p>Level-1部分只会输出<span class="math inline">\(\sigma^{2}\)</span>，因为其他的参数都是Level-2的要素，所以结果会呈现在Level-2部分。</p>
 </div>
-<div id="整理汇报结果" class="section level3">
-<h3><span class="header-section-number">2.3.7</span> 整理汇报结果</h3>
+<div id="整理汇报结果" class="section level3 hasAnchor" number="2.3.7">
+<h3><span class="header-section-number">2.3.7</span> 整理汇报结果<a href="multilevel.html#整理汇报结果" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>将上述的5个回归模型输出结果整理成如下表所示：</p>
 <p><img src="figs/2327.png" /></p>
 <p>注意的是，<span class="math inline">\(R^2={组间误差的方差\over组间误差的方差+组内误差的方差}={\tau\over{\tau+\sigma^2}}\)</span></p>
@@ -756,10 +793,10 @@ SAMPSTAT;</code></pre>
 </div>
 </div>
 </div>
-<h3> 参考文献</h3>
-<div id="refs" class="references">
-<div id="ref-law2014:StochProc">
-<p>罗胜强, and 姜嬿. 2014. <em>管理学问卷调查研究方法</em>. 重庆大学出版社.</p>
+<h3> 参考文献<a href="参考文献.html#参考文献" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-law2014:StochProc" class="csl-entry">
+罗胜强, and 姜嬿. 2014. <em>管理学问卷调查研究方法</em>. 重庆大学出版社.
 </div>
 </div>
             </section>
@@ -772,7 +809,6 @@ SAMPSTAT;</code></pre>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -791,6 +827,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -811,6 +848,10 @@ gitbook.start({
 "text": null
 },
 "download": ["mybook1.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
