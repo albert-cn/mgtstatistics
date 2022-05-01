@@ -1,7 +1,7 @@
 ---
 title: "管理学统计分析快速上手指南"
 author: "Albert Cao"
-date: "2022-05-01"
+date: "2022-05-02"
 bibliography: mybib.bib
 description: 这是用R的bookdown功能制作中文图书，输出格式为bookdown::gitbook和bookdown::pdf_book.
 documentclass: book
